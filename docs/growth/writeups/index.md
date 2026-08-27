@@ -69,6 +69,25 @@ Unique writeups on novel attack classes attract program invites and conference t
 - Monitor Hacktivity for reports against your products even outside formal programs.
 - Build a culture where findings lead to systemic fixes, not just one-line patches.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Impact first paragraph"
+    Lead with what attacker gains — not how you found it.
+
+!!! tip "Redact aggressively"
+    PII, internal hostnames, and live tokens out of public posts.
+
+!!! tip "Repro steps numbered"
+    Copy-paste friendly steps get more engagement and bounties.
+
+!!! tip "Screenshots annotated"
+    Arrows on Burp screenshots save triage time.
+
+!!! tip "Credit others"
+    Link prior art and collaborators — community remembers.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

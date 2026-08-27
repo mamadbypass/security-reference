@@ -124,6 +124,25 @@ User input → unsanitized string concat → DB executes attacker SQL → data l
 - DAST/SAST plus manual testing on every input vector.
 - Regression tests with malicious strings in CI for critical endpoints.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Start with polyglot probes"
+    Try `'`, `"`, `')`, and `';` on every parameter — errors often reveal DB type immediately.
+
+!!! tip "Use sqlmap tamper scripts"
+    When WAF blocks payloads: `--tamper=space2comment,between` and lower `--level` first, then increase.
+
+!!! tip "Test JSON APIs"
+    SQLi lives in `{"id": "1'"}` bodies — Burp Intruder JSON payloads are often missed by scanners.
+
+!!! tip "Union column discovery"
+    Use `ORDER BY 1000--` and binary search down — faster than guessing NULL count.
+
+!!! warning "Report minimally"
+    One table name + one row beats a full dump — programs reward proof, not data hoarding.
+
 ## Quick Commands
 
 ```bash

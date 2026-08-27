@@ -68,6 +68,25 @@ Report via Immunefi or protocol bug bounty; never exploit mainnet without author
 - Use audited libraries (OpenZeppelin); minimize custom low-level assembly.
 - Independent audits, bug bounties, and gradual rollout with TVL caps.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! warning "Fork mainnet locally"
+    Foundry `anvil --fork-url` — never test exploits on live chain.
+
+!!! tip "slither first"
+    Static analysis catches reentrancy and access control in minutes.
+
+!!! tip "Check upgrade proxy"
+    UUPS/Transparent proxy admin key = full drain if compromised.
+
+!!! tip "Invariant fuzzing"
+    Echidna `echidna` on protocol invariants — balance never negative.
+
+!!! tip "Immunefi scope"
+    Out-of-scope contracts and known issues listed — read first.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

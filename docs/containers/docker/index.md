@@ -68,6 +68,25 @@ Use Docker Bench for Security for host-level configuration checks.
 - Use minimal base images (distroless, Alpine) and pin digests.
 - Follow CIS Docker Benchmark; enable user namespaces and rootless Docker where feasible.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Socket exposure"
+    `-v /var/run/docker.sock` in compose files = host root.
+
+!!! tip "trivy in CI"
+    Scan images before runtime — CVEs in base images are common.
+
+!!! tip "Secrets in layers"
+    `docker history` and dive reveal env vars baked into images.
+
+!!! tip "CAP_SYS_ADMIN"
+    Capabilities not dropped? Container escape primitives multiply.
+
+!!! tip "Registry auth"
+    Anonymous pull from private registry leaks proprietary images.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

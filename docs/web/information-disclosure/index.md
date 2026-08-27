@@ -119,6 +119,25 @@ Disclosure source → attacker collects credentials/schema/paths → enables tar
 
 - Rotate any credential ever committed; treat disclosure as incident.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip ".git exposure"
+    `wget -r https://target.com/.git/` or `git-dumper` for full source.
+
+!!! tip "JS secrets"
+    Search bundles for `api_key`, `AKIA`, `Bearer`, internal URLs.
+
+!!! tip "nuclei exposures"
+    `nuclei -t exposures/ -l urls.txt` finds common leaks fast.
+
+!!! tip "Error verbosity"
+    Trigger errors on every parameter — stack traces leak paths and versions.
+
+!!! warning "Rotate leaked keys"
+    Report critical leaks immediately — don't wait for full writeup.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

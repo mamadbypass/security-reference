@@ -68,6 +68,25 @@ Bug bounty focus: phishing via dApp UI, not unauthorized mainnet theft.
 - Wallet vendors: clear signing screens, domain binding in EIP-712 messages.
 - Monitor deployed frontend hashes; alert on deploy changes.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Transaction simulation"
+    MetaMask/Rabby simulate — test what user actually signs.
+
+!!! tip "Infinite approval"
+    USDT `approve(max)` — report clear revocation steps.
+
+!!! tip "Address poisoning"
+    UI shows first/last chars — users send to lookalike addresses.
+
+!!! tip "Clone dApp domains"
+    Homoglyph domains + wallet connect — user education angle.
+
+!!! tip "Test on testnet"
+    Sepolia/Goerli forks for UI bugs without real funds.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

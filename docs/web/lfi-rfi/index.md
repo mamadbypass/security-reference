@@ -127,6 +127,25 @@ include(PAGES.get(page, "home.php"))
 
 **Monitoring**: Alert on repeated `%2e%2e` patterns and wrapper scheme usage in parameters.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "php://filter trick"
+    `php://filter/convert.base64-encode/resource=index.php` reads source without execution.
+
+!!! tip "Double encoding"
+    Try `..%252f..%252f` when `../` is stripped once.
+
+!!! tip "Log poisoning"
+    Poison User-Agent in access log, then LFI `/var/log/apache2/access.log` for RCE.
+
+!!! tip "Wrapper enumeration"
+    `php://`, `zip://`, `data://`, `expect://` — fuzz wrappers per language.
+
+!!! tip "RFI needs allow_url_include"
+    RFI is rare on modern PHP — focus on LFI + log/session poisoning chains.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

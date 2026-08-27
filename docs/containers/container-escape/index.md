@@ -67,6 +67,25 @@ Document exact misconfiguration; escapes are often configuration bugs not kernel
 - Monitor for escape indicators: unexpected mounts, cgroup writes, docker API from pods.
 - Regularly pentest cluster configurations with kube-hunter from both outside and inside.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "deepce checklist"
+    Run deepce inside container — scores escape vectors automatically.
+
+!!! tip "CAP_SYS_ADMIN + mount"
+    Mount host filesystem when cgroup devices allow it.
+
+!!! tip "Kernel match matters"
+    Escape CVEs are kernel-specific — match exact host kernel.
+
+!!! warning "Lab clusters only"
+    Never test escape primitives on production orchestrators.
+
+!!! tip "Proof from host"
+    Screenshot `hostname` from host namespace — not container ID.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

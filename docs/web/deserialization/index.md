@@ -114,6 +114,25 @@ Tampered serialized object → server deserializes → gadget chain executes →
 - WAF rules for Java serialization magic bytes in cookies.
 - EDR alerts on child processes spawned from app servers after cookie updates.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Cookie and viewstate"
+    Java `.ser`, PHP `O:`, .NET `AAEAAAD` in cookies — decode first byte.
+
+!!! tip "ysoserial gadget chains"
+    Match library versions exactly — CommonsCollections gadgets vary by JDK.
+
+!!! tip "phpggc for PHP"
+    `./phpggc -l` lists chains; `./phpggc Laravel/RCE1 system id` for quick PoC.
+
+!!! tip "JSON type confusion"
+    Some APIs deserialize JSON to objects unsafely — test `__type` or `@class` fields.
+
+!!! warning "Never test prod RCE"
+    Deserialize RCE PoCs belong in isolated VMs matching target versions only.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

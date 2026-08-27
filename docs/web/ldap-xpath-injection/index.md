@@ -133,6 +133,25 @@ Injected metacharacters in filter/expression → query logic altered → auth by
 
 - Prefer modern auth protocols (OIDC) over custom LDAP filter login forms.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "LDAP auth bypass"
+    Username: `*)(uid=*))(|(uid=*` — classic OpenLDAP bypass.
+
+!!! tip "Wildcard enumeration"
+    `*` in search fields returns all entries.
+
+!!! tip "XPath boolean"
+    `' or '1'='1` in XML search APIs.
+
+!!! tip "Error-based LDAP"
+    Verbose LDAP errors reveal DN structure.
+
+!!! tip "Test SSO integrations"
+    LDAP backends on enterprise login portals are common targets.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -66,6 +66,25 @@ Introspection is invaluable during development but dangerous when exposed to att
 - **Audit deployments** so preview environments are not publicly routable without auth.
 - **Monitor for `__schema` and `__type` in request bodies** and alert on spikes.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "GET introspection"
+    Some servers allow introspection via GET query param.
+
+!!! tip "GraphiQL exposure"
+    /graphiql, /playground, /console — often have introspection on.
+
+!!! tip "Staging only?"
+    Production may block introspection but staging.graphql.target.com may not.
+
+!!! tip "Partial introspection"
+    Some fields hidden but mutations still listed — read carefully.
+
+!!! tip "Save schema"
+    Export schema JSON for offline analysis and IDOR field hunting.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

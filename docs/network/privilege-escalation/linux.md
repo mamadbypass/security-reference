@@ -77,6 +77,25 @@ Linux privilege escalation gains **root** from an unprivileged shell. Attack sur
 - **AppArmor/SELinux** — Enforce mandatory access controls.
 - **Audit logging** — `auditd` rules for privilege changes and sudo usage.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "sudo -l before exploits"
+    `sudo -l` output often gives direct root without kernel bugs.
+
+!!! tip "SUID GTFOBins"
+    Match SUID binaries to gtfobins.github.io one-liners.
+
+!!! tip "Capabilities"
+    `getcap -r / 2>/dev/null` — cap_setuid on python = instant root.
+
+!!! tip "Cron writable scripts"
+    World-writable cron entries running as root are still everywhere.
+
+!!! tip "Container on host?"
+    Docker group membership equals root — check `id` and socket access.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

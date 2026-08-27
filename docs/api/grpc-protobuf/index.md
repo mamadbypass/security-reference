@@ -68,6 +68,25 @@ Protobuf is not encryption: messages can be decoded with a `.proto` file or infe
 - **Validate all protobuf fields** server-side; never trust client-supplied IDs for access control.
 - **Log RPC method, peer identity, and latency**; alert on reflection probes and unauthenticated calls.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "grpcurl list"
+    `grpcurl -plaintext host:50051 list` — reflection exposes all RPCs.
+
+!!! tip "Burp gRPC"
+    Enable HTTP/2 in Burp and use gRPC tab for message editing.
+
+!!! tip "Protobuf without proto"
+    Use `grpcurl describe` or blackbox protobuf decoding.
+
+!!! tip "Metadata auth"
+    Test `authorization` metadata per RPC — not just at connection.
+
+!!! tip "grpcui browser"
+    Web UI for manual RPC testing when CLI is awkward.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

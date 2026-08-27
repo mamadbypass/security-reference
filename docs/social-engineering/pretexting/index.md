@@ -67,6 +67,25 @@ Never use obtained credentials beyond proof-of-concept in controlled validation.
 - Incident playbooks for suspected social engineering attempts.
 - Regular tabletop exercises combining digital and human attack vectors.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Stop phrase agreed"
+    Target can say codeword to verify caller with security.
+
+!!! tip "Record laws"
+    Two-party consent states — know before recording calls.
+
+!!! tip "Low info goal"
+    One fact per call — multi-question raises suspicion.
+
+!!! tip "Callback verification"
+    Train client to call known IT number back.
+
+!!! tip "Debrief without names"
+    Aggregate lessons — protect individuals.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -132,6 +132,25 @@ Request A and B read balance=100 → both pass check for 100 debit → both comm
 - Load tests with deliberate parallelism in staging.
 - Property-based tests asserting invariant (balance never negative).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Turbo Intruder settings"
+    Use `race.open-socket` technique and `last-byte-sync` for tight races.
+
+!!! tip "python asyncio script"
+    Custom async scripts beat Intruder for >50 parallel requests.
+
+!!! tip "Single-connection HTTP/2"
+    Multiplex many requests on one connection to reduce jitter.
+
+!!! tip "Target limit-once ops"
+    Coupons, votes, transfers, password reset — anything with a single-use flag.
+
+!!! tip "Record success rate"
+    Report '12/50 requests succeeded' — shows reliability for triage.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

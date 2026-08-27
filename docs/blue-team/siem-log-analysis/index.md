@@ -75,6 +75,25 @@ Effective analysis requires understanding **what each log source actually record
 - **Right-size retention** — Balance cost vs investigation window (90+ days recommended).
 - **Automate enrichment** — Threat intel feeds, GeoIP, and asset context on every alert.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "UTC everywhere"
+    Normalize all timestamps to UTC before building timelines.
+
+!!! tip "Entity pivot"
+    Pick one user or host — pivot across DNS, proxy, auth, endpoint.
+
+!!! tip "Rare process first"
+    Statistical outliers beat keyword searches for unknown malware.
+
+!!! tip "Save queries"
+    Export working SPL/KQL as detection candidates.
+
+!!! tip "Chain of custody"
+    Note who pulled logs and when for incident reports.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

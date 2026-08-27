@@ -77,6 +77,25 @@ Common flaws:
 - **Rotate keys** with `kid` versioning; monitor for signature failures and algorithm anomalies.
 - Reference [PortSwigger JWT attacks](https://portswigger.net/web-security/jwt) for test cases to block.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "jwt_tool all tests"
+    `python3 jwt_tool.py TOKEN -M at` runs all attacks.
+
+!!! tip "alg=none"
+    Set header `{"alg":"none"}` and remove signature — still works on bad libs.
+
+!!! tip "HS/RS confusion"
+    Sign with public key as HMAC secret when server expects RS256.
+
+!!! tip "kid injection"
+    `{"kid": "../../dev/key"}` or SQLi in kid field.
+
+!!! tip "Check exp claim"
+    Many APIs ignore expiration — test expired tokens.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

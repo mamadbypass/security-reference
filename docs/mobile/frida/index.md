@@ -69,6 +69,25 @@ Use Frida only on apps you own or have explicit authorization to test.
 - Monitor for hook frameworks in production via attestation (Play Integrity, DeviceCheck).
 - Rate-limit and anomaly-detect API usage patterns that indicate automated abuse.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "objection rapid recon"
+    `objection -g com.app explore` — ssl, root, and dump in minutes.
+
+!!! tip "Hook crypto early"
+    Intercept `javax.crypto` or CommonCrypto before app init completes.
+
+!!! tip "Spawn vs attach"
+    `frida -U -f com.app` bypasses some anti-debug on startup.
+
+!!! tip "Document offsets"
+    iOS hooks need class/method names — Android needs full JNI signatures.
+
+!!! tip "Server still rules"
+    Client bypass without server impact is usually informational.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

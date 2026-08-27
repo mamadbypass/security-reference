@@ -80,6 +80,25 @@ Attackers correlate these sources to find **forgotten properties**—acquired st
 - **Deploy EASM** that correlates DNS, IPs, cloud APIs, and code leaks into one dashboard.
 - **Run quarterly "forgotten asset" reviews** with security and infrastructure teams.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "ASN mapping"
+    `asnmap -d target.com` then scan owned IP ranges.
+
+!!! tip "Acquisition hunting"
+    Check acquired companies' domains still in DNS CNAME chains.
+
+!!! tip "Mobile app strings"
+    Extract API hosts from APK strings — often staging environments.
+
+!!! tip "GitHub dorking"
+    `org:target filename:.env` or `target.com password` in public repos.
+
+!!! tip "Certificate transparency"
+    New certs reveal hosts before DNS propagates publicly.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

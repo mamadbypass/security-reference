@@ -76,6 +76,25 @@ GCP's **Organization Policy Service** can enforce constraints (no public IPs, re
 - **Least-privilege IAM** — Custom roles; avoid primitive Owner/Editor.
 - **Regular Forseti/Scout Suite** assessments.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "gcloud auth list"
+    Stolen `application_default_credentials.json` unlocks project APIs.
+
+!!! tip "GCS IAM fuzz"
+    `gsutil iam get gs://bucket` on naming-convention buckets.
+
+!!! tip "Default SA on GCE"
+    Compute default SA often has editor — metadata token is the key.
+
+!!! tip "Org policy bypass"
+    Test cross-project SA impersonation when folder policies look strict.
+
+!!! tip "gcp_scanner"
+    Run on every project ID found in DNS or JS bundles.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

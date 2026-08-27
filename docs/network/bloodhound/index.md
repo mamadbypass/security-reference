@@ -75,6 +75,25 @@ BloodHound turns manual ACL review into visual, queryable attack planning—used
 - **Harden ADCS** — BloodHound CE ESC queries reveal certificate template misconfigurations; apply [SpecterOps hardening guidance](https://specterops.io/wp-content/uploads/sites/3/2022/06/Certified_Pre-Owned.pdf).
 - **Integrate with SIEM** — Alert on mass LDAP queries and unusual SPN enumeration.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "All collection methods"
+    Run `-c All` once, then targeted collections on schedule.
+
+!!! tip "CE vs legacy"
+    BloodHound CE uses different ingest — match collector to your version.
+
+!!! tip "Shortest path export"
+    Screenshot the path graph for reports — analysts love visual proof.
+
+!!! tip "Validate top 3 paths"
+    BloodHound suggests many paths — manually confirm the shortest real one.
+
+!!! tip "Defensive Cypher"
+    Export remediation queries (`MATCH ...`) for blue team handoff.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

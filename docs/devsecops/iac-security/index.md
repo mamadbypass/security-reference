@@ -67,6 +67,25 @@ Integrate IaC scanning in PR checks; block merge on critical findings.
 - Scan for secrets in IaC with git-secrets and trufflehog.
 - Maintain golden modules with secure defaults; deprecate risky patterns.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "checkov in PR"
+    Fail build on HIGH — don't only scan quarterly.
+
+!!! tip "0.0.0.0/0 grep"
+    Search Terraform for open security groups and `Principal: *`.
+
+!!! tip "State file secrets"
+    Terraform state may contain DB passwords — lock down S3 backend.
+
+!!! tip "Drift detection"
+    Console changes bypass IaC — compare live vs code.
+
+!!! tip "Fix snippets in report"
+    One-line HCL fix per finding speeds remediation.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

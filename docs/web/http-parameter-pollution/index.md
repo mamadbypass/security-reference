@@ -120,6 +120,25 @@ if len(request.GET.getlist('id')) > 1:
 
 - Log full parameter lists, not only first occurrence.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Framework differences"
+    PHP uses last, ASP.NET uses first — test both orders: `id=1&id=2`.
+
+!!! tip "HPP in OAuth"
+    Duplicate `redirect_uri` or `state` parameters confuse validation.
+
+!!! tip "WAF bypass"
+    Split blocked keywords: `id=1&sele=id&lect` concatenated server-side.
+
+!!! tip "File upload boundaries"
+    Duplicate `filename` in multipart — parser differential.
+
+!!! tip "Document server stack"
+    HPP behavior is framework-specific — name it in report.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -126,6 +126,25 @@ Poison `Location` to attacker URL plus injected cookies on victim domain.
 
 - Fuzz all redirect and cookie-setting endpoints with CRLF payloads in CI security tests.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Response splitting"
+    Inject `%0d%0aContent-Length: 0%0d%0a%0d%0a<script>alert(1)</script>`
+
+!!! tip "Header injection"
+    Set-Cookie injection via CRLF in redirect parameters.
+
+!!! tip "Log injection"
+    CRLF in User-Agent pollutes SIEM — show defensive teams the log line.
+
+!!! tip "URL encode variants"
+    Try `%0d%0a`, `%0a`, `%0d`, double encoding.
+
+!!! tip "crlfuzz automation"
+    `crlfuzz -u URL` speeds up header injection discovery.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

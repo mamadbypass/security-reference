@@ -68,6 +68,25 @@ Stay within legal boundaries and program scope; OSINT on individuals may be rest
 - Monitor certificate transparency and new subdomain registrations for impersonation.
 - Conduct periodic OSINT self-assessments to see attacker-visible attack surface.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "theHarvester baseline"
+    Emails and subdomains in one command — start here.
+
+!!! tip "Email format"
+    firstname.lastname@corp.com enables targeted sims (authorized only).
+
+!!! tip "Cross-verify"
+    One LinkedIn profile != confirmed employee — corroborate.
+
+!!! tip "Legal boundaries"
+    OSINT for defense and authorized red team — not harassment.
+
+!!! tip "Date your intel"
+    People change roles — stale org charts mislead.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -67,6 +67,25 @@ Document pinout for responsible disclosure; do not publish keys that enable mass
 - Pen-test hardware before launch with physical access assumptions.
 - Provide secure update path so UART is not the only recovery mechanism.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "UART baud scan"
+    Try 115200, 57600, 38400 — multimeter finds TX/RX/GND.
+
+!!! warning "3.3V vs 5V"
+    Wrong voltage fries boards — confirm before connecting.
+
+!!! tip "Boot interrupt"
+    Spam key during power-on for U-Boot or CFE shell.
+
+!!! tip "SPI flash dump"
+    flashrom or chip programmer when UART locked.
+
+!!! tip "Photo pinout"
+    Document pads for report — future you will thank you.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

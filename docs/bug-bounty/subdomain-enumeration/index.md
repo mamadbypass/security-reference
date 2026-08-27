@@ -77,6 +77,25 @@ Subdomain enumeration discovers hostnames under a root domain (`*.target.com`) t
 - **Segment environments** — Do not point `staging.target.com` at production data; use separate accounts and credentials.
 - **Alert on new subdomains** via automated CT monitoring (e.g., Facebook ct-monitor, Certstream, commercial EASM).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Combine passive sources"
+    subfinder + amass + assetfinder + crt.sh — union beats any single tool.
+
+!!! tip "Wildcard handling"
+    Use puredns or shuffledns to filter wildcard DNS before httpx.
+
+!!! tip "Permutation attacks"
+    altdns or gotator on discovered subs finds `dev-api-v2.target.com`.
+
+!!! tip "Monitor CT logs"
+    crt.sh RSS + Slack alert for new certs on in-scope domains.
+
+!!! tip "Validate ownership"
+    Never test a subdomain until confirmed in program scope.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

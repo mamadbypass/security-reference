@@ -71,6 +71,25 @@ Chain findings: hardcoded admin API key + exported activity that loads arbitrary
 - Run MobSF or similar in CI for every release build.
 - Follow **OWASP MASTG** and MASVS for structured testing and verification.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "jadx + grep secrets"
+    `jadx -d out app.apk` then search for `api_key`, `password`, `Bearer`.
+
+!!! tip "Exported components"
+    AndroidManifest exported activities/intents — test without login.
+
+!!! tip "MobSF report"
+    Automated scan catches backup flags, weak crypto, and hardcoded keys.
+
+!!! tip "Network security config"
+    Pinning declared but disabled in debug manifest variants.
+
+!!! tip "Compare release vs debug"
+    Debug builds often disable pinning and enable logging.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

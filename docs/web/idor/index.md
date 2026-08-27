@@ -114,6 +114,25 @@ Attacker authenticates → requests object by ID → server fetches by ID only �
 
 - Role matrix testing in CI: each endpoint tested with wrong user's object IDs must return 403/404 consistently.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Test every HTTP method"
+    IDOR on `GET /user/5` often fails on `PUT` or `DELETE` for the same ID.
+
+!!! tip "UUID != secure"
+    Leaked UUIDs in JS bundles or emails are as bad as sequential IDs.
+
+!!! tip "GraphQL global IDs"
+    Base64 `Type:ID` values decode to internal IDs — swap and replay.
+
+!!! tip "Use Autorize extension"
+    Burp Autorize auto-replays low-priv requests with high-priv cookies — huge time saver.
+
+!!! tip "Mass assignment combo"
+    Change `userId` in body while keeping attacker session — classic B2B SaaS bug.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

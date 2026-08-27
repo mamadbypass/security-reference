@@ -77,6 +77,25 @@ In bug bounty, port scanning is usually limited to **in-scope hosts** and may be
 - **Segment internal services** — Even if one host is compromised, lateral scanning should not reach databases.
 - **Continuous external scanning** — Run internal port scans from outside to verify perimeter rules hold.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Top ports first"
+    naabu `-top-ports 1000` on all hosts before full 65535 on gold targets.
+
+!!! warning "Rate limit scans"
+    `-rate 1000` max on bug bounty — avoid tripping IDS or program bans.
+
+!!! tip "Service scripts"
+    nmap `-sV -sC` on interesting ports finds default creds and versions.
+
+!!! tip "Admin panels"
+    8080, 8443, 9090, 3000, 5000 — high-value non-standard ports.
+
+!!! tip "UDP selectively"
+    UDP full scan is slow and noisy — SNMP 161 and DNS 53 only unless internal.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -75,6 +75,25 @@ Assessments also cover **rogue AP detection**, guest network isolation, and evil
 - **Certificate pinning for 802.1X** — Prevent evil-twin credential capture.
 - **Monitor** — Alert on duplicate SSIDs and anomalous AP MAC addresses.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Passive recon first"
+    Identify clients and hidden SSIDs before transmitting deauth frames.
+
+!!! tip "PMKID capture"
+    `hcxdumptool` can grab PMKID without full handshake on WPA2.
+
+!!! tip "Enterprise cert check"
+    Test if clients accept any RADIUS cert — evil twin on WPA-Enterprise.
+
+!!! tip "Client isolation"
+    Associated to guest WiFi? Probe for lateral access to corporate VLAN.
+
+!!! warning "Legal and location"
+    Wireless tests need physical authorization at the site.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
