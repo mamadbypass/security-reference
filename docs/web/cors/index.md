@@ -122,6 +122,25 @@ Craft sandboxed iframe or `data:` documents that send `Origin: null`.
 
 - Automated CORS misconfiguration scans in CI for staging environments.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Origin reflection"
+    If server echoes your `Origin` header, it's likely vulnerable with credentials.
+
+!!! tip "Null origin"
+    Sandboxed iframe sends `Origin: null` — test `null` in allow-list bypass.
+
+!!! tip "Subdomain takeover + CORS"
+    Loose `*.domain.com` CORS fails when a subdomain is takeover-able.
+
+!!! tip "HTML PoC template"
+    Use fetch with `credentials: 'include'` from attacker page — keep PoC minimal.
+
+!!! tip "Pre-flight matters"
+    Sensitive methods need preflight — test PUT/DELETE cross-origin.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

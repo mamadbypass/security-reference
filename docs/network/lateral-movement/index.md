@@ -78,6 +78,25 @@ Domain environments amplify lateral movement: shared local admin passwords, exce
 - **Network segmentation** — Firewall rules between VLANs; assume breach design.
 - **Monitor** — Event 4624 type 3 (network logon), 4648 (explicit creds), and anomalous SMB/WinRM from workstations.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "CrackMapExec swiss army"
+    `crackmapexec smb targets.txt -u user -p pass --shares` maps the network.
+
+!!! tip "Pass-the-hash hygiene"
+    Use `-H NTLM` only on in-scope hosts — avoid domain-wide spraying.
+
+!!! tip "WinRM over SMB"
+    evil-winrm when 5985 open — often less monitored than psexec.
+
+!!! tip "Document the path"
+    Each hop: source host, cred used, target, timestamp.
+
+!!! tip "Stop at objective"
+    Don't wander into out-of-scope VLANs after proving segment access.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

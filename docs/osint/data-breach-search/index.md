@@ -67,6 +67,25 @@ Researchers: do not publish raw breach data; reference breach name and date only
 - Detect credential stuffing with rate limits, CAPTCHA, and impossible travel signals.
 - Never store passwords in reversible encryption; use strong hashing for any secrets.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "HIBP API domain"
+    Check corporate domain exposure — defensive notification only.
+
+!!! warning "Never credential stuff"
+    Breach data for unauthorized login is illegal.
+
+!!! tip "Force reset workflow"
+    Pair exposed emails with mandatory MFA enrollment.
+
+!!! tip "Password policy"
+    Reuse from personal breaches hits corporate accounts.
+
+!!! tip "Monitor continuously"
+    One-time check misses new breaches — automate alerts.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

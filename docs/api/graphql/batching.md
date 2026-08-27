@@ -76,6 +76,25 @@ Rate limiters and WAFs often count **HTTP requests**, not **GraphQL operations**
 - **Use CAPTCHA or proof-of-work** after a small number of failed auth attempts, regardless of batching.
 - **Log and alert** when a single request contains multiple auth mutations.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Array of operations"
+    Wrap queries: `[{query: ...}, {query: ...}]` in single POST.
+
+!!! tip "Alias duplication"
+    `{ a1: user(id:1){email} a2: user(id:2){email} ... }`
+
+!!! tip "Rate limit bypass"
+    Document requests-per-HTTP vs requests-per-operation difference.
+
+!!! warning "OTP brute force"
+    Batch 10k OTP attempts if server counts HTTP not operations.
+
+!!! tip "Cost analysis"
+    Measure server time vs batch size for DoS report evidence.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

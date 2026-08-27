@@ -67,6 +67,25 @@ Document which hosts were pinned and whether bypass affected all endpoints.
 - Assume pinning can be bypassed on compromised devices; enforce auth and encryption at the application layer.
 - Test pinning with tools like `nabla` or MobSF and verify failure on proxy connections.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Universal SSL kill"
+    frida-multiple-unpinning script covers OkHttp, AFNetworking, Flutter.
+
+!!! tip "apk-mitm patch"
+    When Frida blocked, repackage APK with mitm proxy cert.
+
+!!! tip "iOS trust store"
+    Install Burp CA on device and enable full trust in Settings.
+
+!!! tip "Certificate transparency"
+    Some apps pin plus CT — note bypass method per OS version.
+
+!!! tip "Production builds"
+    Confirm pinning enabled in release — debug-only pinning is not a vuln.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

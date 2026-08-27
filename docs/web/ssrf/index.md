@@ -119,6 +119,25 @@ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE_NAME
 
 - Alert on requests to metadata IPs, `localhost`, and RFC1918 ranges from app tiers.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Collaborator first"
+    Always confirm with Burp Collaborator or interactsh before internal scanning.
+
+!!! tip "DNS rebinding"
+    When IP filters block `127.0.0.1`, use a rebinding service or `localtest.me` variants.
+
+!!! tip "Cloud metadata paths"
+    AWS: `http://169.254.169.254/latest/meta-data/iam/security-credentials/` — try IMDSv2 token header too.
+
+!!! tip "Gopher for Redis"
+    If port 6379 is open internally, gopher payloads can write SSH keys — lab only.
+
+!!! tip "Blind SSRF timing"
+    Compare response times for open vs closed ports when no body reflection exists.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

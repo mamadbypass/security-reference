@@ -68,6 +68,25 @@ Single Sign-On (SSO) federates authentication to an Identity Provider (IdP). **S
 - **Rotate keys safely**; log failed signature validations and anomalous attribute changes.
 - Review [OWASP SAML Security guidance](https://owasp.org/www-community/vulnerabilities/SAML_Security_Cheat_Sheet).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "SAML Raider"
+    Burp extension for signing, wrapping, and comment injection.
+
+!!! tip "Signature stripping"
+    Remove `<ds:Signature>` block — some SPs don't validate.
+
+!!! tip "Comment injection"
+    XML comments inside Assertion to break signature coverage.
+
+!!! tip "ACS URL swap"
+    Change AssertionConsumerServiceURL to attacker endpoint.
+
+!!! tip "Replay assertions"
+    Save valid assertion and replay before NotOnOrAfter expires.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

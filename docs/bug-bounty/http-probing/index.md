@@ -80,6 +80,25 @@ Tools like `httpx` integrate probing with tech detection, screenshotting, and fa
 - **Use consistent TLS certificates** — Minimize SAN sprawl that expands attacker subdomain lists.
 - **Return generic error pages** — Avoid verbose server banners and stack traces on probed endpoints.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "httpx flags"
+    `-title -status-code -tech-detect -follow-redirects -json -o out.json`
+
+!!! tip "Screenshot triage"
+    `-screenshot` flags interesting login pages visually.
+
+!!! tip "Filter noise"
+    `-mc 200,301,302,403` — 403 often hides admin panels worth bypass testing.
+
+!!! tip "Chain to nuclei"
+    `httpx -l subs.txt -silent | nuclei -t exposures/`
+
+!!! tip "Re-probe after changes"
+    Run httpx daily on scope — new services appear constantly.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

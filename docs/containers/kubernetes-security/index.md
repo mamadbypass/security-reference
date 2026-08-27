@@ -68,6 +68,25 @@ Peirates and CDK automate common K8s privilege escalation paths from inside a po
 - Rotate service account tokens; disable auto-mount where not needed.
 - Run kubescape, kube-bench, and Falco for policy and runtime threat detection.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "kubescape NSA framework"
+    Baseline scan against NSA/CISA hardening guide.
+
+!!! tip "Falco noise tuning"
+    Trigger benign violations first — tune before production alerts.
+
+!!! tip "NetworkPolicy gaps"
+    Default allow egress — test DNS tunnel and metadata access.
+
+!!! tip "Admission bypass"
+    Deploy test pod with forbidden securityContext — policy only matters if enforced.
+
+!!! tip "Secrets as env vars"
+    Env vars appear in process list and crash dumps — prefer volume mounts.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

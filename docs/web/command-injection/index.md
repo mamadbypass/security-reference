@@ -126,6 +126,25 @@ commix -u "https://target.com/ping?ip=127.0.0.1" --batch
 - Monitor child process creation from web workers (`/bin/sh`, `cmd.exe`).
 - WAF signatures as secondary layer only.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Separator fuzzing"
+    `;`, `|`, `||`, `&&`, `` ` ``, `$()`, `%0a` on ping/traceroute features.
+
+!!! tip "Blind detection"
+    `; sleep 5` or `| ping -c 5 127.0.0.1` when no output.
+
+!!! tip "commix for automation"
+    `commix -u URL --batch` handles many injection types.
+
+!!! tip "Windows vs Linux"
+    Use `& whoami` on Windows, `; id` on Linux — fingerprint OS first.
+
+!!! tip "Argument injection"
+    Sometimes only arguments inject: `filename;id` vs full command.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -77,6 +77,25 @@ Good detections specify **analytic story**: data source, logic, false positive g
 - **Document runbooks** — Each high-severity detection links to IR playbook.
 - **Retire noisy rules** — Failed detections erode SOC trust; fix or remove.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Start with ATT&CK"
+    Pick one technique sub-technique — write detection before broad coverage.
+
+!!! tip "Sigma portability"
+    Write Sigma first, convert to Splunk/KQL — avoids vendor lock-in early.
+
+!!! tip "Atomic Red Team validate"
+    Run matching atomic test — no alert means detection gap proven.
+
+!!! tip "Tune false positives"
+    Baseline 7 days of logs before enabling production alerts.
+
+!!! tip "Document data sources"
+    Detection without required log field is a false promise in SOC.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -121,6 +121,25 @@ cat urls.txt | dalfox pipe -o xss_results.txt
 
 **Testing**: Regular XSS scans plus manual review of every reflection point and client-side sink.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Context is everything"
+    Payload that works in HTML breaks in attributes — tag the sink type before crafting.
+
+!!! tip "Try polyglot payloads"
+    Use `jaVasCript:/*-/*\`/*\\`/*'/*"/**/(/* */oNcliCk=alert() )//` for filter bypass probes.
+
+!!! tip "Check DOM sinks"
+    Search JS for `innerHTML`, `document.write`, `eval`, `setTimeout` — DOM XSS won't show in response source.
+
+!!! tip "CSP bypass hunting"
+    Look for JSONP endpoints, AngularJS sandbox escapes, and `base-uri` gaps.
+
+!!! tip "Use dalfox for speed"
+    Pipe URLs: `cat urls.txt | dalfox pipe -o findings.txt` after gau/katana crawl.
+
 ## Quick Commands
 
 ```bash

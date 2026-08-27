@@ -67,6 +67,25 @@ Timing-based oracles require statistical analysis of response times instead of e
 - Migrate legacy ViewState and cookie encryption to signed, authenticated formats.
 - Test with padding oracle scanners during security assessments.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Error differential"
+    Compare response size, status, and body on bad padding vs good.
+
+!!! tip "padbuster automation"
+    `padbuster URL ciphertext 8` — block size 8 or 16.
+
+!!! tip "Every encrypted field"
+    Cookies, URL params, hidden form fields — test all.
+
+!!! warning "Lab only decrypt"
+    Decrypting live user sessions needs explicit authorization.
+
+!!! tip "Fix is AEAD"
+    Recommend AES-GCM or ChaCha20-Poly1305 — not just PKCS padding tweak.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

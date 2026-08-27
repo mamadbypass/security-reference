@@ -123,6 +123,25 @@ Smuggled bytes on keep-alive connection → prepended to victim request → cach
 - Monitor for malformed TE headers, duplicate Content-Length, abnormal chunk sequences.
 - Vendor patches: keep proxies (nginx, Apache, IIS, HAProxy, Cloudflare) updated—many smuggling variants are version-specific.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "HTTP/1.1 desync"
+    CL.TE vs TE.CL — run Burp smuggler or `python3 smuggler.py`.
+
+!!! tip "HTTP/2 downgrade"
+    h2c smuggling when front speaks H2 and back speaks H1.
+
+!!! tip "Poison admin cache"
+    Smuggled request can poison next user's response — high impact.
+
+!!! tip "Confirm with timing"
+    Desync often shows as delayed or swapped responses — use multiple requests.
+
+!!! tip "Document server pair"
+    Report exact CDN + origin versions — smuggling is stack-specific.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

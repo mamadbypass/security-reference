@@ -121,6 +121,25 @@ Attacker sends crafted request → origin reflects unkeyed input → cache store
 
 - Some providers offer cache poisoning protection rules—enable and tune.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Param Miner extension"
+    Burp Param Miner finds unkeyed headers automatically.
+
+!!! tip "Fat GET requests"
+    Some caches key on URL only — poison via unkeyed header on GET.
+
+!!! tip "X-Forwarded-Host"
+    Classic cache poison header — reflect into HTML links.
+
+!!! tip "Verify with cache buster"
+    Confirm poison without `cb=` param affects other users.
+
+!!! warning "Purge after test"
+    Clear CDN cache or wait TTL after PoC to avoid harming users.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

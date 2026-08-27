@@ -112,6 +112,25 @@ Malicious origin or stolen session → WS connection → unauthorized subscribe/
 - Log anomalous subscription patterns (many private channels).
 - Terminate idle connections; heartbeat with timeout.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Origin header"
+    Connect with `Origin: https://evil.com` — many servers skip validation.
+
+!!! tip "Replay after handshake"
+    Auth at handshake only? Send messages without re-auth.
+
+!!! tip "Subscribe to rooms"
+    Join `user-123-notifications` channel without membership check.
+
+!!! tip "ws-harness in Burp"
+    Extension replays and fuzzes WebSocket messages.
+
+!!! tip "SQLi in WS messages"
+    Message handlers often lack sanitization — test JSON fields.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

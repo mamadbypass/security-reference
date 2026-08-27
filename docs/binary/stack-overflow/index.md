@@ -66,6 +66,25 @@ Practice on CTF binaries and authorized vuln servers; document reliability and m
 - Fuzz native code with AFL++, libFuzzer; fix crashes before release.
 - Deploy WAF/IPS only as supplement; fix root cause in binary.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "cyclic pattern"
+    pwntools `cyclic` finds exact offset faster than manual counting.
+
+!!! tip "checksec first"
+    NX on? Plan ROP. Canary on? Need leak. PIE on? Need libc leak.
+
+!!! tip "gdb gef/peda"
+    Visualize stack layout and canary position during development.
+
+!!! tip "one_gadget last resort"
+    When ROP chain long, try one_gadget on exact libc build.
+
+!!! tip "Remote vs local"
+    ASLR on remote — leaks required; local may disable for debugging.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

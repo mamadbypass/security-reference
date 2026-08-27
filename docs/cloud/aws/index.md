@@ -75,6 +75,25 @@ Attackers chain **credential leaks** (git, SSRF) to IAM roles, then enumerate an
 - **MFA for console** and short-lived credentials via IAM Identity Center.
 - **Regular Prowler/Config** compliance scans; remediate before external testers.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Pacu quick start"
+    `pacu` modules for IAM privesc after any cred leak.
+
+!!! tip "IMDSv1 check"
+    Curl `169.254.169.254` without token — IMDSv1 on EC2 is cred theft.
+
+!!! tip "S3 bucket names"
+    Guess `company-backup`, `company-dev` — many are public or listable.
+
+!!! tip "Role chaining"
+    Look for `sts:AssumeRole` chains from low-priv to admin.
+
+!!! tip "Region sweep"
+    Clients forget ap-southeast-1 — enumerate all regions for resources.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

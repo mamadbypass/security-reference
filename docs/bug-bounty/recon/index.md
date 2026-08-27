@@ -11,16 +11,26 @@ Visual summary of the **attack/data flow** and the **five-phase testing workflow
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
-flowchart LR
-    subgraph Sources["Passive Sources"]
+flowchart TD
+    subgraph Passive["① Passive Intel"]
         CT[CT Logs] --> E[Enumerate]
         DNS[DNS/WHOIS] --> E
         OSINT[OSINT APIs] --> E
     end
-    E --> T{Tools}
-    T --> SF[subfinder] & AM[amass] & GAU[gau]
-    SF & AM & GAU --> LIVE
-    LIVE --> NU --> R[Findings Report]
+    subgraph Active["② Active Discovery"]
+        E --> SF[subfinder / amass]
+        SF --> GAU[gau / waybackurls]
+        GAU --> LIVE[httpx probe]
+    end
+    subgraph Scan["③ Vuln Scan"]
+        LIVE --> NU[nuclei templates]
+        NU --> TRIAGE[Manual validation]
+    end
+    subgraph Out["④ Output"]
+        TRIAGE --> R[Asset + finding report]
+    end
+    class SF,GAU,NU tool
+    class R success
 classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
 classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
 classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
@@ -80,6 +90,25 @@ Effective recon produces an **asset inventory** that feeds downstream testing (n
 - **Deploy external attack surface management (EASM)** to continuously discover what attackers see from the internet.
 - **Rate-limit and alert on aggressive scanning** from unexpected ASNs while accepting good-faith researcher traffic per program policy.
 - **Run your own recon pipeline internally** on a schedule; fix exposures before they appear on HackerOne.
+
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "One-liner recon chain"
+    `subfinder -d target.com -silent | httpx -title -tech-detect -o live.txt`
+
+!!! warning "Scope first"
+    Load scope into Burp and all tools before touching anything — out-of-scope = instant ban.
+
+!!! tip "Passive before active"
+    Run passive enum 24h before active scans — programs notice aggressive scanning.
+
+!!! tip "Track everything"
+    Use a spreadsheet: asset, tech, status, findings, last tested.
+
+!!! tip "Refresh weekly"
+    Recon is never done — new subdomains appear on every CT log update.
 
 ## Quick Commands
 

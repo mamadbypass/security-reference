@@ -75,6 +75,25 @@ Common misconfigs: anonymous API access, cluster-admin bindings to default servi
 - **Image scanning** — Trivy/Grype in CI; sign with cosign.
 - Follow [OWASP Kubernetes Top 10](https://owasp.org/www-project-kubernetes-top-ten/).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "kubectl auth can-i"
+    `kubectl auth can-i --list` shows effective permissions immediately.
+
+!!! tip "Secrets in etcd"
+    Anonymous API or etcd access = all cluster secrets.
+
+!!! tip "Privileged pod escape"
+    Pods with `privileged: true` and host mounts — test kubelet escape.
+
+!!! tip "kube-hunter remote"
+    Run against API server URL from outside when port 6443 exposed.
+
+!!! tip "Default namespace"
+    Dev clusters leave cluster-admin bindings in `default` — check RoleBindings.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -73,6 +73,25 @@ Testing maps **allowed paths** between zones by probing from compromised or test
 - **Log and alert** — Deny-rule hits may indicate lateral movement attempts.
 - **Validate with continuous testing** — Internal scanners that verify segmentation after every change.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Diagram vs reality"
+    Probe every zone boundary — policies drift from documentation.
+
+!!! tip "Dual-homed hosts"
+    Jump boxes and backup servers often bridge segments unintentionally.
+
+!!! tip "Management plane"
+    iLO, IPMI, and hypervisor APIs frequently sit on flat networks.
+
+!!! tip "hping3 for ACL map"
+    Send SYN to one port at a time across zones to build allow matrix.
+
+!!! tip "Business justification"
+    Report each unexpected flow with risk — not just open port lists.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -119,6 +119,25 @@ Test `//`, encoded slashes (`%2f%2f`), tab/newline before hostname, subdomain tr
 
 - Log redirect targets; alert on external domains in redirect parameters.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Bypass patterns"
+    Try `//evil.com`, `\/evil.com`, `https:evil.com`, `%09evil.com`, `@evil.com`.
+
+!!! tip "OAuth redirect_uri"
+    Open redirect + OAuth = token theft — always test login flows.
+
+!!! tip "JavaScript redirects"
+    `?next=javascript:alert(1)` or `data:text/html` in `location=` params.
+
+!!! tip "Chain to XSS"
+    Redirect to `javascript:` URI if scheme filter is weak.
+
+!!! tip "Low severity alone"
+    Combine with sensitive action or OAuth for higher impact in report.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

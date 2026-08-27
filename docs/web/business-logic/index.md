@@ -121,6 +121,25 @@ Attacker manipulates workflow state or parameters → server enforces incomplete
 - Threat modeling per feature (STRIDE on purchase flow).
 - Pair QA testers with security reviewers for "what if I try..." scenarios.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Think like a fraudster"
+    Negative quantities, currency switch mid-checkout, skip payment step.
+
+!!! tip "Replay final API"
+    Call confirm-order API without prior steps — state machine bypass.
+
+!!! tip "Multi-account testing"
+    Referral self-referral, coupon reuse across accounts.
+
+!!! tip "Integer overflow"
+    Max int quantities and prices — especially mobile APIs.
+
+!!! tip "Document $ impact"
+    Business logic bugs need dollar amounts in report for severity.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

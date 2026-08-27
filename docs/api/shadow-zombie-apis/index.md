@@ -68,6 +68,25 @@ They often lack WAF coverage, OAuth scopes, audit logging, and patch cadence. Di
 - **Scan repositories and buckets** for OpenAPI leaks; rotate any exposed keys.
 - **Continuous external attack surface monitoring** (EASM) to detect unknown endpoints early.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "linkfinder on JS"
+    `python linkfinder.py -i https://target.com/app.js -o cli`
+
+!!! tip "wayback URLs"
+    Old API paths in Wayback Machine still respond on legacy servers.
+
+!!! tip "APK strings"
+    `strings app.apk | grep -i api` finds hidden endpoints.
+
+!!! tip "Swagger leaks"
+    /swagger.json, /openapi.json, /api-docs — unauthenticated docs.
+
+!!! tip "404 vs 401"
+    Shadow APIs often return 401 not 404 — fuzz paths and watch auth differences.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

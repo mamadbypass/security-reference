@@ -67,6 +67,25 @@ When scope is ambiguous, ask the program before testing—document the response.
 - Update scope promptly when launching new products or domains.
 - Use asset tags in ASM tools so internal teams know which surfaces are bounty-eligible.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "bbscope export"
+    `bbscope h1 -t TOKEN -p program` — canonical scope file.
+
+!!! tip "Wildcard regex"
+    Convert `*.target.com` to testable patterns for automation.
+
+!!! tip "Out-of-scope blocklist"
+    Explicit exclusions prevent accidental bans.
+
+!!! tip "Git-track scope"
+    Commit scope.json — team shares same boundaries.
+
+!!! tip "Scheduled refresh"
+    Cron weekly scope pull — programs add assets often.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

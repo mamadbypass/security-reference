@@ -79,6 +79,25 @@ Once identified, versions are correlated with **CVE databases** and nuclei templ
 - **Segment EOL systems** — Isolate unpatchable legacy apps behind VPN until replaced.
 - **Inventory third-party scripts** — Analytics and chat widgets introduce supply-chain risk.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Stack fingerprint"
+    httpx `-tech-detect` + whatweb for double coverage.
+
+!!! tip "Version to CVE"
+    Match detected versions to nuclei CVE templates immediately.
+
+!!! tip "JS framework"
+    React/Vue/Angular versions in bundle comments — check known XSS gadgets.
+
+!!! tip "WAF detection"
+    wafw00f identifies WAF — choose tamper scripts accordingly.
+
+!!! tip "WordPress/plugins"
+    wpscan when WordPress detected — low-hanging fruit on many programs.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

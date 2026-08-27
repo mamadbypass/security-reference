@@ -78,6 +78,25 @@ Common stacks (Apollo Server, Hasura, Strawberry, gqlgen) differ in default intr
 - **Log query names, complexity scores, and anomalies**; alert on introspection attempts and high-cost queries.
 - **Remove GraphiQL/Playground** from internet-facing deployments; follow the [OWASP GraphQL Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Introspection query"
+    POST `{"query": "{ __schema { types { name } } }"}` — disable in prod but often forgotten on staging.
+
+!!! tip "Batch brute force"
+    Send 100 login mutations in one HTTP request to bypass rate limits.
+
+!!! tip "Field-level auth"
+    Query other users' `email`, `ssn`, `balance` fields with victim IDs.
+
+!!! tip "Alias DoS"
+    Deeply nested aliases can CPU-DoS — test cost limits responsibly.
+
+!!! tip "clairvoyance recovery"
+    When introspection off: `clairvoyance -u URL -d wordlist.txt`
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

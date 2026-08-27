@@ -130,6 +130,25 @@ nosqlmap -u "http://target.com/login" --data '{"user":"test","pass":"test"}'
 
 - Fuzz JSON fields with `{"$gt":""}` replacements in all API endpoints.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Auth bypass JSON"
+    `{"username": {"$ne": null}, "password": {"$ne": null}}`
+
+!!! tip "Operator injection"
+    Fuzz `$gt`, `$regex`, `$where` in MongoDB login forms.
+
+!!! tip "nosqlmap tool"
+    Automates MongoDB, CouchDB, and other NoSQL injection.
+
+!!! tip "JavaScript in $where"
+    `{"$where": "sleep(5000)"}` for time-based confirmation.
+
+!!! tip "Map vs reduce"
+    Test both API JSON bodies and URL-encoded JSON parameters.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

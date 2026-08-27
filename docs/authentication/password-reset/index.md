@@ -70,6 +70,25 @@ Some implementations leak tokens in Referer headers, browser history, or server 
 - **Use HTTPS-only links**; add `Referrer-Policy: no-referrer` on reset pages.
 - Follow the [OWASP Forgot Password Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Token in response"
+    Reset tokens sometimes returned in JSON body or URL referrer.
+
+!!! tip "Host header poison"
+    Poison Host header in reset request — token link goes to attacker.
+
+!!! tip "Parameter tamper"
+    Change `email` or `userId` in reset POST while using victim token.
+
+!!! tip "Token entropy"
+    Request 10 tokens — check for sequential or short patterns.
+
+!!! tip "Reuse after reset"
+    Old reset link may still work after password changed.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -68,6 +68,25 @@ Maintain chain of custody documentation for legal admissibility.
 - Retain logs and images per policy; immutable WORM storage for evidence.
 - Train IR team on proper acquisition to avoid spoliation.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Write-blocker always"
+    Never mount original evidence read-write.
+
+!!! tip "Hash verify"
+    SHA-256 before and after imaging — document both.
+
+!!! tip "Volatility profile"
+    Wrong Windows profile garbles output — identify OS build first.
+
+!!! tip "Timeline UTC"
+    Autopsy + Plaso super timeline for court-ready chronology.
+
+!!! tip "Chain of custody form"
+    Who, when, where, hash — every handoff documented.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

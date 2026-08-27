@@ -76,6 +76,25 @@ Post-exploitation enumeration (`winPEAS`, `PowerUp`) automates checking hundreds
 - **Enable Credential Guard** and LSA protection on supported Windows versions.
 - **Deploy EDR** with tamper protection; alert on Mimikatz, Potato exploits, and suspicious service modifications.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "winPEAS first pass"
+    Automated output highlights SeImpersonate, unquoted paths, and AlwaysInstallElevated.
+
+!!! tip "Potato family"
+    SeImpersonatePrivilege → PrintSpoofer or GodPotato on modern builds.
+
+!!! tip "Service permissions"
+    `accesschk.exe -uwcqv *` on services — weak DACLs are common.
+
+!!! tip "Saved creds hunt"
+    `cmdkey /list` and registry blobs under `HKLM\SECURITY`.
+
+!!! tip "Patch gap = quick win"
+    Watson/CVE mapping on stale servers finds kernel exploits fast.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
