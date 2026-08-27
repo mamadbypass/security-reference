@@ -1,0 +1,294 @@
+/* Security Reference — synced with Material light/dark palettes */
+
+:root,
+[data-md-color-scheme="default"] {
+  --sr-surface: var(--md-default-bg-color--light);
+  --sr-border: color-mix(in srgb, var(--md-primary-fg-color) 18%, transparent);
+  --sr-border-hover: color-mix(in srgb, var(--md-primary-fg-color) 42%, transparent);
+  --sr-muted: color-mix(in srgb, var(--md-default-fg-color) 62%, transparent);
+  --sr-radius: 0.5rem;
+  --sr-shadow: var(--md-shadow-z1);
+  --sr-shadow-hover: var(--md-shadow-z2);
+}
+
+[data-md-color-scheme="slate"] {
+  --sr-surface: var(--md-default-bg-color--light);
+  --sr-border: color-mix(in srgb, var(--md-primary-fg-color--light) 24%, transparent);
+  --sr-border-hover: color-mix(in srgb, var(--md-primary-fg-color--light) 50%, transparent);
+  --sr-muted: color-mix(in srgb, var(--md-default-fg-color) 68%, transparent);
+}
+
+/* ── Typography (inherit Material scale) ───────────────── */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  border-bottom: 1px solid var(--sr-border);
+  padding-bottom: 0.35em;
+  margin-top: 2em;
+}
+
+.md-typeset h3,
+.md-typeset h4 {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+/* ── Mermaid diagrams ─────────────────────────────────── */
+.sr-diagram {
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--sr-border);
+  border-radius: var(--sr-radius);
+  padding: 1rem;
+  margin: 1.25rem 0 1.75rem;
+  overflow-x: auto;
+}
+
+.sr-diagram-methodology {
+  background: color-mix(in srgb, var(--md-accent-fg-color) 6%, var(--md-code-bg-color));
+}
+
+.sr-diagram .mermaid {
+  display: flex;
+  justify-content: center;
+}
+
+.sr-diagram .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Hero (homepage) ────────────────────────────────────── */
+.sr-hero {
+  background: linear-gradient(
+    135deg,
+    var(--md-primary-fg-color--dark) 0%,
+    var(--md-primary-fg-color) 55%,
+    color-mix(in srgb, var(--md-primary-fg-color) 70%, var(--md-accent-fg-color)) 100%
+  );
+  border-radius: calc(var(--sr-radius) * 1.5);
+  padding: 2rem 1.5rem;
+  margin: 0 0 1.75rem;
+  color: var(--md-primary-bg-color);
+  text-align: center;
+}
+
+.sr-hero h1 {
+  color: var(--md-primary-bg-color) !important;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  margin: 0 0 0.5rem;
+  border: none;
+}
+
+.sr-hero p {
+  color: color-mix(in srgb, var(--md-primary-bg-color) 92%, transparent);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 auto 1.25rem;
+  max-width: 38rem;
+}
+
+.sr-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.sr-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: color-mix(in srgb, var(--md-primary-bg-color) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--md-primary-bg-color) 35%, transparent);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--md-primary-bg-color) !important;
+  text-decoration: none !important;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.sr-badge:hover {
+  background: color-mix(in srgb, var(--md-primary-bg-color) 30%, transparent);
+  border-color: color-mix(in srgb, var(--md-primary-bg-color) 55%, transparent);
+  color: var(--md-primary-bg-color) !important;
+}
+
+/* ── Card grid ──────────────────────────────────────────── */
+.sr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.875rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.sr-card {
+  background: var(--sr-surface);
+  border: 1px solid var(--sr-border);
+  border-radius: var(--sr-radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--sr-shadow);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  text-decoration: none !important;
+  color: var(--md-default-fg-color) !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-height: 7rem;
+}
+
+.sr-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sr-shadow-hover);
+  border-color: var(--sr-border-hover);
+}
+
+.sr-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.sr-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--md-default-fg-color);
+}
+
+.sr-card-text {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--sr-muted);
+}
+
+/* ── Tool blocks ────────────────────────────────────────── */
+.tool-block {
+  border-left: 3px solid var(--md-primary-fg-color);
+  background: var(--sr-surface);
+  border-radius: 0 var(--sr-radius) var(--sr-radius) 0;
+  padding: 0.875rem 1rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.tool-block h3,
+.tool-block h4 {
+  margin-top: 0;
+}
+
+.tool-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+}
+
+.tool-tag {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-size: 0.6875rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ── Workflow steps ─────────────────────────────────────── */
+.workflow-container {
+  counter-reset: workflow;
+}
+
+.workflow-step {
+  counter-increment: workflow;
+  position: relative;
+  padding-left: 2.75rem;
+  margin: 1.25rem 0;
+  min-height: 2.25rem;
+}
+
+.workflow-step::before {
+  content: counter(workflow);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8125rem;
+}
+
+/* ── Code blocks ────────────────────────────────────────── */
+.md-typeset pre > code {
+  border-radius: var(--sr-radius);
+}
+
+.md-typeset .highlight pre,
+.md-typeset pre {
+  border-radius: var(--sr-radius);
+}
+
+/* ── Tables ─────────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  border-radius: var(--sr-radius);
+  overflow: hidden;
+  border: 1px solid var(--sr-border);
+  font-size: 0.85rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background: color-mix(in srgb, var(--md-primary-fg-color) 4%, transparent);
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  border-color: var(--sr-border);
+}
+
+/* ── Admonitions ───────────────────────────────────────── */
+.md-typeset .admonition {
+  border-radius: var(--sr-radius);
+  font-size: 0.9rem;
+}
+
+/* ── Navigation ─────────────────────────────────────────── */
+.md-header {
+  box-shadow: var(--md-shadow-z1);
+}
+
+.md-tabs {
+  background-color: var(--md-primary-fg-color--dark);
+}
+
+.md-search__input {
+  border-radius: 999px;
+}
+
+/* ── Task lists ─────────────────────────────────────────── */
+.md-typeset .task-list-indicator::before {
+  background-color: var(--md-primary-fg-color);
+}
