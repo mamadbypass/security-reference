@@ -1,13 +1,22 @@
-/* Re-render Mermaid diagrams when the user toggles light/dark mode. */
+/* Keep Mermaid diagrams in sync with Material light/dark palette. */
 (function () {
-  function currentScheme() {
-    return document.body.getAttribute("data-md-color-scheme") || "default";
+  function scheme() {
+    return document.body.getAttribute("data-md-color-scheme") === "slate" ? "dark" : "default";
+  }
+
+  function mermaidTheme() {
+    return scheme() === "dark" ? "dark" : "default";
   }
 
   function rerenderMermaid() {
     if (typeof mermaid === "undefined" || !mermaid.run) {
       return;
     }
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: mermaidTheme(),
+      securityLevel: "loose",
+    });
     var nodes = document.querySelectorAll(".mermaid");
     if (!nodes.length) {
       return;
@@ -24,18 +33,20 @@
     mermaid.run({ nodes: nodes });
   }
 
-  var lastScheme = currentScheme();
+  var last = scheme();
   var observer = new MutationObserver(function () {
-    var scheme = currentScheme();
-    if (scheme === lastScheme) {
+    var current = scheme();
+    if (current === last) {
       return;
     }
-    lastScheme = scheme;
-    window.setTimeout(rerenderMermaid, 120);
+    last = current;
+    window.setTimeout(rerenderMermaid, 150);
   });
 
-  observer.observe(document.body, {
-    attributes: true,
-    attributeFilter: ["data-md-color-scheme"],
+  document.addEventListener("DOMContentLoaded", function () {
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["data-md-color-scheme"],
+    });
   });
 })();
