@@ -1,0 +1,29 @@
+name: Enable GitHub Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  enable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable Pages (workflow source)
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${GH_TOKEN}" ]; then
+            echo "GH_PAGES_TOKEN secret is not set."
+            exit 1
+          fi
+          gh api "repos/${GITHUB_REPOSITORY}/pages" -X POST -f build_type=workflow || \
+          gh api "repos/${GITHUB_REPOSITORY}/pages" -X PUT -f build_type=workflow
+          gh api "repos/${GITHUB_REPOSITORY}/pages"
+
+      - name: Trigger deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAGES_TOKEN }}
+        run: gh workflow run deploy.yml --repo "${GITHUB_REPOSITORY}"
