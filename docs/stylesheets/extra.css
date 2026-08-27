@@ -1,0 +1,11 @@
+:root {
+  --md-primary-fg-color: #512da8;
+}
+
+.md-typeset h1 {
+  font-weight: 600;
+}
+
+.md-typeset .admonition {
+  border-radius: 4px;
+}

@@ -1,0 +1,181 @@
+site_name: Security Reference
+site_description: Comprehensive bug bounty and penetration testing knowledge base
+site_url: https://mamadbypass.github.io/security-reference/
+repo_url: https://github.com/mamadbypass/security-reference
+repo_name: mamadbypass/security-reference
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: en
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Master Checklist: MASTER_CHECKLIST.md
+  - Tools Index: TOOLS_INDEX.md
+  - Bug Bounty:
+    - bug-bounty/recon/index.md
+    - bug-bounty/subdomain-enumeration/index.md
+    - bug-bounty/asset-discovery/index.md
+    - bug-bounty/port-scanning/index.md
+    - bug-bounty/http-probing/index.md
+    - bug-bounty/dns-enumeration/index.md
+    - bug-bounty/tech-detection/index.md
+  - Web Security:
+    - web/sqli/index.md
+    - web/xss/index.md
+    - web/ssrf/index.md
+    - web/idor/index.md
+    - web/ssti/index.md
+    - web/lfi-rfi/index.md
+    - web/xxe/index.md
+    - web/deserialization/index.md
+    - web/race-condition/index.md
+    - web/open-redirect/index.md
+    - web/prototype-pollution/index.md
+    - web/cors/index.md
+    - web/clickjacking/index.md
+    - web/http-request-smuggling/index.md
+    - web/web-cache-poisoning/index.md
+    - web/business-logic/index.md
+    - web/crlf-injection/index.md
+    - web/command-injection/index.md
+    - web/nosql-injection/index.md
+    - web/http-parameter-pollution/index.md
+    - web/websockets/index.md
+    - web/information-disclosure/index.md
+    - web/ldap-xpath-injection/index.md
+    - web/dom-clobbering/index.md
+  - API Security:
+    - api/graphql/index.md
+    - GraphQL Introspection: api/graphql/introspection.md
+    - GraphQL Batching: api/graphql/batching.md
+    - api/versioning/index.md
+    - api/shadow-zombie-apis/index.md
+    - api/grpc-protobuf/index.md
+  - Authentication:
+    - authentication/jwt/index.md
+    - authentication/password-reset/index.md
+    - authentication/sso-saml/index.md
+    - authentication/passwordless/index.md
+  - Mobile:
+    - mobile/apk-ipa-analysis/index.md
+    - mobile/frida/index.md
+    - mobile/ssl-pinning-bypass/index.md
+    - mobile/deep-links/index.md
+  - Automation:
+    - automation/js-analysis/index.md
+    - automation/diffing/index.md
+    - automation/scope-tooling/index.md
+  - Network:
+    - network/active-directory/index.md
+    - Kerberoasting: network/active-directory/kerberoasting.md
+    - network/bloodhound/index.md
+    - network/dcsync/index.md
+    - network/pentesting/index.md
+    - Windows PrivEsc: network/privilege-escalation/windows.md
+    - Linux PrivEsc: network/privilege-escalation/linux.md
+    - network/lateral-movement/index.md
+    - network/wireless/index.md
+    - network/firewall-segmentation/index.md
+  - Blue Team:
+    - blue-team/detection-engineering/index.md
+    - blue-team/siem-log-analysis/index.md
+    - blue-team/threat-hunting/index.md
+    - blue-team/incident-response/index.md
+    - blue-team/malware-analysis/index.md
+  - Cloud:
+    - cloud/aws/index.md
+    - cloud/azure/index.md
+    - cloud/gcp/index.md
+    - cloud/kubernetes/index.md
+  - Reporting:
+    - reporting/vulnerability-reports/index.md
+  - Growth:
+    - growth/cve-research/index.md
+    - growth/writeups/index.md
+  - Cryptography:
+    - cryptography/crypto-flaws/index.md
+    - cryptography/padding-oracle/index.md
+    - cryptography/tls-ssl/index.md
+  - Containers:
+    - containers/docker/index.md
+    - containers/kubernetes-security/index.md
+    - containers/container-escape/index.md
+  - DevSecOps:
+    - devsecops/pipeline-security/index.md
+    - devsecops/iac-security/index.md
+    - devsecops/supply-chain/index.md
+  - Binary Exploitation:
+    - binary/reverse-engineering/index.md
+    - binary/stack-overflow/index.md
+    - binary/heap-exploitation/index.md
+  - OSINT:
+    - osint/people-org/index.md
+    - osint/data-breach-search/index.md
+  - Social Engineering:
+    - social-engineering/phishing/index.md
+    - social-engineering/pretexting/index.md
+  - IoT:
+    - iot/firmware-analysis/index.md
+    - iot/hardware-interfaces/index.md
+  - Web3:
+    - web3/smart-contracts/index.md
+    - web3/wallet-dapp/index.md
+  - Forensics:
+    - forensics/disk-memory/index.md
+    - forensics/network/index.md
+    - forensics/cloud/index.md
+  - Secure Code Review:
+    - secure-code-review/sast/index.md
+    - secure-code-review/threat-modeling/index.md
