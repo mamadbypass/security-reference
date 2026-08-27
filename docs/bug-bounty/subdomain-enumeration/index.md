@@ -45,12 +45,12 @@ Subdomain enumeration discovers hostnames under a root domain (`*.target.com`) t
 
 | Tool | Usage |
 |------|-------|
-| `subfinder` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `amass` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `puredns` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `massdns` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dnsx` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `shuffledns` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `subfinder` | [Passive subdomain discovery](../../TOOLS_GUIDE.md#subfinder) |
+| `amass` | [OSINT & subdomain enum](../../TOOLS_GUIDE.md#amass) |
+| `puredns` | [DNS resolver & wildcard filter](https://github.com/d3mondev/puredns) |
+| `massdns` | [High-performance DNS stub](https://github.com/blechschmidt/massdns) |
+| `dnsx` | [DNS toolkit](../../TOOLS_GUIDE.md#dnsx) |
+| `shuffledns` | [Subdomain brute force](https://github.com/projectdiscovery/shuffledns) |
 
 ## Resources
 

@@ -48,9 +48,9 @@ IR teams balance **speed** (stop bleeding) with **forensic integrity** (chain of
 
 | Tool | Usage |
 |------|-------|
-| `thehive` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `velociraptor` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ftk imager` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `thehive` | [Incident response case management](../../TOOLS_GUIDE.md) |
+| `velociraptor` | [Endpoint visibility](https://github.com/Velocidex/velociraptor) |
+| `ftk imager` | Disk imaging — [AccessData FTK](https://www.exterro.com/ftk-imager) |
 
 ## Resources
 

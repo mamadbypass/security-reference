@@ -46,9 +46,9 @@ BloodHound turns manual ACL review into visual, queryable attack planning—used
 
 | Tool | Usage |
 |------|-------|
-| `bloodhound` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `sharphound` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `bloodhound.py` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `bloodhound` | [AD attack path analysis](../../TOOLS_GUIDE.md#bloodhound) |
+| `sharphound` | [BloodHound collector](../../TOOLS_GUIDE.md#bloodhound) |
+| `bloodhound.py` | [BloodHound ingestor (Python)](../../TOOLS_GUIDE.md#bloodhound) |
 
 ## Resources
 

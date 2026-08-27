@@ -40,8 +40,8 @@ Unique writeups on novel attack classes attract program invites and conference t
 
 | Tool | Usage |
 |------|-------|
-| `markdown` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `obsidian` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `markdown` | [Write reports in Markdown for GitHub/HackerOne](../../TOOLS_GUIDE.md) |
+| `obsidian` | [Personal knowledge base for writeups & notes](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

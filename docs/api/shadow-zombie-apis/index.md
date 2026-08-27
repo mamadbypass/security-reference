@@ -39,9 +39,9 @@ They often lack WAF coverage, OAuth scopes, audit logging, and patch cadence. Di
 
 | Tool | Usage |
 |------|-------|
-| `linkfinder` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `katana` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `nuclei` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `linkfinder` | [JS endpoint discovery](../../TOOLS_GUIDE.md#linkfinder) |
+| `katana` | [Web crawler](../../TOOLS_GUIDE.md#katana) |
+| `nuclei` | [Template-based vuln scanner](../../TOOLS_GUIDE.md#nuclei) |
 
 ## Verification Checklist
 

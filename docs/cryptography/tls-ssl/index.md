@@ -40,8 +40,8 @@ Document findings per endpoint; CDN-fronted sites may show different configs tha
 
 | Tool | Usage |
 |------|-------|
-| `testssl.sh` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `sslyze` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `testssl.sh` | [TLS configuration testing](../../TOOLS_GUIDE.md#testsslsh) |
+| `sslyze` | [TLS configuration analysis](https://github.com/nabla-c0d3/sslyze) |
 
 ## Verification Checklist
 

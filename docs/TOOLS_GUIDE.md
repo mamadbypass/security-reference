@@ -888,6 +888,469 @@ semgrep --config=./rules/ src/
 
 ---
 
+## Threat Modeling
+
+### draw.io
+
+<div class="tool-block" markdown="1">
+
+<div class="tool-meta"><span class="tool-tag">Diagrams</span><span class="tool-tag">DFD</span></div>
+
+**Install**
+
+Use the web app at [diagrams.net](https://app.diagrams.net/) or install the desktop build.
+
+**Basic Usage**
+
+1. Create a **Data Flow Diagram** with processes, data stores, external entities, and trust boundaries.
+2. Label data flows with protocol + sensitivity (e.g., `HTTPS / PII`).
+3. Export PNG/SVG for design reviews and attach to threat model docs.
+
+**Pro Tips**
+
+- Use consistent shapes: rectangles = processes, cylinders = data stores, dashed lines = trust boundaries.
+- Pair diagrams with a STRIDE table — one row per component/threat pair.
+
+</div>
+
+### Microsoft Threat Modeling Tool
+
+<div class="tool-block" markdown="1">
+
+<div class="tool-meta"><span class="tool-tag">STRIDE</span><span class="tool-tag">Windows</span></div>
+
+**Install**
+
+Download from [Microsoft Learn — Threat Modeling Tool](https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool).
+
+**Basic Usage**
+
+1. Draw system diagram or import from Visio/draw.io.
+2. Run **Analyze Model** to generate STRIDE threats per element.
+3. Mark threats as mitigated / not applicable and export report.
+
+**Pro Tips**
+
+- Use built-in stencils for web apps, Azure services, and generic processes.
+- Link each threat to a Jira/Azure DevOps work item for tracking.
+
+</div>
+
+### OWASP Threat Dragon
+
+<div class="tool-block" markdown="1">
+
+<div class="tool-meta"><span class="tool-tag">STRIDE</span><span class="tool-tag">Cross-platform</span></div>
+
+**Install**
+
+```bash
+# Web version
+npm install -g threatdragon
+
+# Or use the desktop build from OWASP releases
+```
+
+**Basic Usage**
+
+1. Create a new threat model and draw components + data flows.
+2. Select each component and document STRIDE threats.
+3. Export JSON model to version control alongside architecture docs.
+
+**Pro Tips**
+
+- Store `.json` models in Git — diff on architecture changes.
+- Integrate with CI by validating that models exist for new services.
+
+</div>
+
+---
+
+## Additional Recon Tools
+
+### amass
+
+```bash
+go install -v github.com/owasp-amass/amass/v4/...@master
+
+# Passive enum
+amass enum -passive -d target.com -o amass_passive.txt
+
+# Active + brute force
+amass enum -active -d target.com -brute -w subdomains-top1million.txt
+```
+
+### assetfinder
+
+```bash
+go install github.com/tomnomnom/assetfinder@latest
+assetfinder --subs-only target.com | sort -u
+```
+
+### waybackurls
+
+```bash
+go install github.com/tomnomnom/waybackurls@latest
+echo target.com | waybackurls | sort -u > wayback.txt
+```
+
+### dnsx
+
+```bash
+go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
+cat subs.txt | dnsx -a -aaaa -cname -resp -o resolved.txt
+```
+
+---
+
+## Additional Web Tools
+
+### OWASP ZAP
+
+<div class="tool-block" markdown="1">
+
+**Install**
+
+```bash
+# Docker
+docker run -u zap -p 8080:8080 -i ghcr.io/zaproxy/zaproxy:stable zap-webswing.sh
+
+# Or download from https://www.zaproxy.org/download/
+```
+
+**Basic Usage**
+
+```bash
+# Baseline scan
+docker run -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t https://target.com
+
+# API scan
+zap-api-scan.py -t https://target.com/api/openapi.json -f openapi
+```
+
+</div>
+
+### tplmap
+
+```bash
+git clone https://github.com/epinna/tplmap.git && cd tplmap
+pip install -r requirements.txt
+./tplmap.py -u 'https://target.com/page?name=test'
+```
+
+### xsstrike
+
+```bash
+git clone https://github.com/s0md3v/XSStrike.git && cd XSStrike
+pip install -r requirements.txt
+python xsstrike.py -u 'https://target.com/search?q=test'
+```
+
+### autorize
+
+Install from [Autorize Burp extension](https://github.com/Quitten/Autorize). Load two sessions (low-priv + high-priv), enable interception, and browse the app — Autorize highlights authorization bypasses automatically.
+
+### linkfinder
+
+```bash
+git clone https://github.com/GerbenJavado/LinkFinder.git && cd LinkFinder
+pip install -r requirements.txt
+python linkfinder.py -i https://target.com/app.js -o results.html
+```
+
+### smuggler
+
+```bash
+git clone https://github.com/defparam/smuggler.git && cd smuggler
+python smuggler.py -u https://target.com
+```
+
+### ssrfmap
+
+```bash
+git clone https://github.com/swisskyrepo/SSRFmap.git && cd SSRFmap
+python ssrfmap.py -r request.txt -p url
+```
+
+### ghauri
+
+```bash
+pip install ghauri
+ghauri -u "https://target.com/item?id=1" --batch
+```
+
+### nosqlmap
+
+```bash
+git clone https://github.com/codingo/NoSQLMap.git && cd NoSQLMap
+python nosqlmap.py
+```
+
+### openredirex
+
+```bash
+git clone https://github.com/devanshbatham/OpenRedireX.git && cd OpenRedireX
+python openredirex.py -l payloads.txt -u "https://target.com/redirect?url=FUZZ"
+```
+
+### corsy
+
+```bash
+pip install corsy
+python3 corsy.py -u https://target.com
+```
+
+### crlfuzz
+
+```bash
+go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
+crlfuzz -u "https://target.com/redirect?url=https://evil.com"
+```
+
+### ppmap
+
+```bash
+git clone https://github.com/RhinoSecurityLabs/ppmap.git && cd ppmap
+node ppmap.js -u https://target.com
+```
+
+### param-miner
+
+Install from [Burp Param Miner](https://github.com/portswigger/param-miner). Run a baseline crawl, then **Extensions → Param Miner → Guess params** to discover hidden cache-poisoning parameters.
+
+### web-cache-vulnerability-scanner
+
+```bash
+git clone https://github.com/Hackmanit/Web-Cache-Vulnerability-Scanner.git
+python3 web_cache_vulnerability_scanner.py -u https://target.com
+```
+
+### lfi-suite
+
+```bash
+git clone https://github.com/D35m0nd142/LFISuite.git && cd LFISuite
+python lfisuite.py
+```
+
+### h2csmuggler
+
+```bash
+pip install h2csmuggler
+h2csmuggler -x https://target.com -c https://target.com
+```
+
+### race-the-web
+
+```bash
+go install github.com/TheHackerDev/race-the-web@latest
+race-the-web -u https://target.com/api/transfer -n 50
+```
+
+### ws-harness
+
+Install [Burp ws-harness](https://github.com/PortSwigger/ws-harness) extension. Capture a WebSocket handshake, modify messages in the harness tab, and replay for auth bypass testing.
+
+### xxeinjector
+
+```bash
+git clone https://github.com/enjoiz/XXEinjector.git && cd XXEinjector
+ruby XXEinjector.rb --host=target.com --path=/upload --file=sample.xml
+```
+
+### oxmlxxe
+
+```bash
+git clone https://github.com/Bo0oM/oxml_xxe.git && cd oxml_xxe
+python3 exploit.py --file malicious.docx
+```
+
+### ysoserial
+
+```bash
+git clone https://github.com/frohoff/ysoserial.git && cd ysoserial
+mvn package -DskipTests
+java -jar target/ysoserial-*.jar CommonsCollections1 'id' | base64
+```
+
+### phpggc
+
+```bash
+git clone https://github.com/ambionics/phpggc.git && cd phpggc
+./phpggc Laravel/RCE1 system id
+```
+
+### gophish
+
+```bash
+# Download release from https://github.com/gophish/gophish/releases
+./gophish
+# Admin UI: https://localhost:3333
+```
+
+### recon-ng
+
+```bash
+sudo apt install recon-ng
+recon-ng
+[recon-ng][default] > marketplace install all
+[recon-ng][default] > modules load recon/domains-hosts/hackertarget
+```
+
+### sonarqube
+
+```bash
+docker run -d --name sonarqube -p 9000:9000 sonarqube:community
+# Create project → run scanner with sonar-scanner CLI
+```
+
+---
+
+## Web3 Security
+
+### slither
+
+```bash
+pip install slither-analyzer
+slither contracts/ --print human-summary
+slither contracts/ --detect reentrancy-eth
+```
+
+### foundry
+
+```bash
+curl -L https://foundry.paradigm.xyz | bash && foundryup
+forge init my-project && cd my-project
+forge test -vvv
+forge fuzz --runs 10000
+```
+
+### echidna
+
+```bash
+docker run -it --rm -v $PWD:/src trailofbits/echidna \
+  echidna-test /src/contract.sol --contract Target
+```
+
+### mythril
+
+```bash
+pip install mythril
+myth analyze contract.sol --solv 0.8.20
+```
+
+---
+
+## Active Directory & Network
+
+### rubeus
+
+```powershell
+# Kerberoast
+.\Rubeus.exe kerberoast /outfile:hashes.txt
+
+# AS-REP roast
+.\Rubeus.exe asreproast /format:hashcat
+```
+
+### mimikatz
+
+```text
+privilege::debug
+sekurlsa::logonpasswords
+lsadump::dcsync /domain:corp.local /user:Administrator
+```
+
+> Use only on systems you own or have explicit authorization to test.
+
+### responder
+
+```bash
+sudo responder -I eth0 -wrf
+# Capture NTLMv2 hashes from LLMNR/NBT-NS poisoning
+```
+
+### linpeas
+
+```bash
+curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | sh
+```
+
+### winpeas
+
+```powershell
+.\winPEASx64.exe
+```
+
+---
+
+## Cloud & Containers
+
+### scout-suite
+
+```bash
+pip install scoutsuite
+scout aws --report-dir ./scout-report
+scout azure --cli
+scout gcp --service-account key.json
+```
+
+### kube-hunter
+
+```bash
+pip install kube-hunter
+kube-hunter --remote some.node.ip
+```
+
+### trivy
+
+```bash
+# Install: https://aquasecurity.github.io/trivy/
+trivy image myapp:latest
+trivy fs --scanners vuln,secret,misconfig .
+```
+
+### checkov
+
+```bash
+pip install checkov
+checkov -d terraform/
+checkov --framework kubernetes -f deployment.yaml
+```
+
+---
+
+## Code Analysis & Forensics
+
+### codeql
+
+```bash
+# Install CodeQL CLI + create database
+codeql database create db --language=javascript --source-root=src
+codeql database analyze db --format=sarif-latest --output=results.sarif
+```
+
+### ghidra
+
+Download from [ghidra-sre.org](https://ghidra-sre.org/). Import binary → Auto Analyze → use Decompiler and Symbol Tree for reversing firmware and native binaries.
+
+### binwalk
+
+```bash
+pip install binwalk
+binwalk -e firmware.bin
+binwalk -A firmware.bin   # architecture scan
+```
+
+### volatility
+
+```bash
+pip install volatility3
+vol -f memory.dump windows.info
+vol -f memory.dump windows.pslist
+```
+
+---
+
 ## Utility Tools
 
 ### bbscope
@@ -920,6 +1383,28 @@ interactsh-client
 git clone https://github.com/drwetter/testssl.sh.git
 ./testssl.sh target.com
 ./testssl.sh --severity HIGH target.com
+```
+
+### clairvoyance
+
+```bash
+pip install clairvoyance
+clairvoyance -u https://target.com/graphql -d wordlist.txt
+```
+
+### apktool
+
+```bash
+sudo apt install apktool   # Debian/Ubuntu
+apktool d app.apk -o decompiled/
+apktool b decompiled/ -o patched.apk
+```
+
+### mobsf
+
+```bash
+docker run -it --rm -p 8000:8000 opensecurity/mobile-security-framework-mobsf:latest
+# Upload APK/IPA at http://localhost:8000
 ```
 
 ---

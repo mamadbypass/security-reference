@@ -39,7 +39,7 @@ Never use obtained credentials beyond proof-of-concept in controlled validation.
 
 | Tool | Usage |
 |------|-------|
-| `custom scripts` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `custom scripts` | [Python/Bash automation for repeatable tests](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

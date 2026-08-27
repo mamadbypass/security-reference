@@ -97,8 +97,8 @@ Poison `Location` to attacker URL plus injected cookies on victim domain.
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `crlfuzz` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `crlfuzz` | [CRLF injection fuzzer](../../TOOLS_GUIDE.md#crlfuzz) |
 
 ## Resources
 

@@ -39,8 +39,8 @@ Timing-based oracles require statistical analysis of response times instead of e
 
 | Tool | Usage |
 |------|-------|
-| `padbuster` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `custom scripts` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `padbuster` | [Padding oracle attacks](https://github.com/AonCyberLabs/PadBuster) |
+| `custom scripts` | [Python/Bash automation for repeatable tests](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

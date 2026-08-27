@@ -39,10 +39,10 @@ Practice on CTF binaries and authorized vuln servers; document reliability and m
 
 | Tool | Usage |
 |------|-------|
-| `gdb` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `pwndbg` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `gef` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ropper` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `gdb` | [GNU debugger for binary analysis](../../TOOLS_GUIDE.md) |
+| `pwndbg` | GDB plugin for exploit dev — [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) |
+| `gef` | GDB Enhanced Features — [hugsy/gef](https://github.com/hugsy/gef) |
+| `ropper` | ROP gadget finder — [sashs/Ropper](https://github.com/sashs/Ropper) |
 
 ## Verification Checklist
 

@@ -47,10 +47,10 @@ Common stacks (Apollo Server, Hasura, Strawberry, gqlgen) differ in default intr
 
 | Tool | Usage |
 |------|-------|
-| `clairvoyance` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `graphql-voyager` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `inql` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `clairvoyance` | [GraphQL schema recovery](../../TOOLS_GUIDE.md#clairvoyance) |
+| `graphql-voyager` | [Schema visualization](https://github.com/graphql-kit/graphql-voyager) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `inql` | [GraphQL security (Burp)](https://github.com/doyensec/inql) |
 
 ## Resources
 

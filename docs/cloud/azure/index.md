@@ -46,9 +46,9 @@ Azure uses **RBAC** (Owner, Contributor, Reader) at subscription/resource scope.
 
 | Tool | Usage |
 |------|-------|
-| `roadtools` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `azurehound` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `microburst` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `roadtools` | [Azure AD exploration](https://github.com/dirkjanm/ROADtools) |
+| `azurehound` | [Azure BloodHound collector](https://github.com/BloodHoundAD/AzureHound) |
+| `microburst` | [Azure security assessment](https://github.com/NetSPI/MicroBurst) |
 
 ## Resources
 

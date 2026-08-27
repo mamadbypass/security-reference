@@ -45,9 +45,9 @@ Testing maps **allowed paths** between zones by probing from compromised or test
 
 | Tool | Usage |
 |------|-------|
-| `nmap` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `hping3` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `custom probes` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `nmap` | [Network scanner](../../TOOLS_GUIDE.md#nmap) |
+| `hping3` | [Firewall probing](https://github.com/antirez/hping) |
+| `custom probes` | [ICMP/TCP probes to map firewall rules](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

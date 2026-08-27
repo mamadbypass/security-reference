@@ -41,9 +41,9 @@ Use Frida only on apps you own or have explicit authorization to test.
 
 | Tool | Usage |
 |------|-------|
-| `frida` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `objection` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `r2frida` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `frida` | [Dynamic instrumentation](../../TOOLS_GUIDE.md#frida-objection) |
+| `objection` | [Runtime mobile exploration](../../TOOLS_GUIDE.md#frida-objection) |
+| `r2frida` | [Radare2 + Frida bridge](../../TOOLS_GUIDE.md#frida-objection) |
 
 ## Resources
 

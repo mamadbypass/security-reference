@@ -92,8 +92,8 @@ Attacker manipulates workflow state or parameters → server enforces incomplete
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `manual testing` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `manual testing` | [Hands-on business logic testing with Burp Repeater](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

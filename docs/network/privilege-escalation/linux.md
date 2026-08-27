@@ -48,8 +48,8 @@ Linux privilege escalation gains **root** from an unprivileged shell. Attack sur
 
 | Tool | Usage |
 |------|-------|
-| `linpeas` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `linux-exploit-suggester` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `linpeas` | [Linux privesc enumeration](../../TOOLS_GUIDE.md#linpeas) |
+| `linux-exploit-suggester` | [Kernel exploit suggestions](https://github.com/mzet-/linux-exploit-suggester) |
 
 ## Resources
 

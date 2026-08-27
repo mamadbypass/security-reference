@@ -97,9 +97,9 @@ include(PAGES.get(page, "home.php"))
 
 | Tool | Usage |
 |------|-------|
-| `ffuf` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `lfi-suite` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `ffuf` | [Web fuzzer](../../TOOLS_GUIDE.md#ffuf) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `lfi-suite` | [LFI exploitation](../../TOOLS_GUIDE.md#lfi-suite) |
 
 ## Resources
 

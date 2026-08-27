@@ -39,10 +39,10 @@ Report via Immunefi or protocol bug bounty; never exploit mainnet without author
 
 | Tool | Usage |
 |------|-------|
-| `slither` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `mythril` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `foundry` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `echidna` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `slither` | [Solidity static analyzer](../../TOOLS_GUIDE.md#slither) |
+| `mythril` | [EVM bytecode analysis](../../TOOLS_GUIDE.md#mythril) |
+| `foundry` | [Smart contract dev & testing](../../TOOLS_GUIDE.md#foundry) |
+| `echidna` | [Smart contract fuzzer](../../TOOLS_GUIDE.md#echidna) |
 
 ## Resources
 

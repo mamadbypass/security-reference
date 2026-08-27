@@ -91,8 +91,8 @@ Test `//`, encoded slashes (`%2f%2f`), tab/newline before hostname, subdomain tr
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `openredirex` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `openredirex` | [Open redirect fuzzer](../../TOOLS_GUIDE.md#openredirex) |
 
 ## Resources
 

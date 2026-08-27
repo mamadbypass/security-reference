@@ -47,10 +47,10 @@ Good detections specify **analytic story**: data source, logic, false positive g
 
 | Tool | Usage |
 |------|-------|
-| `sigma` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `splunk` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `elastic` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `atomic red team` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `sigma` | [Detection rule format](https://github.com/SigmaHQ/sigma) |
+| `splunk` | [SIEM search & correlation](../../TOOLS_GUIDE.md) |
+| `elastic` | [Elastic Security SIEM & detection](../../TOOLS_GUIDE.md) |
+| `atomic red team` | [Detection validation](https://github.com/redcanaryco/atomic-red-team) |
 
 ## Resources
 

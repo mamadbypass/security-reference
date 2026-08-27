@@ -39,9 +39,9 @@ Maintain chain of custody documentation for legal admissibility.
 
 | Tool | Usage |
 |------|-------|
-| `ftk imager` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `volatility` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `autopsy` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `ftk imager` | Disk imaging — [AccessData FTK](https://www.exterro.com/ftk-imager) |
+| `volatility` | [Memory forensics](../../TOOLS_GUIDE.md#volatility) |
+| `autopsy` | Digital forensics — [Autopsy](https://www.autopsy.com/) |
 
 ## Verification Checklist
 

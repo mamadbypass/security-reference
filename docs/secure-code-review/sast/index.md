@@ -39,9 +39,9 @@ Integrate SARIF output into PR comments for developer-friendly remediation.
 
 | Tool | Usage |
 |------|-------|
-| `semgrep` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `codeql` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `sonarqube` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `semgrep` | [Static analysis (SAST)](../../TOOLS_GUIDE.md#semgrep) |
+| `codeql` | [Semantic code analysis](../../TOOLS_GUIDE.md#codeql) |
+| `sonarqube` | [Code quality & security](../../TOOLS_GUIDE.md#sonarqube) |
 
 ## Resources
 

@@ -89,9 +89,9 @@ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE_NAME
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ssrfmap` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `interactsh` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `ssrfmap` | [SSRF exploitation](../../TOOLS_GUIDE.md#ssrfmap) |
+| `interactsh` | [Out-of-band interaction server](../../TOOLS_GUIDE.md#interactsh) |
 
 ## Resources
 

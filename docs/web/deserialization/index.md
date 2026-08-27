@@ -86,9 +86,9 @@ Tampered serialized object → server deserializes → gadget chain executes →
 
 | Tool | Usage |
 |------|-------|
-| `ysoserial` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `phpggc` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `ysoserial` | [Java deserialization payloads](../../TOOLS_GUIDE.md#ysoserial) |
+| `phpggc` | [PHP deserialization payloads](../../TOOLS_GUIDE.md#phpggc) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
 
 ## Resources
 

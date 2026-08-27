@@ -47,9 +47,9 @@ Post-exploitation enumeration (`winPEAS`, `PowerUp`) automates checking hundreds
 
 | Tool | Usage |
 |------|-------|
-| `winpeas` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `powerup` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `watson` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `winpeas` | [Windows privesc enumeration](../../TOOLS_GUIDE.md#winpeas) |
+| `powerup` | [Windows privesc checks](https://github.com/PowerShellMafia/PowerSploit) |
+| `watson` | [Windows patch enumeration](https://github.com/rasta-mouse/Watson) |
 
 ## Resources
 

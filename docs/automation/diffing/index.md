@@ -39,9 +39,9 @@ Combine passive sources (crt.sh, SecurityTrails) with active probing for complet
 
 | Tool | Usage |
 |------|-------|
-| `nuclei` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `custom scripts` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `github actions` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `nuclei` | [Template-based vuln scanner](../../TOOLS_GUIDE.md#nuclei) |
+| `custom scripts` | [Python/Bash automation for repeatable tests](../../TOOLS_GUIDE.md) |
+| `github actions` | [CI/CD pipeline security review](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

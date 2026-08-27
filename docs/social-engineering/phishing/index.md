@@ -39,8 +39,8 @@ Coordinate with IT to whitelist test infrastructure and avoid help desk overload
 
 | Tool | Usage |
 |------|-------|
-| `gophish` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `king phisher` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `gophish` | [Phishing campaign framework](../../TOOLS_GUIDE.md#gophish) |
+| `king phisher` | [Phishing campaigns](../../TOOLS_GUIDE.md#gophish) |
 
 ## Verification Checklist
 

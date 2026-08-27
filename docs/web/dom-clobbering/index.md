@@ -84,8 +84,8 @@ Historical bypasses used clobbering to override sanitizer config via `id="allowe
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dompurify bypass research` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `dompurify bypass research` | [Review DOMPurify bypass advisories & test sinks](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

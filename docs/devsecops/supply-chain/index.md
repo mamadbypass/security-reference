@@ -39,9 +39,9 @@ Researcher perspective: report malicious packages to registries; publish IOCs re
 
 | Tool | Usage |
 |------|-------|
-| `syft` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `cosign` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dependabot` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `syft` | [SBOM generator](https://github.com/anchore/syft) |
+| `cosign` | [Container signing](https://github.com/sigstore/cosign) |
+| `dependabot` | [GitHub dependency alerts & automated PRs](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

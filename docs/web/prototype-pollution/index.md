@@ -98,9 +98,9 @@ Malicious key in merge → prototype polluted → later object access reads atta
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ppmap` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dom clobbering scanners` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `ppmap` | [Prototype pollution scanner](../../TOOLS_GUIDE.md#ppmap) |
+| `dom clobbering scanners` | [Browser DevTools + DOM XSS sinks review](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

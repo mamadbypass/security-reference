@@ -42,9 +42,9 @@ High-value targets: service accounts with weak passwords, accounts with `Generic
 
 | Tool | Usage |
 |------|-------|
-| `rubeus` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `impacket GetUserSPNs` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `hashcat` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `rubeus` | [Kerberos abuse toolkit](../../TOOLS_GUIDE.md#rubeus) |
+| `impacket GetUserSPNs` | [Kerberoasting with GetUserSPNs](../../TOOLS_GUIDE.md#impacket) |
+| `hashcat` | [Password cracking](https://hashcat.net/hashcat/) |
 
 ## Verification Checklist
 

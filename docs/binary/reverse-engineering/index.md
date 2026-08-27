@@ -39,10 +39,10 @@ For malware, work only in isolated VMs with no network egress.
 
 | Tool | Usage |
 |------|-------|
-| `ghidra` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ida` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `radare2` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `binary ninja` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `ghidra` | [Reverse engineering suite](../../TOOLS_GUIDE.md#ghidra) |
+| `ida` | Interactive disassembler — [hex-rays.com](https://hex-rays.com/ida-pro/) |
+| `radare2` | Open-source reversing — [rada.re](https://rada.re/n/) |
+| `binary ninja` | Commercial reverse engineering — [binary.ninja](https://binary.ninja/) |
 
 ## Resources
 

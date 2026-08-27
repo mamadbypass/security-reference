@@ -39,9 +39,9 @@ Use testssl.sh and manual review for TLS; Burp for application-layer crypto toke
 
 | Tool | Usage |
 |------|-------|
-| `testssl.sh` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `sslscan` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `testssl.sh` | [TLS configuration testing](../../TOOLS_GUIDE.md#testsslsh) |
+| `sslscan` | [SSL/TLS scanner](https://github.com/rbsec/sslscan) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
 
 ## Resources
 

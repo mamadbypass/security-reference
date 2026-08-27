@@ -46,10 +46,10 @@ In bug bounty, port scanning is usually limited to **in-scope hosts** and may be
 
 | Tool | Usage |
 |------|-------|
-| `naabu` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `nmap` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `masscan` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `rustscan` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `naabu` | [Fast port scanner](../../TOOLS_GUIDE.md#naabu) |
+| `nmap` | [Network scanner](../../TOOLS_GUIDE.md#nmap) |
+| `masscan` | [High-speed port scanner](https://github.com/robertdavidgraham/masscan) |
+| `rustscan` | [Fast port scanner](https://github.com/RustScan/RustScan) |
 
 ## Resources
 

@@ -39,10 +39,10 @@ Automate in CI recon pipelines to alert when new secrets appear in client bundle
 
 | Tool | Usage |
 |------|-------|
-| `linkfinder` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `secretfinder` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `nuclei` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `katana` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `linkfinder` | [JS endpoint discovery](../../TOOLS_GUIDE.md#linkfinder) |
+| `secretfinder` | JS secret extraction — [m4ll0k/SecretFinder](https://github.com/m4ll0k/SecretFinder) |
+| `nuclei` | [Template-based vuln scanner](../../TOOLS_GUIDE.md#nuclei) |
+| `katana` | [Web crawler](../../TOOLS_GUIDE.md#katana) |
 
 ## Verification Checklist
 

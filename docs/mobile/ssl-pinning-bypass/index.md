@@ -39,9 +39,9 @@ Document which hosts were pinned and whether bypass affected all endpoints.
 
 | Tool | Usage |
 |------|-------|
-| `frida` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `apk-mitm` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `objection` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `frida` | [Dynamic instrumentation](../../TOOLS_GUIDE.md#frida-objection) |
+| `apk-mitm` | [Patch APK for MITM](https://github.com/shroudedcode/apk-mitm) |
+| `objection` | [Runtime mobile exploration](../../TOOLS_GUIDE.md#frida-objection) |
 
 ## Verification Checklist
 

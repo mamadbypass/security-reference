@@ -45,7 +45,7 @@ Because there is no password, **the token or authenticator becomes the sole secr
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
 
 ## Resources
 

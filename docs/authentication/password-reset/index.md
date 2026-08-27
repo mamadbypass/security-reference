@@ -42,7 +42,7 @@ Some implementations leak tokens in Referer headers, browser history, or server 
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
 
 ## Resources
 

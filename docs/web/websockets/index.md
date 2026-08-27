@@ -83,9 +83,9 @@ Malicious origin or stolen session → WS connection → unauthorized subscribe/
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ws-harness` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `owasp zap` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `ws-harness` | [WebSocket testing](../../TOOLS_GUIDE.md#ws-harness) |
+| `owasp zap` | [Open-source web scanner](../../TOOLS_GUIDE.md#owasp-zap) |
 
 ## Resources
 

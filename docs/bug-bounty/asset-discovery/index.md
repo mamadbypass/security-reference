@@ -48,11 +48,11 @@ Attackers correlate these sources to find **forgotten properties**—acquired st
 
 | Tool | Usage |
 |------|-------|
-| `asnmap` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `mapcidr` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `naabu` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `httpx` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `katana` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `asnmap` | [ASN mapping](https://github.com/projectdiscovery/asnmap) |
+| `mapcidr` | [CIDR expansion](https://github.com/projectdiscovery/mapcidr) |
+| `naabu` | [Fast port scanner](../../TOOLS_GUIDE.md#naabu) |
+| `httpx` | [HTTP probing & tech detection](../../TOOLS_GUIDE.md#httpx) |
+| `katana` | [Web crawler](../../TOOLS_GUIDE.md#katana) |
 
 ## Resources
 

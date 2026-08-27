@@ -101,9 +101,9 @@ Billion laughs / quadratic blowup entity expansion can crash parsers lacking lim
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `xxeinjector` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `oxmlxxe` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `xxeinjector` | [XXE payload generator](../../TOOLS_GUIDE.md#xxeinjector) |
+| `oxmlxxe` | [Office XML XXE](../../TOOLS_GUIDE.md#oxmlxxe) |
 
 ## Resources
 

@@ -49,9 +49,9 @@ Domain environments amplify lateral movement: shared local admin passwords, exce
 
 | Tool | Usage |
 |------|-------|
-| `crackmapexec` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `evil-winrm` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `impacket` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `crackmapexec` | [Network pentest swiss army knife](../../TOOLS_GUIDE.md#crackmapexec-netexec) |
+| `evil-winrm` | [WinRM shell](https://github.com/Hackplayers/evil-winrm) |
+| `impacket` | [Network protocol tools](../../TOOLS_GUIDE.md#impacket) |
 
 ## Verification Checklist
 

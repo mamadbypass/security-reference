@@ -46,10 +46,10 @@ Effective analysis requires understanding **what each log source actually record
 
 | Tool | Usage |
 |------|-------|
-| `splunk` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `elastic` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `sentinel` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `chronicle` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `splunk` | [SIEM search & correlation](../../TOOLS_GUIDE.md) |
+| `elastic` | [Elastic Security SIEM & detection](../../TOOLS_GUIDE.md) |
+| `sentinel` | [Microsoft Sentinel analytics](../../TOOLS_GUIDE.md) |
+| `chronicle` | [Google Chronicle threat detection](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

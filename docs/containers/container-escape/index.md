@@ -39,8 +39,8 @@ Document exact misconfiguration; escapes are often configuration bugs not kernel
 
 | Tool | Usage |
 |------|-------|
-| `deepce` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `cdk` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `deepce` | [Container escape enumeration](../../TOOLS_GUIDE.md) |
+| `cdk` | Container penetration toolkit — [cdk](https://github.com/cdk-team/CDK) |
 
 ## Resources
 

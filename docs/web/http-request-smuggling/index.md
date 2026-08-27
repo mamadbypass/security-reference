@@ -94,9 +94,9 @@ Smuggled bytes on keep-alive connection → prepended to victim request → cach
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `smuggler` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `h2csmuggler` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `smuggler` | [HTTP request smuggling](../../TOOLS_GUIDE.md#smuggler) |
+| `h2csmuggler` | [H2C smuggling detection](../../TOOLS_GUIDE.md#h2csmuggler) |
 
 ## Resources
 

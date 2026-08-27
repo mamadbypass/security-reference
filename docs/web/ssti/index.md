@@ -102,8 +102,8 @@ tplmap -u 'https://target.com/page?name=test'
 
 | Tool | Usage |
 |------|-------|
-| `tplmap` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `tplmap` | [Server-side template injection](../../TOOLS_GUIDE.md#tplmap) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
 
 ## Resources
 

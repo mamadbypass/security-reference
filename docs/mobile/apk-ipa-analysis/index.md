@@ -42,10 +42,10 @@ Chain findings: hardcoded admin API key + exported activity that loads arbitrary
 
 | Tool | Usage |
 |------|-------|
-| `jadx` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `apktool` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `mobsf` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `objection` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `jadx` | [Android decompiler](../../TOOLS_GUIDE.md#jadx) |
+| `apktool` | [APK reverse engineering](../../TOOLS_GUIDE.md#apktool) |
+| `mobsf` | [Mobile security framework](../../TOOLS_GUIDE.md#mobsf) |
+| `objection` | [Runtime mobile exploration](../../TOOLS_GUIDE.md#frida-objection) |
 
 ## Resources
 

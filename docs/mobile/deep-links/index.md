@@ -39,9 +39,9 @@ Use Burp Collaborator or custom logging to detect server-side callbacks from dee
 
 | Tool | Usage |
 |------|-------|
-| `adb` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `objection` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `adb` | [Android Debug Bridge](https://developer.android.com/tools/adb) |
+| `objection` | [Runtime mobile exploration](../../TOOLS_GUIDE.md#frida-objection) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
 
 ## Verification Checklist
 

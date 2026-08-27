@@ -49,10 +49,10 @@ Tools like `httpx` integrate probing with tech detection, screenshotting, and fa
 
 | Tool | Usage |
 |------|-------|
-| `httpx` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `httprobe` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `aquatone` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `gowitness` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `httpx` | [HTTP probing & tech detection](../../TOOLS_GUIDE.md#httpx) |
+| `httprobe` | Legacy HTTP probe — prefer **httpx** |
+| `aquatone` | Visual subdomain recon — [michenriksen/aquatone](https://github.com/michenriksen/aquatone) |
+| `gowitness` | Screenshot live web hosts — [sensepost/gowitness](https://github.com/sensepost/gowitness) |
 
 ## Resources
 

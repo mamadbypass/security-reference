@@ -39,10 +39,10 @@ Use GitHub's workflow permission settings and branch protection as baseline cont
 
 | Tool | Usage |
 |------|-------|
-| `github actions` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `gitlab ci` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `snyk` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dependabot` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `github actions` | [CI/CD pipeline security review](../../TOOLS_GUIDE.md) |
+| `gitlab ci` | [Pipeline config & secret exposure review](../../TOOLS_GUIDE.md) |
+| `snyk` | Dependency scanning — [snyk.io](https://snyk.io/) |
+| `dependabot` | [GitHub dependency alerts & automated PRs](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

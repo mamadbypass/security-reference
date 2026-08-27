@@ -47,9 +47,9 @@ Common misconfigs: anonymous API access, cluster-admin bindings to default servi
 
 | Tool | Usage |
 |------|-------|
-| `kubectl` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `kube-hunter` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `kubescape` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `kubectl` | [Kubernetes CLI](https://kubernetes.io/docs/reference/kubectl/) |
+| `kube-hunter` | [Kubernetes pentest](../../TOOLS_GUIDE.md#kube-hunter) |
+| `kubescape` | [K8s security posture](https://github.com/kubescape/kubescape) |
 
 ## Resources
 

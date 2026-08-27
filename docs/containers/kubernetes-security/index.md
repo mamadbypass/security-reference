@@ -39,9 +39,9 @@ Peirates and CDK automate common K8s privilege escalation paths from inside a po
 
 | Tool | Usage |
 |------|-------|
-| `kubescape` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `falco` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `kyverno` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `kubescape` | [K8s security posture](https://github.com/kubescape/kubescape) |
+| `falco` | Runtime threat detection — [falco.org](https://falco.org/) |
+| `kyverno` | Kubernetes policy engine — [kyverno.io](https://kyverno.io/) |
 
 ## Verification Checklist
 

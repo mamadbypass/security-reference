@@ -93,9 +93,9 @@ Craft sandboxed iframe or `data:` documents that send `Origin: null`.
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `corsy` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `CORScanner` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `corsy` | [CORS misconfiguration scan](../../TOOLS_GUIDE.md#corsy) |
+| `CORScanner` | [CORS misconfiguration scan](../../TOOLS_GUIDE.md#corsy) |
 
 ## Resources
 

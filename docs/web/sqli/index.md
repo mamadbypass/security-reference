@@ -83,7 +83,7 @@ sqlmap -r request.txt --batch --dbs
 ```
 
 !!! tip "Full Tool Guide"
-    See the [Tools Guide](/TOOLS_GUIDE/) for install instructions, all flags, and pro tips.
+    See the [Tools Guide](../../TOOLS_GUIDE.md) for install instructions, all flags, and pro tips.
 
 ## Methodology
 
@@ -96,9 +96,9 @@ sqlmap -r request.txt --batch --dbs
 
 | Tool | Usage |
 |------|-------|
-| `sqlmap` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ghauri` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `sqlmap` | [Automated SQL injection](../../TOOLS_GUIDE.md#sqlmap) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `ghauri` | [SQL injection tool](../../TOOLS_GUIDE.md#ghauri) |
 
 ## Example Payloads
 

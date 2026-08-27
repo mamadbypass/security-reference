@@ -39,9 +39,9 @@ Document pinout for responsible disclosure; do not publish keys that enable mass
 
 | Tool | Usage |
 |------|-------|
-| `bus pirate` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `jtagulator` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `logic analyzer` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `bus pirate` | Hardware hacking — [dangerousprototypes.com](http://dangerousprototypes.com/docs/Bus_Pirate) |
+| `jtagulator` | JTAG/UART discovery — [Grand Idea Studio](https://www.grandideastudio.com/jtagulator) |
+| `logic analyzer` | [Signal analysis with Saleae or PulseView](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

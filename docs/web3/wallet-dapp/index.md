@@ -39,8 +39,8 @@ Bug bounty focus: phishing via dApp UI, not unauthorized mainnet theft.
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `wallet simulators` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `wallet simulators` | [Test dApp flows in local EVM simulators](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

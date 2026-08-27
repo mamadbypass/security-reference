@@ -52,9 +52,9 @@ Hunting requires curated data, skilled analysts, and executive support for time 
 
 | Tool | Usage |
 |------|-------|
-| `velociraptor` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `sysmon` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `yara` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `velociraptor` | [Endpoint visibility](https://github.com/Velocidex/velociraptor) |
+| `sysmon` | [Windows monitoring](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) |
+| `yara` | Malware detection rules — [virustotal.github.io/yara](https://virustotal.github.io/yara/) |
 
 ## Verification Checklist
 

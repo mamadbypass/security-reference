@@ -46,8 +46,8 @@ DCSync dumps **all domain password hashes**, enabling Golden Ticket creation, Pa
 
 | Tool | Usage |
 |------|-------|
-| `mimikatz` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `impacket secretsdump` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `mimikatz` | [Credential extraction](../../TOOLS_GUIDE.md#mimikatz) |
+| `impacket secretsdump` | [DCSync / credential dumping](../../TOOLS_GUIDE.md#impacket) |
 
 ## Verification Checklist
 

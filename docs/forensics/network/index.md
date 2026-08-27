@@ -39,9 +39,9 @@ Document IoCs: IPs, domains, URIs, user-agents, certificate serials.
 
 | Tool | Usage |
 |------|-------|
-| `wireshark` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `zeek` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `networkminer` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `wireshark` | [Packet analysis](https://www.wireshark.org/) |
+| `zeek` | Network security monitoring — [zeek.org](https://zeek.org/) |
+| `networkminer` | Network forensics — [networkminer.com](https://www.networkminer.com/) |
 
 ## Verification Checklist
 

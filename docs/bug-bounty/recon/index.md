@@ -47,7 +47,7 @@ nuclei -l live.txt -t exposures/ -t misconfiguration/ -o vulns.txt
 ```
 
 !!! tip "Full Tool Guide"
-    See the [Tools Guide](/TOOLS_GUIDE/) for install instructions, all flags, and pro tips.
+    See the [Tools Guide](../../TOOLS_GUIDE.md) for install instructions, all flags, and pro tips.
 
 ## Methodology
 
@@ -60,13 +60,13 @@ nuclei -l live.txt -t exposures/ -t misconfiguration/ -o vulns.txt
 
 | Tool | Usage |
 |------|-------|
-| `amass` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `subfinder` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `assetfinder` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `httpx` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `nuclei` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `gau` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `waybackurls` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `amass` | [OSINT & subdomain enum](../../TOOLS_GUIDE.md#amass) |
+| `subfinder` | [Passive subdomain discovery](../../TOOLS_GUIDE.md#subfinder) |
+| `assetfinder` | [Related domains & subdomains](../../TOOLS_GUIDE.md#assetfinder) |
+| `httpx` | [HTTP probing & tech detection](../../TOOLS_GUIDE.md#httpx) |
+| `nuclei` | [Template-based vuln scanner](../../TOOLS_GUIDE.md#nuclei) |
+| `gau` | [Archive URL collection](../../TOOLS_GUIDE.md#gau) |
+| `waybackurls` | [Wayback Machine URLs](../../TOOLS_GUIDE.md#waybackurls) |
 
 ## Resources
 

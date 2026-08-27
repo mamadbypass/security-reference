@@ -93,9 +93,9 @@ Attacker sends crafted request → origin reflects unkeyed input → cache store
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `param-miner` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `web-cache-vulnerability-scanner` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `param-miner` | [Hidden parameter discovery](../../TOOLS_GUIDE.md#param-miner) |
+| `web-cache-vulnerability-scanner` | [Cache poisoning scanner](../../TOOLS_GUIDE.md#web-cache-vulnerability-scanner) |
 
 ## Resources
 

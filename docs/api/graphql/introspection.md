@@ -38,8 +38,8 @@ Introspection is invaluable during development but dangerous when exposed to att
 
 | Tool | Usage |
 |------|-------|
-| `clairvoyance` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `graphql-cop` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `clairvoyance` | [GraphQL schema recovery](../../TOOLS_GUIDE.md#clairvoyance) |
+| `graphql-cop` | [GraphQL security audit](https://github.com/dolevf/graphql-cop) |
 
 ## Verification Checklist
 

@@ -47,9 +47,9 @@ Assessments also cover **rogue AP detection**, guest network isolation, and evil
 
 | Tool | Usage |
 |------|-------|
-| `aircrack-ng` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `bettercap` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `kismet` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `aircrack-ng` | [Wi-Fi security auditing](https://www.aircrack-ng.org/) |
+| `bettercap` | [Network attack & monitoring](https://github.com/bettercap/bettercap) |
+| `kismet` | [Wireless network detector](https://www.kismetwireless.net/) |
 
 ## Verification Checklist
 

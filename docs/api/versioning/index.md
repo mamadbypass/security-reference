@@ -38,9 +38,9 @@ This creates a **version skew** vulnerability class (related to OWASP API #9 Imp
 
 | Tool | Usage |
 |------|-------|
-| `ffuf` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `kiterunner` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `ffuf` | [Web fuzzer](../../TOOLS_GUIDE.md#ffuf) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `kiterunner` | [API route brute force](../../TOOLS_GUIDE.md#kiterunner-kr) |
 
 ## Resources
 

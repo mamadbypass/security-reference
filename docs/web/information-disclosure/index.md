@@ -91,10 +91,10 @@ Disclosure source → attacker collects credentials/schema/paths → enables tar
 
 | Tool | Usage |
 |------|-------|
-| `trufflehog` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `gitleaks` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `nuclei` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `linkfinder` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `trufflehog` | [Secret scanner](../../TOOLS_GUIDE.md#trufflehog) |
+| `gitleaks` | [Git secret scanner](../../TOOLS_GUIDE.md#gitleaks) |
+| `nuclei` | [Template-based vuln scanner](../../TOOLS_GUIDE.md#nuclei) |
+| `linkfinder` | [JS endpoint discovery](../../TOOLS_GUIDE.md#linkfinder) |
 
 ## Resources
 

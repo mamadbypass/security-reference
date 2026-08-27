@@ -39,9 +39,9 @@ Stay within legal boundaries and program scope; OSINT on individuals may be rest
 
 | Tool | Usage |
 |------|-------|
-| `maltego` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `theharvester` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `recon-ng` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `maltego` | [Link analysis & OSINT](https://www.maltego.com/) |
+| `theharvester` | [Email & subdomain OSINT](https://github.com/laramies/theHarvester) |
+| `recon-ng` | [OSINT framework](../../TOOLS_GUIDE.md#recon-ng) |
 
 ## Resources
 

@@ -39,9 +39,9 @@ Test only on devices you own; IoT botnets harm real users.
 
 | Tool | Usage |
 |------|-------|
-| `binwalk` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `firmadyne` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ghidra` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `binwalk` | [Firmware analysis](../../TOOLS_GUIDE.md#binwalk) |
+| `firmadyne` | Firmware emulation — [Firmadyne](https://github.com/firmadyne/firmadyne) |
+| `ghidra` | [Reverse engineering suite](../../TOOLS_GUIDE.md#ghidra) |
 
 ## Verification Checklist
 

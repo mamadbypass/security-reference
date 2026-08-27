@@ -39,9 +39,9 @@ Use dedicated forensics account with read-only roles; avoid modifying evidence i
 
 | Tool | Usage |
 |------|-------|
-| `aws cli` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `azure monitor` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `gcp logging` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `aws cli` | [Cloud forensics with `aws cloudtrail lookup-events`](../../TOOLS_GUIDE.md) |
+| `azure monitor` | [Azure log analytics & Sentinel queries](../../TOOLS_GUIDE.md) |
+| `gcp logging` | [Cloud Logging & Chronicle investigation](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

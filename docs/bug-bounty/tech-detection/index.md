@@ -49,10 +49,10 @@ Once identified, versions are correlated with **CVE databases** and nuclei templ
 
 | Tool | Usage |
 |------|-------|
-| `whatweb` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `wappalyzer` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `nuclei` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `httpx -tech-detect` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `whatweb` | [Web technology fingerprinting](https://github.com/urbanadventurer/WhatWeb) |
+| `wappalyzer` | [Stack detection](https://www.wappalyzer.com/) |
+| `nuclei` | [Template-based vuln scanner](../../TOOLS_GUIDE.md#nuclei) |
+| `httpx -tech-detect` | [Technology fingerprinting](../../TOOLS_GUIDE.md#httpx) |
 
 ## Resources
 

@@ -49,10 +49,10 @@ BloodHound visualizes these relationships as attack graphs from any compromised 
 
 | Tool | Usage |
 |------|-------|
-| `bloodhound` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `rubeus` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `impacket` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `powerview` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `bloodhound` | [AD attack path analysis](../../TOOLS_GUIDE.md#bloodhound) |
+| `rubeus` | [Kerberos abuse toolkit](../../TOOLS_GUIDE.md#rubeus) |
+| `impacket` | [Network protocol tools](../../TOOLS_GUIDE.md#impacket) |
+| `powerview` | [AD situational awareness](https://github.com/PowerShellMafia/PowerSploit) |
 
 ## Resources
 

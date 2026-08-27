@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from tool_links import format_tool_row, format_tools_guide_tip  # noqa: E402
 from vuln_content import enrich_meta  # noqa: E402
 
 STRUCTURE = {
@@ -1317,7 +1318,7 @@ javascript:alert(1)
 }
 
 
-def render_page(meta: dict) -> str:
+def render_page(rel_path: str, meta: dict) -> str:
     lines = [f"# {meta['title']}", "", meta["description"], ""]
 
     if meta.get("how_it_works"):
@@ -1337,7 +1338,7 @@ def render_page(meta: dict) -> str:
         lines.append("")
         lines += [
             "!!! tip \"Full Tool Guide\"",
-            "    See the [Tools Guide](/TOOLS_GUIDE/) for install instructions, all flags, and pro tips.",
+            f"    {format_tools_guide_tip(rel_path)}",
             "",
         ]
 
@@ -1350,7 +1351,7 @@ def render_page(meta: dict) -> str:
         lines += ["## Tools", ""]
         lines += ["| Tool | Usage |", "|------|-------|"]
         for tool in meta["tools"]:
-            lines.append(f"| `{tool}` | See [Tools Guide](/TOOLS_GUIDE/) |")
+            lines.append(format_tool_row(rel_path, tool))
         lines.append("")
 
     if meta.get("payloads"):
@@ -1386,7 +1387,7 @@ def main() -> None:
         if meta is None:
             continue
         meta = enrich_meta(rel_path, meta)
-        path.write_text(render_page(meta), encoding="utf-8")
+        path.write_text(render_page(rel_path, meta), encoding="utf-8")
     print(f"Generated {len([k for k, v in STRUCTURE.items() if v is not None])} pages")
 
 

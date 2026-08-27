@@ -46,10 +46,10 @@ Attackers chain **credential leaks** (git, SSRF) to IAM roles, then enumerate an
 
 | Tool | Usage |
 |------|-------|
-| `pacu` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `prowler` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `scout suite` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `cloudfox` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `pacu` | [AWS exploitation framework](../../TOOLS_GUIDE.md#pacu) |
+| `prowler` | [Cloud security assessment](../../TOOLS_GUIDE.md#prowler) |
+| `scout suite` | [Multi-cloud audit](../../TOOLS_GUIDE.md#scout-suite) |
+| `cloudfox` | [AWS situational awareness](https://github.com/BishopFox/cloudfox) |
 
 ## Resources
 

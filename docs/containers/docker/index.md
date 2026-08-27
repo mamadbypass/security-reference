@@ -39,9 +39,9 @@ Use Docker Bench for Security for host-level configuration checks.
 
 | Tool | Usage |
 |------|-------|
-| `trivy` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `docker bench` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `grype` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `trivy` | [Container vulnerability scan](../../TOOLS_GUIDE.md#trivy) |
+| `docker bench` | Docker CIS benchmark — [docker-bench-security](https://github.com/docker/docker-bench-security) |
+| `grype` | Container vulnerability scanner — [Anchore Grype](https://github.com/anchore/grype) |
 
 ## Resources
 

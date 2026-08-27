@@ -39,9 +39,9 @@ When scope is ambiguous, ask the program before testing—document the response.
 
 | Tool | Usage |
 |------|-------|
-| `bbscope` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `hackerone cli` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `custom spreadsheets` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `bbscope` | [Bug bounty scope aggregation](../../TOOLS_GUIDE.md#bbscope) |
+| `hackerone cli` | [HackerOne API CLI for program management](../../TOOLS_GUIDE.md) |
+| `custom spreadsheets` | [Track assets, findings, and retest status](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

@@ -97,9 +97,9 @@ Request A and B read balance=100 → both pass check for 100 debit → both comm
 
 | Tool | Usage |
 |------|-------|
-| `burp turbo intruder` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `race-the-web` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `python asyncio` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp turbo intruder` | [Race condition & burst attacks](../../TOOLS_GUIDE.md#burp-suite) |
+| `race-the-web` | [Race condition testing](../../TOOLS_GUIDE.md#race-the-web) |
+| `python asyncio` | [Async HTTP for race condition PoCs](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

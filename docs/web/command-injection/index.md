@@ -99,9 +99,9 @@ commix -u "https://target.com/ping?ip=127.0.0.1" --batch
 
 | Tool | Usage |
 |------|-------|
-| `commix` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `ffuf` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `commix` | [Command injection](../../TOOLS_GUIDE.md#commix) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `ffuf` | [Web fuzzer](../../TOOLS_GUIDE.md#ffuf) |
 
 ## Resources
 

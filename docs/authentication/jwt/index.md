@@ -48,8 +48,8 @@ Common flaws:
 
 | Tool | Usage |
 |------|-------|
-| `jwt_tool` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `jwt_tool` | [JWT analysis & attacks](../../TOOLS_GUIDE.md#jwt_tool) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
 
 ## Resources
 

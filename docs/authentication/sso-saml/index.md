@@ -40,8 +40,8 @@ Single Sign-On (SSO) federates authentication to an Identity Provider (IdP). **S
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `saml raider` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `saml raider` | SAML testing Burp extension — [SAML Raider](https://github.com/SAMLRaider/SAMLRaider) |
 
 ## Resources
 

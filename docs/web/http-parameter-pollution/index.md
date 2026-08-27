@@ -92,8 +92,8 @@ if len(request.GET.getlist('id')) > 1:
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `manual fuzzing` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `manual fuzzing` | [Custom wordlists and Burp Intruder payloads](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

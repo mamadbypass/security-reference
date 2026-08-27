@@ -39,9 +39,9 @@ Protobuf is not encryption: messages can be decoded with a `.proto` file or infe
 
 | Tool | Usage |
 |------|-------|
-| `grpcurl` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `grpcui` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `burp grpc assistant` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `grpcurl` | [gRPC CLI client](../../TOOLS_GUIDE.md#grpcurl) |
+| `grpcui` | gRPC web UI — [fullstorydev/grpcui](https://github.com/fullstorydev/grpcui) |
+| `burp grpc assistant` | [gRPC testing in Burp](../../TOOLS_GUIDE.md#burp-suite) |
 
 ## Resources
 

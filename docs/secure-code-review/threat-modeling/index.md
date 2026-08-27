@@ -39,9 +39,9 @@ Use threat models to guide bug bounty scope and internal red team objectives.
 
 | Tool | Usage |
 |------|-------|
-| `draw.io` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `microsoft threat modeling tool` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `owasp threat dragon` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `draw.io` | [Data-flow & architecture diagrams](../../TOOLS_GUIDE.md#drawio) |
+| `microsoft threat modeling tool` | [STRIDE threat modeling (Windows)](../../TOOLS_GUIDE.md#microsoft-threat-modeling-tool) |
+| `owasp threat dragon` | [OWASP threat modeling](../../TOOLS_GUIDE.md#owasp-threat-dragon) |
 
 ## Resources
 

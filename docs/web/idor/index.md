@@ -85,8 +85,8 @@ Attacker authenticates → requests object by ID → server fetches by ID only �
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `autorize` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `autorize` | [Authorization testing (Burp)](../../TOOLS_GUIDE.md#autorize) |
 
 ## Resources
 

@@ -1,12 +1,12 @@
 # Tools Index
 
-Quick reference table of all security tools. For **install commands, usage examples, and pro tips**, see the comprehensive **[Tools Guide](/TOOLS_GUIDE/)**.
+Quick reference table of all security tools. For **install commands, usage examples, and pro tips**, see the comprehensive **[Tools Guide](TOOLS_GUIDE.md)**.
 
 !!! info "How to Use This Page"
     1. Find your tool category below
     2. Click the tool name to visit the official repo
-    3. Open the [Tools Guide](/TOOLS_GUIDE/) for copy-paste commands
-    4. See [Workflows](/WORKFLOWS/) for how tools chain together
+    3. Open the [Tools Guide](TOOLS_GUIDE.md) for copy-paste commands
+    4. See [Workflows](WORKFLOWS.md) for how tools chain together
 
 ## Reconnaissance
 

@@ -39,9 +39,9 @@ Integrate IaC scanning in PR checks; block merge on critical findings.
 
 | Tool | Usage |
 |------|-------|
-| `checkov` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `tfsec` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `kics` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `checkov` | [IaC security scanner](../../TOOLS_GUIDE.md#checkov) |
+| `tfsec` | [Terraform security scanner](https://github.com/aquasecurity/tfsec) |
+| `kics` | [IaC security (multi-cloud)](https://github.com/Checkmarx/kics) |
 
 ## Verification Checklist
 

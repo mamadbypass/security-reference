@@ -39,8 +39,8 @@ Researchers: do not publish raw breach data; reference breach name and date only
 
 | Tool | Usage |
 |------|-------|
-| `have i been pwned api` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dehashed (authorized)` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `have i been pwned api` | Defensive credential exposure checks via [HIBP API](https://haveibeenpwned.com/API/v3) |
+| `dehashed (authorized)` | [Authorized breach monitoring services only](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

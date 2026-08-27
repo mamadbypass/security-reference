@@ -48,10 +48,10 @@ DNS is often overlooked but provides high-impact findings without aggressive sca
 
 | Tool | Usage |
 |------|-------|
-| `dnsx` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dig` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dnsrecon` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `fierce` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `dnsx` | [DNS toolkit](../../TOOLS_GUIDE.md#dnsx) |
+| `dig` | [DNS lookup — built into Linux/macOS](../../TOOLS_GUIDE.md) |
+| `dnsrecon` | DNS enumeration — [darkoperator/dnsrecon](https://github.com/darkoperator/dnsrecon) |
+| `fierce` | DNS recon — [mschwager/fierce](https://github.com/mschwager/fierce) |
 
 ## Resources
 

@@ -95,8 +95,8 @@ CSP `frame-ancestors` supersedes XFO in modern browsers—deploy both for legacy
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `custom html poc` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `custom html poc` | [Minimal HTML page demonstrating clickjacking](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

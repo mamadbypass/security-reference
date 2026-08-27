@@ -48,8 +48,8 @@ GCP's **Organization Policy Service** can enforce constraints (no public IPs, re
 
 | Tool | Usage |
 |------|-------|
-| `gcp_scanner` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `scout suite` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `gcp_scanner` | [GCP misconfiguration scan](https://github.com/google/gcp_scanner) |
+| `scout suite` | [Multi-cloud audit](../../TOOLS_GUIDE.md#scout-suite) |
 
 ## Resources
 

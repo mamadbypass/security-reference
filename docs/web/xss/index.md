@@ -89,7 +89,7 @@ cat urls.txt | dalfox pipe -o xss_results.txt
 ```
 
 !!! tip "Full Tool Guide"
-    See the [Tools Guide](/TOOLS_GUIDE/) for install instructions, all flags, and pro tips.
+    See the [Tools Guide](../../TOOLS_GUIDE.md) for install instructions, all flags, and pro tips.
 
 ## Methodology
 
@@ -102,9 +102,9 @@ cat urls.txt | dalfox pipe -o xss_results.txt
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `xsstrike` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `dalfox` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `xsstrike` | [XSS detection](../../TOOLS_GUIDE.md#xsstrike) |
+| `dalfox` | [XSS scanner](../../TOOLS_GUIDE.md#dalfox) |
 
 ## Example Payloads
 

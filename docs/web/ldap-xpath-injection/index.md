@@ -105,8 +105,8 @@ Injected metacharacters in filter/expression → query logic altered → auth by
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `manual payloads` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `manual payloads` | [Craft payloads from OWASP cheat sheets](../../TOOLS_GUIDE.md) |
 
 ## Resources
 

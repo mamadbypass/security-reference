@@ -46,8 +46,8 @@ Rate limiters and WAFs often count **HTTP requests**, not **GraphQL operations**
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `custom scripts` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `custom scripts` | [Python/Bash automation for repeatable tests](../../TOOLS_GUIDE.md) |
 
 ## Verification Checklist
 

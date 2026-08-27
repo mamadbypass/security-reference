@@ -102,8 +102,8 @@ nosqlmap -u "http://target.com/login" --data '{"user":"test","pass":"test"}'
 
 | Tool | Usage |
 |------|-------|
-| `burp` | See [Tools Guide](/TOOLS_GUIDE/) |
-| `nosqlmap` | See [Tools Guide](/TOOLS_GUIDE/) |
+| `burp` | [Intercept, repeater & scanner](../../TOOLS_GUIDE.md#burp-suite) |
+| `nosqlmap` | [NoSQL injection](../../TOOLS_GUIDE.md#nosqlmap) |
 
 ## Resources
 
