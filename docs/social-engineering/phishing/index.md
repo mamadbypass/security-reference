@@ -68,6 +68,25 @@ Coordinate with IT to whitelist test infrastructure and avoid help desk overload
 - Browser isolation for risky links; block newly registered domains at egress.
 - Executive protection program for high-value targets (spear-phish monitoring).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "gophish metrics"
+    Click rate and submit rate — not individual shaming.
+
+!!! tip "Legal sign-off"
+    Written approval naming date range and target groups.
+
+!!! tip "Realistic not cruel"
+    Urgent payroll lure works — fake termination does harm.
+
+!!! tip "Landing on isolated domain"
+    Use lookalike you control — not real login page clone on prod.
+
+!!! tip "Delete captured creds"
+    Test passwords destroyed after debrief.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

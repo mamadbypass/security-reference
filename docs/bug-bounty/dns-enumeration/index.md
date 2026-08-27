@@ -81,6 +81,25 @@ DNS is often overlooked but provides high-impact findings without aggressive sca
 - **Use DNSSEC** where supported to prevent cache poisoning (does not stop enumeration).
 - **Audit TXT records** for leaked secrets and obsolete verification tokens.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "dnsx for resolution"
+    `cat subs.txt | dnsx -a -aaaa -cname -resp -o resolved.txt`
+
+!!! tip "AXFR attempt"
+    Always try `dig axfr @ns1.target.com target.com` — still works surprisingly often.
+
+!!! tip "TXT record intel"
+    SPF records leak internal IPs and third-party services.
+
+!!! tip "CNAME takeover"
+    NXDOMAIN on CNAME to dead SaaS = subdomain takeover candidate.
+
+!!! tip "fierce for zones"
+    `fierce --domain target.com` maps adjacent IP blocks.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

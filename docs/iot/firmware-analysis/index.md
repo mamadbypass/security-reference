@@ -68,6 +68,25 @@ Test only on devices you own; IoT botnets harm real users.
 - Secure OTA with encrypted, authenticated update channels.
 - Bug bounty or coordinated disclosure program for hardware products.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "binwalk extract"
+    `binwalk -e firmware.bin` — then grep squashfs for `passwd`.
+
+!!! tip "Emulate carefully"
+    Firmadyne/QEMU when architecture matches — ARM vs MIPS.
+
+!!! tip "Hardcoded telnet"
+    root:12345 still appears in consumer IoT.
+
+!!! tip "Unsigned updates"
+    MITM update channel = full device compromise PoC.
+
+!!! tip "Vendor disclosure"
+    Consumer device bugs need coordinated disclosure timeline.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

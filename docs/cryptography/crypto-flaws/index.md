@@ -67,6 +67,25 @@ Use testssl.sh and manual review for TLS; Burp for application-layer crypto toke
 - Rotate keys with documented procedures; use HSMs or KMS for master keys.
 - Follow OWASP Cryptographic Storage Cheat Sheet and NIST SP 800-57.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "grep for secrets"
+    Search repos for `AES_KEY`, `SECRET`, `BEGIN RSA` — still common.
+
+!!! tip "JWT alg none"
+    Quick win on homegrown auth — test before deep crypto review.
+
+!!! tip "ECB patterns"
+    Repeated blocks in ciphertext suggest ECB mode on structured data.
+
+!!! tip "testssl.sh sweep"
+    Run on every hostname — weak TLS configs cluster on legacy apps.
+
+!!! tip "Never roll your own"
+    Custom crypto protocols in source = high priority review.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

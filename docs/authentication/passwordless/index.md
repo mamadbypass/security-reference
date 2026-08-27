@@ -73,6 +73,25 @@ Because there is no password, **the token or authenticator becomes the sole secr
 - **Invalidate sessions** after passwordless login on new devices; notify users of new sign-ins.
 - See [WebAuthn Guide](https://webauthn.guide/) for implementation details.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Magic link leakage"
+    Check Referer header leaks token to third-party resources.
+
+!!! tip "OTP rate limits"
+    Test 6-digit OTP — 1M combos need rate limit or lockout.
+
+!!! tip "Same link twice"
+    Magic links should be single-use — test double redemption.
+
+!!! tip "WebAuthn challenge"
+    Replay old challenge/response if server doesn't store nonce.
+
+!!! tip "Email pre-account"
+    Request magic link for unregistered email — user enumeration.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

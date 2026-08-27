@@ -67,6 +67,25 @@ Automate in CI recon pipelines to alert when new secrets appear in client bundle
 - Scan releases with trufflehog or custom regex in CI before deploy.
 - Implement CSP and avoid exposing sensitive logic that should live server-side only.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "linkfinder pipeline"
+    Every JS URL through linkfinder — APIs hide in minified bundles.
+
+!!! tip "secretfinder pass"
+    AWS keys and internal URLs in `app.*.js` chunk files.
+
+!!! tip "katana crawl"
+    `katana -u target -jc` extracts JS-linked endpoints.
+
+!!! tip "Version diff"
+    Save JS weekly — new routes appear before public changelog.
+
+!!! tip "Scope filter"
+    Auto-found hosts may be CDN or third-party — verify in program scope.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

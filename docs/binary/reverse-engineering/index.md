@@ -68,6 +68,25 @@ For malware, work only in isolated VMs with no network egress.
 - Monitor for cracked distributions; use legal and technical responses as appropriate.
 - For sensitive firmware, encrypt payloads and verify integrity at boot.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "strings before Ghidra"
+    Quick `strings -a binary` finds URLs, keys, and format strings.
+
+!!! tip "checksec baseline"
+    NX, PIE, RELRO, canary — know protections before exploit dev.
+
+!!! tip "Rename as you go"
+    Ghidra/IDA renaming saves hours on return visits.
+
+!!! tip "Anti-debug bypass"
+    Patch `ptrace` checks or use `LD_PRELOAD` in lab only.
+
+!!! tip "Version pin libraries"
+    Exploit gadgets depend on exact libc — record `ldd` output.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

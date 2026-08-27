@@ -80,6 +80,25 @@ Use threat models to guide bug bounty scope and internal red team objectives.
 - Revisit models after incidents and pen test findings.
 - Align mitigations with OWASP ASVS levels appropriate to application risk tier.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Data flow diagram"
+    Draw trust boundaries before STRIDE — boxes and arrows first.
+
+!!! tip "STRIDE per element"
+    One worksheet row per component — don't batch threats.
+
+!!! tip "Store in git"
+    Threat model YAML/MD versioned with architecture changes.
+
+!!! tip "Test cases from threats"
+    Each high threat becomes a security test case in QA.
+
+!!! tip "OWASP Threat Dragon"
+    Free tool exports models shareable with dev teams.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

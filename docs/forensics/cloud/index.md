@@ -67,6 +67,25 @@ Use dedicated forensics account with read-only roles; avoid modifying evidence i
 - Incident response runbooks specific to cloud API abuse.
 - Regular purple-team exercises simulating credential theft in cloud consoles.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Pull logs fast"
+    CloudTrail retention defaults — export before expiry.
+
+!!! tip "AssumeRole trail"
+    Attacker pivot often shows as cross-account AssumeRole.
+
+!!! tip "GuardDuty correlation"
+    Use findings as index into raw CloudTrail events.
+
+!!! tip "Region sweep"
+    Attackers create resources in unused regions.
+
+!!! tip "IAM change timeline"
+    New access keys and policy attachments = priority events.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

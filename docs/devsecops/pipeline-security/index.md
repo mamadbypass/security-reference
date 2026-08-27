@@ -69,6 +69,25 @@ Use GitHub's workflow permission settings and branch protection as baseline cont
 - Sign artifacts with **Sigstore/cosign**; verify provenance with SLSA builders.
 - Follow OWASP Top 10 CI/CD Security Risks; audit pipelines quarterly.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Fork PR secrets"
+    GitHub Actions secrets unavailable on forks — test poisoned PR paths.
+
+!!! tip "OIDC over long-lived tokens"
+    Recommend `id-token: write` + cloud OIDC — no AWS keys in YAML.
+
+!!! tip "PPE attacks"
+    Pull Request Target workflows run with base repo secrets — high risk.
+
+!!! tip "Branch protection"
+    Require reviews and block force-push on default branch.
+
+!!! tip "Artifact signing"
+    cosign/sigstore for images — verify in deploy stage.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

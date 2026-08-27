@@ -80,6 +80,25 @@ Hunting requires curated data, skilled analysts, and executive support for time 
 - **Purple team integration** — Red validates that hunts would catch simulated TTPs.
 - **Avoid alert fatigue** — Hunts explore quietly; only escalate confirmed leads.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Hypothesis driven"
+    Start with intel: new CVE, odd DNS, or peer anomaly — not random searches.
+
+!!! tip "Velociraptor scale"
+    Deploy hunt across fleet without RDPing to each host.
+
+!!! tip "Baseline normal"
+    Know what good looks like before declaring evil.
+
+!!! tip "Hunt to detection"
+    Every true positive hunt should become a permanent rule.
+
+!!! tip "Time-box hunts"
+    4-hour hunts with clear success criteria beat endless scrolling.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

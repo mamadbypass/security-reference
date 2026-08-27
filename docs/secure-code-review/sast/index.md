@@ -67,6 +67,25 @@ Integrate SARIF output into PR comments for developer-friendly remediation.
 - Track mean time to remediate SAST findings by severity.
 - Follow OWASP Code Review Guide checklists for manual coverage gaps.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "semgrep auto rules"
+    `semgrep --config p/owasp-top-ten` on every PR.
+
+!!! tip "Triage by reachability"
+    Sink without source path = likely false positive.
+
+!!! tip "Auth hotspots"
+    grep `isAdmin`, `role`, `permission` — manual review there.
+
+!!! tip "CodeQL path queries"
+    Data flow from `getParameter` to SQL execution.
+
+!!! tip "File:line in ticket"
+    Developers fix faster with exact location and fix snippet.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -67,6 +67,25 @@ Use Burp Collaborator or custom logging to detect server-side callbacks from dee
 - Never put secrets (tokens, PII) in deep link query strings.
 - Log and monitor anomalous deep link patterns; test with OWASP MASTG deep link test cases.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "adb intent fuzzing"
+    `adb shell am start -a android.intent.action.VIEW -d 'scheme://path'`
+
+!!! tip "WebView loading"
+    Deep link params reflected in WebView URL — test XSS and file access.
+
+!!! tip "iOS universal links"
+    AASA file mistakes allow cross-app hijacking.
+
+!!! tip "Auth on destination"
+    Open `/account/settings` via link without session cookie.
+
+!!! tip "Intent filter export"
+    Exported handlers without permission = other apps can trigger them.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

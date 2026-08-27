@@ -123,6 +123,25 @@ CSP `frame-ancestors` supersedes XFO in modern browsers—deploy both for legacy
 
 - Secondary channel confirmation for financial transactions (out-of-band).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "No X-Frame-Options"
+    Missing `X-Frame-Options` AND weak CSP `frame-ancestors` = test immediately.
+
+!!! tip "Double-click attacks"
+    Some actions need double-click — design PoC overlay accordingly.
+
+!!! tip "Mobile touch"
+    Touch events differ from mouse — test on real mobile viewport.
+
+!!! tip "UI redress + CSRF"
+    Clickjacking bypasses CSRF tokens since user genuinely clicks.
+
+!!! tip "Sensitive actions only"
+    Report clickjacking on money transfer, email change, 2FA disable — not static pages.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

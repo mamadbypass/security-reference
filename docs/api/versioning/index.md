@@ -67,6 +67,25 @@ This creates a **version skew** vulnerability class (related to OWASP API #9 Imp
 - **Block internet access** to internal/beta versions; require VPN or mTLS.
 - **Automate contract tests** so new security controls cannot ship only in the latest route tree.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Fuzz versions"
+    Try /v0/, /v1/, /v2/, /beta/, /internal/, /legacy/ on same base path.
+
+!!! tip "Mobile app APIs"
+    Old API versions stay live for mobile clients years after deprecation.
+
+!!! tip "Header versioning"
+    `Accept: application/vnd.api+json; version=1` vs version=2
+
+!!! tip "Diff auth between versions"
+    v1 may lack auth added in v2 — always test oldest version.
+
+!!! tip "Changelog mining"
+    Read public API changelog for removed security controls.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

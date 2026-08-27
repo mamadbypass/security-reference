@@ -75,6 +75,25 @@ Azure uses **RBAC** (Owner, Contributor, Reader) at subscription/resource scope.
 - **NSG default deny** — No RDP/SSH from internet; use Bastion or VPN.
 - **Log Analytics** — Centralize Activity Log, Sign-in logs, and Sentinel analytics.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "ROADtools enum"
+    `roadrecon auth` then `roadrecon gather` maps entire AAD tenant.
+
+!!! tip "Storage public blobs"
+    `az storage blob list` with anonymous auth on guessed accounts.
+
+!!! tip "PIM gaps"
+    Permanent Global Admin assignments bypass PIM — hunt in AzureHound.
+
+!!! tip "Service principal secrets"
+    Expired secrets in repos — search GitHub for `client_secret`.
+
+!!! tip "Conditional Access"
+    Note MFA gaps on legacy auth protocols in report.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

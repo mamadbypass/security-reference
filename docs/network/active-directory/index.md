@@ -12,11 +12,22 @@ Visual summary of the **attack/data flow** and the **five-phase testing workflow
 
 ```mermaid
 flowchart TD
-    RECON[LDAP enum / BloodHound] --> PATH[Attack paths]
-    PATH --> KERB[Kerberoasting]
-    PATH --> RELAY[NTLM relay]
-    PATH --> ACL[ACL abuse]
-    KERB & RELAY & ACL --> DA[Domain Admin]
+    subgraph Recon["① Reconnaissance"]
+        BH[BloodHound / LDAP enum]
+    end
+    subgraph Paths["② Attack Paths"]
+        BH --> KERB[Kerberoasting]
+        BH --> RELAY[NTLM Relay]
+        BH --> ACL[ACL Abuse]
+    end
+    subgraph Priv["③ Privilege Escalation"]
+        KERB & RELAY & ACL --> ESC[Escalate privileges]
+    end
+    subgraph Goal["④ Domain Dominance"]
+        ESC --> DA[Domain Admin / DCSync]
+    end
+    class BH tool
+    class DA warn
 classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
 classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
 classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
@@ -78,6 +89,25 @@ BloodHound visualizes these relationships as attack graphs from any compromised 
 - **Enable Protected Users group** for privileged accounts; enforce MFA for all admin authentication.
 - **Monitor** Event ID 4769 (Kerberoasting), 4662 (replication), and 4624 anomalous logons.
 - Follow [Microsoft's AD security baseline](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/best-practices-for-securing-active-directory).
+
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "BloodHound first"
+    Run SharpHound before manual enum — paths to DA save hours of guessing.
+
+!!! tip "Low-priv is enough"
+    Domain user creds unlock Kerberoast, ACL abuse, and LLMNR poisoning.
+
+!!! tip "Tier 0 focus"
+    Document paths to Domain Admins, not every local admin on workstations.
+
+!!! warning "Snapshot before DCSync"
+    Credential dumps are destructive evidence — get written approval.
+
+!!! tip "Clean up artifacts"
+    Remove created SPNs, accounts, and scheduled tasks before engagement ends.
 
 ## Testing Methodology
 

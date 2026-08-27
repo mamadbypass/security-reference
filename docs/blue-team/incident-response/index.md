@@ -78,6 +78,25 @@ IR teams balance **speed** (stop bleeding) with **forensic integrity** (chain of
 - **Track MTTR metrics** — Containment time, recovery time, repeat incident rate.
 - Follow [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final).
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Contain before eradicate"
+    Isolate host, disable account, block IOC — in that order.
+
+!!! tip "Preserve volatile data"
+    Memory and netstat before reboot — order matters.
+
+!!! tip "Comms template"
+    Pre-written stakeholder updates reduce panic during P1.
+
+!!! tip "Don't wipe early"
+    Forensics needs disk — image before rebuild.
+
+!!! tip "30-day watch"
+    Re-compromise often follows weak eradication — extend monitoring.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

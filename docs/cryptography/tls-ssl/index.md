@@ -68,6 +68,25 @@ Document findings per endpoint; CDN-fronted sites may show different configs tha
 - Enable OCSP stapling; use CA/Browser Forum baseline requirements.
 - Align CDN, load balancer, and origin TLS policies; scan continuously with sslyze or Mozilla SSL Config Generator.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "testssl.sh full"
+    `testssl.sh --severity HIGH target:443` for actionable output.
+
+!!! tip "Legacy clients"
+    Old Java/Android may force TLS 1.0 — document business need.
+
+!!! tip "Cert name mismatch"
+    SAN omissions break more than expired certs in practice.
+
+!!! tip "HSTS preload"
+    Missing HSTS on apex enables sslstrip in captive portals.
+
+!!! tip "Internal CAs"
+    Corporate MITM proxies — distinguish misconfig from intentional inspection.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

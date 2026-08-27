@@ -68,6 +68,25 @@ Researcher perspective: report malicious packages to registries; publish IOCs re
 - Disable arbitrary post-install scripts in CI sandboxes where possible.
 - Adopt **SLSA** levels incrementally; monitor CISA guidance on supply chain security.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "SBOM on release"
+    syft + grype in pipeline — block on critical CVEs.
+
+!!! tip "Typosquat watch"
+    Monitor npm/PyPI names similar to internal packages.
+
+!!! tip "cosign verify"
+    Enforce signature verification in admission controller.
+
+!!! tip "Dependency confusion"
+    Private package names claimed on public registries — namespace packages.
+
+!!! tip "Pin digests"
+    Image tags move — use `@sha256:` in production manifests.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -72,6 +72,25 @@ High-value targets: service accounts with weak passwords, accounts with `Generic
 - **Audit SPN registrations** — Remove stale SPNs from decommissioned services.
 - **Deploy honeypot SPN accounts** — Canary SPNs that alert on any TGS request.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Target high-value SPNs"
+    SQL, backup, and legacy service accounts often have weak passwords.
+
+!!! tip "RC4 tickets crack faster"
+    Request RC4 enctype when possible — AES tickets are slower to crack.
+
+!!! tip "Rubeus automation"
+    `Rubeus.exe kerberoast /outfile:hashes.txt` from any domain user session.
+
+!!! warning "Don't spray cracked creds"
+    Validate one account, then report — password spraying risks lockouts.
+
+!!! tip "Recommend gMSA"
+    Group Managed Service Accounts eliminate roastable static passwords.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

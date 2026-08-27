@@ -112,6 +112,25 @@ Historical bypasses used clobbering to override sanitizer config via `id="allowe
 
 - Static analysis for global lookups; dynamic tests injecting clobber HTML in QA.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Clobber globals"
+    `<a id=config href=https://evil.com>` overrides `window.config`.
+
+!!! tip "Form clobbering"
+    Named inputs clobber `form.element` references in legacy JS.
+
+!!! tip "Script gadgets"
+    Find sinks reading clobbered variables in third-party scripts.
+
+!!! tip "DOMPurify config"
+    Misconfigured allow-lists may permit `id`/`name` attributes.
+
+!!! tip "Combine with HTML injection"
+    DOM clobbering often needs some HTML injection primitive first.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

@@ -67,6 +67,25 @@ Document IoCs: IPs, domains, URIs, user-agents, certificate serials.
 - TLS inspection on corporate proxies with privacy policy compliance.
 - Regular PCAP exercises in IR tabletop scenarios.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Zeek for scale"
+    Wireshark for detail, Zeek for enterprise PCAP volume.
+
+!!! tip "Beacon detection"
+    Regular interval connections — plot time delta in spreadsheet.
+
+!!! tip "JA3/JA3S"
+    TLS fingerprint survives IP rotation.
+
+!!! tip "DNS exfil"
+    Long TXT queries and rare domains in PCAP.
+
+!!! tip "Privacy minimization"
+    Redact unrelated user traffic in shared PCAP extracts.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

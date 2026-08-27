@@ -127,6 +127,25 @@ Malicious key in merge → prototype polluted → later object access reads atta
 
 - Audit client bundles for vulnerable merge helpers; pin patched versions.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "JSON __proto__"
+    Send `{"__proto__": {"isAdmin": true}}` on every JSON endpoint.
+
+!!! tip "Query string pollution"
+    `?__proto__[isAdmin]=true` works on some Node parsers.
+
+!!! tip "Client + server"
+    Pollute in browser for DOM XSS gadgets; pollute server for auth bypass.
+
+!!! tip "ppmap scanner"
+    Run ppmap against Node apps after mapping routes.
+
+!!! tip "Check merge libraries"
+    lodash `merge`, jQuery `extend`, recursive assign — grep source for usage.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

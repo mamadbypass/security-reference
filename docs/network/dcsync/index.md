@@ -74,6 +74,25 @@ DCSync dumps **all domain password hashes**, enabling Golden Ticket creation, Pa
 - **Use Protected Users** for admin accounts — Prevents NTLM and unconstrained delegation abuse.
 - **Regular BloodHound ACL audits** — Find and remove unintended replication rights.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Rights check first"
+    BloodHound shows who can DCSync — don't guess replication ACLs.
+
+!!! tip "Single account dump"
+    Start with `secretsdump -just-dc-user krbtgt` before full domain export.
+
+!!! tip "Golden ticket path"
+    krbtgt hash enables Golden Ticket — document impact clearly.
+
+!!! tip "Protected Users"
+    DA in Protected Users blocks NTLM — plan auth method accordingly.
+
+!!! warning "Secure hash handling"
+    Encrypt dumps at rest and delete after test.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.

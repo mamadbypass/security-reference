@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from diagrams import render_diagram_block  # noqa: E402
 from methodologies import render_methodology_block  # noqa: E402
+from tips import render_tips_block  # noqa: E402
 from tool_links import format_tool_row, format_tools_guide_tip  # noqa: E402
 from vuln_content import enrich_meta  # noqa: E402
 
@@ -1335,6 +1336,10 @@ def render_page(rel_path: str, meta: dict) -> str:
 
     if meta.get("defense"):
         lines += ["## Defense & Mitigation", "", meta["defense"].strip(), ""]
+
+    tips_block = render_tips_block(rel_path)
+    if tips_block:
+        lines.append(tips_block)
 
     if meta.get("commands"):
         lines += ["## Quick Commands", ""]

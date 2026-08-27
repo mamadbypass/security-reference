@@ -68,6 +68,25 @@ Combine passive sources (crt.sh, SecurityTrails) with active probing for complet
 - Automate drift detection on IaC and firewall rules alongside application diffs.
 - Document which assets are in scope so unauthorized new hosts are caught quickly.
 
+## Pro Tips
+
+Practical advice from real engagements — use these to test faster and report better.
+
+!!! tip "Baseline release"
+    Export endpoints and OpenAPI before each deploy.
+
+!!! tip "New params only"
+    Diff highlights new attack surface — prioritize manual test.
+
+!!! tip "Auth regression"
+    Removed middleware on old routes — common on refactors.
+
+!!! tip "nuclei on delta"
+    Scan only new URLs — faster and less noisy.
+
+!!! tip "Changelog correlation"
+    Map security-relevant commits to endpoint diff.
+
 ## Testing Methodology
 
 Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
