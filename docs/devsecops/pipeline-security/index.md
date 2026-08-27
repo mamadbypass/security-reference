@@ -2,6 +2,21 @@
 
 Secure build pipelines against secret leakage and supply chain attacks.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    CODE[Push code] --> CI[CI pipeline]
+    CI --> SAST[SAST scan]
+    CI --> DEPS[Dependency scan]
+    SAST & DEPS --> GATE[Security gate]
+    GATE --> DEPLOY[Deploy or block]
+```
+
+</div>
+
 ## How It Works
 
 **CI/CD pipelines** build, test, and deploy software with access to source code, cloud credentials, signing keys, and production deploy triggers. Compromise of a pipeline job (malicious PR, stolen `GITHUB_TOKEN`, poisoned action) equals compromise of everything the pipeline can touch.

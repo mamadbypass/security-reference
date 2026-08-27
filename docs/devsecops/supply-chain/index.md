@@ -2,6 +2,20 @@
 
 Protect software dependencies and build integrity.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    DEP[Dependencies] --> SBOM[syft SBOM]
+    SBOM --> VULN[Known CVEs]
+    VULN --> SIGN[cosign verify]
+    SIGN --> TRUST[Trusted artifact]
+```
+
+</div>
+
 ## How It Works
 
 **Software supply chain** attacks compromise dependencies, build tools, or distribution channels so malicious code reaches downstream users. Examples include npm/PyPI typosquatting, compromised maintainer accounts, SolarWinds-style build injection, and unsigned container images.

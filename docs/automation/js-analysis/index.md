@@ -2,6 +2,19 @@
 
 Extract endpoints, secrets, and logic from client-side code.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    JS[JS bundles] --> LF[linkfinder / katana]
+    LF --> API[API routes & secrets]
+    API --> NU[nuclei scan]
+```
+
+</div>
+
 ## How It Works
 
 Modern web apps ship large **JavaScript bundles** (webpack, Vite, Next.js) that contain API routes, internal admin paths, GraphQL queries, AWS keys, and business logic. Source maps—often left on production—reconstruct original TypeScript files.

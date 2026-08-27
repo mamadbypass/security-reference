@@ -2,6 +2,20 @@
 
 Exploit weak JSON Web Token implementations.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    JWT[JWT token] --> ALG{alg=none / HS confusion?}
+    ALG -->|weak| FORGE[Forged token]
+    FORGE --> ACCESS[Privileged access]
+    JWT --> EXP[Expired? / missing aud]
+```
+
+</div>
+
 ## How It Works
 
 JSON Web Tokens (JWTs) are compact, signed (or MAC'd) claims objects, typically `header.payload.signature` in Base64url. The header declares `alg` (HS256, RS256, etc.); the payload holds claims like `sub`, `role`, and `exp`. Servers verify integrity using a shared secret (HMAC) or public key (RSA/ECDSA).

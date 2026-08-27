@@ -2,6 +2,21 @@
 
 Build detections mapped to MITRE ATT&CK techniques.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    LOGS[Log sources] --> NORM[Normalize]
+    NORM --> RULE[Sigma / SPL rules]
+    RULE --> SIEM[SIEM alerts]
+    SIEM --> TUNE[Tune false positives]
+    TUNE --> ATOMIC[Validate with Atomic Red Team]
+```
+
+</div>
+
 ## How It Works
 
 Detection engineering is the discipline of building **reliable, actionable security detections** mapped to adversary behaviors (MITRE ATT&CK). The lifecycle:

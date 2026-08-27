@@ -2,6 +2,19 @@
 
 Phone and in-person social engineering with strict authorization.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    PRE[Build pretext] --> CALL[Phone / in-person]
+    CALL --> TRUST[Establish trust]
+    TRUST --> INFO[Sensitive info disclosed]
+```
+
+</div>
+
 ## How It Works
 
 **Pretexting** builds a fabricated scenario (IT support, vendor, auditor) to manipulate people into revealing information or performing actions. **Vishing** applies this via phone; **in-person** pretexting tests physical security and help desk procedures.

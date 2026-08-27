@@ -2,6 +2,19 @@
 
 Dynamic instrumentation for mobile runtime manipulation.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    APP[Mobile app] --> FRIDA[Frida hook]
+    FRIDA --> BYPASS[SSL pin / root detect bypass]
+    FRIDA --> LOG[Log crypto & API calls]
+```
+
+</div>
+
 ## How It Works
 
 **Frida** is a dynamic instrumentation framework that injects a JavaScript runtime into running processes. On mobile, `frida-server` runs on the device and exposes an API to hook functions, replace return values, and inspect memory at runtime—without repackaging the app.

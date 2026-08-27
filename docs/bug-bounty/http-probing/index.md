@@ -2,6 +2,22 @@
 
 Identify live web services, technologies, and response behaviors.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    HOSTS[Host list] --> HX[httpx]
+    HX --> SC[Status codes]
+    HX --> TT[Page titles]
+    HX --> TD[Tech detect]
+    SC & TT & TD --> LIVE[Live web map]
+    LIVE --> NU[nuclei templates]
+```
+
+</div>
+
 ## How It Works
 
 HTTP probing determines which discovered hosts serve **live web applications** and collects metadata for prioritization: HTTP status codes, page titles, redirect chains, TLS certificates, response sizes, and technology fingerprints.

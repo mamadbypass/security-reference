@@ -2,6 +2,19 @@
 
 Validate network segmentation and firewall rule effectiveness.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    ZONE[DMZ] -->|allowed port| INT[Internal zone]
+    PROBE[Probe rules] --> GAP[Segmentation gaps]
+    GAP --> PIVOT[Lateral pivot]
+```
+
+</div>
+
 ## How It Works
 
 Firewall and network segmentation testing validates that **security zones** are properly isolated and that firewall rules enforce least-privilege access. Organizations define zones such as:

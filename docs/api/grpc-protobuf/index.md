@@ -2,6 +2,20 @@
 
 Test gRPC services and protobuf-encoded APIs.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    PB[Protobuf service] --> DECODE[Decode / grpcurl]
+    DECODE --> METHODS[List RPC methods]
+    METHODS --> AUTH{Auth on each RPC?}
+    AUTH -->|no| ABUSE[Sensitive operations]
+```
+
+</div>
+
 ## How It Works
 
 gRPC uses HTTP/2 with Protocol Buffers (protobuf) for compact binary messages. Services expose RPC methods (`/package.Service/Method`) instead of REST paths. **gRPC server reflection** allows clients to list services and message types at runtime—similar to GraphQL introspection. Many internal microservices speak gRPC on ports like 50051, sometimes exposed through gRPC-Web, Envoy transcoding, or misconfigured load balancers.

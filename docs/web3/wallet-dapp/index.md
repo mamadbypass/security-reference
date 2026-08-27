@@ -2,6 +2,20 @@
 
 Test wallet connectors and decentralized application frontends.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    USER[User wallet] --> DAPP[dApp UI]
+    DAPP --> TX[Sign transaction]
+    TX --> PHISH{Malicious approval?}
+    PHISH -->|yes| DRAIN[Token drain]
+```
+
+</div>
+
 ## How It Works
 
 **Wallets** (MetaMask, Rabby, hardware wallets) sign transactions and messages. **dApp frontends** request signatures via `eth_sendTransaction` or `personal_sign`. Users often approve malicious **token approvals**, **permit signatures**, or transactions to attacker contracts without reading hex calldata.

@@ -2,6 +2,21 @@
 
 Extract and crack service ticket hashes offline.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    USER[Any domain user] --> TGS[Request service ticket]
+    TGS --> HASH[RC4 hash offline]
+    HASH --> CRACK[hashcat]
+    CRACK --> SVC[Service account creds]
+    SVC --> PRIV[Privilege escalation]
+```
+
+</div>
+
 ## How It Works
 
 Kerberoasting exploits how Kerberos issues **Ticket Granting Service (TGS) tickets** for accounts with **Service Principal Names (SPNs)**. When a domain user requests access to a service (e.g., MSSQL, HTTP, CIFS), the DC returns a TGS ticket encrypted with the **service account's password hash**.

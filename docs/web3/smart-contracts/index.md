@@ -2,6 +2,20 @@
 
 Review Solidity and EVM contracts for common vulnerabilities.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    SOL[Solidity contract] --> SLI[slither / mythril]
+    SLI --> BUG[Reentrancy / overflow]
+    BUG --> FUZZ[echidna / foundry fuzz]
+    FUZZ --> REPORT[Bug bounty report]
+```
+
+</div>
+
 ## How It Works
 
 **Smart contracts** are immutable (or upgradeable) programs on blockchains—primarily EVM (Solidity) and Solana (Rust). They hold tokens, enforce DeFi logic, and govern DAOs. Bugs cause direct financial loss with no recourse: reentrancy, integer overflow (pre-0.8), access control failures, oracle manipulation, and flash loan attacks.

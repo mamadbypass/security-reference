@@ -2,6 +2,23 @@
 
 Discover subdomains and expand the attack surface.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    A[Root Domain] --> P[Passive Enum]
+    A --> B[Brute Force]
+    P --> CT[crt.sh / CT logs]
+    P --> API[DNS APIs]
+    B --> WL[Wordlists]
+    CT & API & WL --> R[Resolve with dnsx]
+    R --> V[Validate live subs]
+```
+
+</div>
+
 ## How It Works
 
 Subdomain enumeration discovers hostnames under a root domain (`*.target.com`) that expand the attack surface beyond the primary website. Hostnames are found through multiple channels:

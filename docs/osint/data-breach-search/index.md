@@ -2,6 +2,19 @@
 
 Check for credential exposure in breach datasets.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    EMAIL[Email / domain] --> HIBP[HIBP API]
+    HIBP --> EXP[Exposed in breach]
+    EXP --> DEFEND[Force password reset]
+```
+
+</div>
+
 ## How It Works
 
 **Data breach datasets** aggregate credentials and PII from past compromises, sold or leaked on criminal forums and indexed by services like Have I Been Pwned. Security teams check whether employee or customer emails appear in breaches to drive password resets and MFA adoption.

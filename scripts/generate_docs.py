@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from diagrams import render_diagram_block  # noqa: E402
 from tool_links import format_tool_row, format_tools_guide_tip  # noqa: E402
 from vuln_content import enrich_meta  # noqa: E402
 
@@ -1320,6 +1321,10 @@ javascript:alert(1)
 
 def render_page(rel_path: str, meta: dict) -> str:
     lines = [f"# {meta['title']}", "", meta["description"], ""]
+
+    diagram = render_diagram_block(rel_path)
+    if diagram:
+        lines.append(diagram)
 
     if meta.get("how_it_works"):
         lines += ["## How It Works", "", meta["how_it_works"].strip(), ""]

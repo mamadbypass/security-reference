@@ -2,6 +2,19 @@
 
 Proactively search for adversary activity.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    HYP[Hypothesis] --> DATA[Query endpoint / SIEM]
+    DATA --> PATTERN[Anomaly pattern]
+    PATTERN --> IOC[New IOC / detection rule]
+```
+
+</div>
+
 ## How It Works
 
 Threat hunting is **proactive, hypothesis-driven search** for adversary activity that evades automated detections. Unlike alert-driven SOC work, hunters start with questions:

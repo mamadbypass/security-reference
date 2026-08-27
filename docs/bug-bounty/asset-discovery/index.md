@@ -2,6 +2,23 @@
 
 Map all in-scope assets including APIs, mobile backends, and cloud resources.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    SUB[Subdomains] --> ASN[ASN / IP ranges]
+    ASN --> PORT[Port scan]
+    PORT --> HTTP[HTTP probe]
+    HTTP --> CRAWL[katana crawl]
+    CRAWL --> API[API endpoints]
+    CRAWL --> STG[Staging / dev assets]
+    API & STG --> INV[Asset inventory]
+```
+
+</div>
+
 ## How It Works
 
 Asset discovery goes beyond subdomain lists to build a **complete map of in-scope resources**: web applications, APIs, mobile backends, cloud storage, IP ranges, ASN allocations, and third-party integrations.

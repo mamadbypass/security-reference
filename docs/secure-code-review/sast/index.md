@@ -2,6 +2,19 @@
 
 Combine static analysis with manual review for vulnerability discovery.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    SRC[Source code] --> SEM[semgrep / CodeQL]
+    SEM --> FIND[Security findings]
+    FIND --> TRIAGE[Dev triage & fix]
+```
+
+</div>
+
 ## How It Works
 
 **SAST** (Static Application Security Testing) analyzes source or bytecode without execution to find patterns matching vulnerabilities—SQL injection sinks, XSS, hardcoded secrets, weak crypto. Tools include Semgrep, CodeQL, SonarQube, and language-specific analyzers.

@@ -2,6 +2,19 @@
 
 Manage program scope and asset tracking.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    PLAT[H1 / BC / Intigriti] --> BB[bbscope export]
+    BB --> LIST[In-scope asset list]
+    LIST --> RECON[Feed into recon pipeline]
+```
+
+</div>
+
 ## How It Works
 
 Bug bounty **scope** defines which domains, apps, and IP ranges researchers may test and what is forbidden (DoS, social engineering, out-of-scope subsidiaries). Programs publish scope on HackerOne, Bugcrowd, Intigriti, or private portals—often in inconsistent formats.

@@ -2,6 +2,20 @@
 
 Find deprecated API versions with weaker security controls.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    V1[/api/v1 deprecated] --> OLD[Weak auth / debug]
+    V2[/api/v2 current] --> NEW[Hardened]
+    A[Attacker] --> V1
+    OLD --> BYPASS[Bypass v2 controls]
+```
+
+</div>
+
 ## How It Works
 
 APIs evolve through versioned paths (`/v1/`, `/v2/`), headers (`Accept-Version`, `X-Api-Version`), query parameters, or separate hostnames (`api-old.example.com`). Teams frequently ship stricter auth, input validation, and rate limiting on new versions while **legacy versions remain online** for mobile apps, partners, or internal tools.

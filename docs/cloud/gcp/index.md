@@ -2,6 +2,19 @@
 
 Assess Google Cloud Platform IAM and storage security.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    SCAN[gcp_scanner] --> IAM[GCP IAM bindings]
+    SCAN --> BUCKET[Open GCS buckets]
+    IAM & BUCKET --> PERSIST[Project takeover]
+```
+
+</div>
+
 ## How It Works
 
 Google Cloud Platform (GCP) organizes resources in a hierarchy: **Organization → Folders → Projects**. IAM bindings attach roles to principals at any level with inheritance.

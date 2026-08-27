@@ -2,6 +2,20 @@
 
 Pollute JavaScript object prototypes for XSS and RCE.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    JSON[__proto__ payload] --> MERGE[Object merge]
+    MERGE --> POLL[Prototype polluted]
+    POLL --> AUTH[Bypass auth checks]
+    POLL --> RCE[Template / RCE gadgets]
+```
+
+</div>
+
 ## How It Works
 
 Prototype pollution is a JavaScript vulnerability where attackers modify `Object.prototype` (or other builtins) by injecting properties through unsafe object merge, extend, or clone operations.

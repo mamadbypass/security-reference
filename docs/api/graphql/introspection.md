@@ -2,6 +2,19 @@
 
 Enumerate schema when introspection is enabled.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    A[Attacker] -->|__schema query| GQL[GraphQL API]
+    GQL --> TYPES[Types & mutations exposed]
+    TYPES --> ATTACK[Target sensitive resolvers]
+```
+
+</div>
+
 ## How It Works
 
 GraphQL introspection is a built-in meta-query capability defined in the GraphQL specification. Clients can query special fields `__schema` and `__type` to discover all types, fields, arguments, enums, interfaces, and directives the server supports. A standard introspection query recursively walks `queryType`, `mutationType`, and `subscriptionType`, exporting names like `adminDeleteUser`, `internalApiKey`, or `ssn` that were never documented publicly.

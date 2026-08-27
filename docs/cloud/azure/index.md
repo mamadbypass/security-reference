@@ -2,6 +2,20 @@
 
 Assess Microsoft Azure identity and resource misconfigurations.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    ROAD[ROADtools enum] --> AAD[Azure AD paths]
+    AAD --> SP[Over-privileged SPs]
+    AAD --> STORAGE[Storage keys exposed]
+    SP & STORAGE --> TENANT[Tenant compromise]
+```
+
+</div>
+
 ## How It Works
 
 Microsoft Azure security spans **Azure Active Directory (Entra ID)**, subscriptions, resource groups, and platform services. Key attack surfaces:

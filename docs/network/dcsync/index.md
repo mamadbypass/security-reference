@@ -2,6 +2,19 @@
 
 Replicate directory credentials from domain controllers.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    PRIV[Replicating privileges] --> DC[Domain Controller]
+    DC --> DUMP[secretsdump all hashes]
+    DUMP --> GOLD[Golden ticket / pass-the-hash]
+```
+
+</div>
+
 ## How It Works
 
 DCSync is a technique that abuses the **Directory Replication** protocol (MS-DRSR) to impersonate a Domain Controller and **replicate password hashes** from a real DC without running code on it. The attacker requests replication of user objects (including `unicodePwd` and `ntlmhash` attributes) as if they were a legitimate DC.

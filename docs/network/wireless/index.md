@@ -2,6 +2,19 @@
 
 Assess Wi-Fi networks and rogue access point risks.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    CAP[Capture handshake] --> CRACK[aircrack-ng]
+    EVIL[Evil twin AP] --> MITM[bettercap MITM]
+    CRACK & MITM --> NET[Network access]
+```
+
+</div>
+
 ## How It Works
 
 Wireless security assessment evaluates **Wi-Fi networks** (802.11) for encryption weaknesses, authentication bypass, and segmentation failures. Networks operate in **managed mode** (clients connect to access points) or **ad hoc**.

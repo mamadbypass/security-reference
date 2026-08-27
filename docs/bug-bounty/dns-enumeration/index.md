@@ -2,6 +2,24 @@
 
 Extract DNS records, zone transfer opportunities, and mail infrastructure.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    D[Domain] --> REC[Record types]
+    REC --> A[A/AAAA]
+    REC --> MX[MX]
+    REC --> TXT[TXT/SPF]
+    REC --> NS[NS]
+    REC --> AXFR{AXFR open?}
+    AXFR -->|yes| ZONE[Zone transfer dump]
+    A & MX & TXT & NS --> MAP[DNS map]
+```
+
+</div>
+
 ## How It Works
 
 DNS enumeration extracts the **naming and routing infrastructure** behind a domain: A/AAAA records (IPs), CNAME aliases (often to CDNs or cloud), MX (mail servers), NS (authoritative nameservers), TXT (SPF, DKIM, DMARC, domain verification tokens), and SRV records.

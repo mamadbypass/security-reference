@@ -2,6 +2,18 @@
 
 Execute OS commands through vulnerable input handlers.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    IN[; | && payload] --> SHELL[OS shell invoked]
+    SHELL --> EXEC[id, cat /etc/passwd]
+```
+
+</div>
+
 ## How It Works
 
 Command injection executes operating system shell commands when applications invoke system utilities with unsanitized user input—`os.system()`, `exec()`, `subprocess` with `shell=True`, PHP `system()`, Java `Runtime.exec()` with string concatenation.

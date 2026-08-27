@@ -2,6 +2,21 @@
 
 Local and remote file inclusion testing.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    PARAM[File parameter] --> LFI{Local or remote?}
+    LFI -->|local| READ[/etc/passwd, configs]
+    LFI -->|remote| RFI[Host malicious PHP]
+    READ --> ESC[Log poison / RCE chain]
+    RFI --> SHELL[Web shell]
+```
+
+</div>
+
 ## How It Works
 
 Local File Inclusion (LFI) and Remote File Inclusion (RFI) arise when applications include or read files based on user-controlled paths without strict validation.

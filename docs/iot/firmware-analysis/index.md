@@ -2,6 +2,20 @@
 
 Extract and analyze embedded device firmware.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    FW[Firmware blob] --> BW[binwalk extract]
+    BW --> FS[SquashFS / rootfs]
+    FS --> GH[Ghidra reverse]
+    GH --> VULN[Hardcoded creds / backdoors]
+```
+
+</div>
+
 ## How It Works
 
 **IoT firmware** is the operating system and application stack on embedded devices—routers, cameras, industrial controllers. Firmware images may be downloaded from vendor sites, extracted via UART, or intercepted during OTA updates.

@@ -2,6 +2,21 @@
 
 Force server-side requests to internal and cloud metadata endpoints.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    A[Attacker] -->|crafted URL| APP[Server-side fetch]
+    APP --> INT[Internal services]
+    APP --> META[Cloud metadata 169.254.169.254]
+    APP --> OOB[OOB via interactsh]
+    INT & META & OOB --> IMPACT[Data / pivot]
+```
+
+</div>
+
 ## How It Works
 
 Server-Side Request Forgery (SSRF) abuses server-side functionality that fetches or connects to URLs supplied by users. The attacker's goal is to make the **server** request resources the attacker cannot reach directly—internal services, cloud metadata endpoints, or restricted admin interfaces.

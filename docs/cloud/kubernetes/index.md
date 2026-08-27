@@ -2,6 +2,19 @@
 
 Assess cluster RBAC, secrets, and workload isolation.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    KUBE[kube-hunter / kubectl] --> RBAC[Weak RBAC]
+    KUBE --> POD[Privileged pods]
+    RBAC & POD --> CLUSTER[Cluster admin]
+```
+
+</div>
+
 ## How It Works
 
 Kubernetes orchestrates containerized workloads across clusters of nodes. Security boundaries include:

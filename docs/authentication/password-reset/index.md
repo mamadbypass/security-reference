@@ -2,6 +2,19 @@
 
 Exploit weak password reset and account recovery flows.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    REQ[Reset request] --> TOKEN[Reset token]
+    TOKEN --> LEAK{Predictable / leaked?}
+    LEAK -->|yes| HIJACK[Account takeover]
+```
+
+</div>
+
 ## How It Works
 
 Password reset flows typically: (1) user submits an email, (2) server generates a one-time token and emails a link, (3) user clicks the link and sets a new password. Weaknesses appear at every step: **predictable tokens** (timestamp, user ID, weak PRNG), **tokens that never expire or are reusable**, **user enumeration** via different responses, **Host header poisoning** that embeds attacker domains in reset links, **parameter tampering** (`email`, `userId`, `account`), and **race conditions** between token validation and password update.

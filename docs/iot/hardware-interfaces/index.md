@@ -2,6 +2,19 @@
 
 Interact with UART, JTAG, and SPI on embedded devices.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    CHIP[IoT device] --> UART[UART / JTAG]
+    UART --> SHELL[Serial console]
+    SHELL --> FLASH[Dump firmware]
+```
+
+</div>
+
 ## How It Works
 
 Embedded devices expose **hardware debug interfaces**—UART, JTAG, SWD, SPI, I2C—that provide direct memory access, firmware download, and breakpoint debugging when physically connected. Manufacturers sometimes leave pads unpopulated or protect with fuses, but many consumer devices expose full shells over UART.

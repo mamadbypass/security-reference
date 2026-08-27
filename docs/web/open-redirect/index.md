@@ -2,6 +2,19 @@
 
 Abuse redirect parameters for phishing and OAuth token theft.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    LINK[redirect?url=] --> APP[App redirects]
+    APP --> PHISH[Attacker domain]
+    PHISH --> STEAL[Credential harvest]
+```
+
+</div>
+
 ## How It Works
 
 Open redirects occur when an application redirects users to arbitrary URLs based on unvalidated query parameters (`url`, `next`, `return`, `redirect`, `r`). The browser trusts the initial domain in the link, but the user ends up on an attacker-controlled site.

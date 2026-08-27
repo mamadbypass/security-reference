@@ -2,6 +2,19 @@
 
 Identify weak algorithms, modes, and key management issues.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    APP[Application crypto] --> WEAK[Weak algorithms / keys]
+    WEAK --> DECRYPT[Decrypt traffic / data]
+    WEAK --> FORGE[Forge tokens / signatures]
+```
+
+</div>
+
 ## How It Works
 
 Applications misuse cryptography in predictable ways: **weak algorithms** (MD5, SHA1 for passwords, DES, RC4), **ECB mode** leaking block patterns, **static IVs** enabling replay, **hardcoded keys** in source, and **insufficient entropy** in tokens.

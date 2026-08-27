@@ -2,6 +2,25 @@
 
 Information gathering and target mapping for bug bounty programs.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    subgraph Sources["Passive Sources"]
+        CT[CT Logs] --> E[Enumerate]
+        DNS[DNS/WHOIS] --> E
+        OSINT[OSINT APIs] --> E
+    end
+    E --> T{Tools}
+    T --> SF[subfinder] & AM[amass] & GAU[gau]
+    SF & AM & GAU --> LIVE
+    LIVE --> NU --> R[Findings Report]
+```
+
+</div>
+
 ## How It Works
 
 Reconnaissance is the systematic process of mapping a target's attack surface before vulnerability testing begins. In bug bounty programs, recon combines **passive intelligence** (data already published by third parties) with **active probing** (direct interaction with in-scope assets under program rules).

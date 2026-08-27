@@ -2,6 +2,20 @@
 
 Exploit overly permissive cross-origin resource sharing.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    EVIL[evil.com] --> BROWSER[Victim browser]
+    BROWSER -->|Origin: evil.com| API[API with ACAO: *]
+    API --> DATA[Sensitive JSON]
+    DATA --> EVIL
+```
+
+</div>
+
 ## How It Works
 
 Cross-Origin Resource Sharing (CORS) controls whether browsers allow JavaScript on one origin to read responses from another. Misconfigurations let attacker.com's pages fetch sensitive APIs **with the victim's cookies** and read the result—bypassing same-origin policy for data exfiltration.

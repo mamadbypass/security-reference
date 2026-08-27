@@ -2,6 +2,20 @@
 
 Acquire and analyze disk images and memory dumps.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    ACQ[Acquire image] --> HASH[Verify hash]
+    HASH --> VOL[Volatility / Autopsy]
+    VOL --> ART[Artifacts & timelines]
+    ART --> REPORT[Forensic report]
+```
+
+</div>
+
 ## How It Works
 
 **Disk forensics** analyzes filesystem images acquired with write blockers to recover deleted files, registry hives, browser history, and malware persistence. **Memory forensics** examines RAM dumps for running processes, network connections, injected code, and credentials not present on disk.

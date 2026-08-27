@@ -2,6 +2,21 @@
 
 Contain, eradicate, and recover from security incidents.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    DETECT[Detection] --> TRIAGE[Triage severity]
+    TRIAGE --> CONTAIN[Contain host / account]
+    CONTAIN --> ERAD[Eradicate]
+    ERAD --> RECOVER[Restore services]
+    RECOVER --> LESSONS[Post-incident review]
+```
+
+</div>
+
 ## How It Works
 
 Incident response (IR) is the structured process of **detecting, containing, eradicating, and recovering** from security incidents while preserving evidence. NIST SP 800-61 phases:

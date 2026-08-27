@@ -2,6 +2,22 @@
 
 Identify open services and exposed management interfaces.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    H[Live hosts] --> TOP[Top 1000 ports]
+    TOP --> FULL[Full port on targets]
+    FULL --> FP[Service fingerprint]
+    FP --> ADMIN{Admin panels?}
+    ADMIN -->|yes| FLAG[High priority]
+    ADMIN -->|no| LOG[Document services]
+```
+
+</div>
+
 ## How It Works
 
 Port scanning identifies **open TCP/UDP ports** on target hosts, revealing which network services accept connections. Each open port maps to a daemon (HTTP/443, SSH/22, RDP/3389, MySQL/3306) that may contain vulnerabilities or misconfigurations.

@@ -2,6 +2,20 @@
 
 Abuse application workflows beyond technical vulnerabilities.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    FLOW[Normal purchase flow] --> ABUSE[Skip / reorder steps]
+    ABUSE --> NEG[Negative price]
+    ABUSE --> COUP[Coupon stacking]
+    ABUSE --> ROLE[Privilege via workflow]
+```
+
+</div>
+
 ## How It Works
 
 Business logic flaws violate application rules and workflow assumptions rather than breaking technical controls. The code executes "correctly" from a programmer's view but allows abuse of intended process.

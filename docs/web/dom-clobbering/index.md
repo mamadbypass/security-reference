@@ -2,6 +2,19 @@
 
 Overwrite DOM properties using named HTML elements.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    HTML[Named DOM nodes] --> CLOB[Overwrite window.config]
+    CLOB --> GADGET[Gadget in trusted script]
+    GADGET --> XSS[XSS / data leak]
+```
+
+</div>
+
 ## How It Works
 
 DOM clobbering overwrites DOM APIs or global variables using named HTML elements (`id` and `name` attributes) that browsers expose as properties on `window`, `document`, or form elements.

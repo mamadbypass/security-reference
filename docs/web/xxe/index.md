@@ -2,6 +2,20 @@
 
 XML External Entity injection testing.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    XML[Malicious XML] --> PARSER[XML parser]
+    PARSER --> FILE[Local file read]
+    PARSER --> SSRF[SSRF to internal]
+    PARSER --> DOS[Billion laughs DoS]
+```
+
+</div>
+
 ## How It Works
 
 XML External Entity (XXE) attacks abuse XML parsers that process external entity declarations. When a parser resolves external entities, attacker-defined URIs can read local files, perform SSRF, or cause denial of service.

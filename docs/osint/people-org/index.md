@@ -2,6 +2,20 @@
 
 Gather open-source intelligence on people and organizations.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    ORG[Target org] --> TH[theHarvester]
+    ORG --> MAL[Maltego transforms]
+    TH & MAL --> EMAILS[Emails & employees]
+    EMAILS --> PHISH[Phishing / cred spray scope]
+```
+
+</div>
+
 ## How It Works
 
 **OSINT** on people and organizations collects publicly available data—social profiles, job postings, press releases, WHOIS, certificate transparency, GitHub commits, and government filings—to map structure, technology stack, and personnel without touching target systems directly.

@@ -2,6 +2,19 @@
 
 Scan Terraform, CloudFormation, and Kubernetes manifests.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    TF[Terraform / K8s YAML] --> SCAN[checkov / tfsec]
+    SCAN --> MIS[Public SG / open S3]
+    MIS --> FIX[Block merge / remediate]
+```
+
+</div>
+
 ## How It Works
 
 **Infrastructure as Code** (Terraform, CloudFormation, Pulumi, Kubernetes YAML) defines cloud resources declaratively. Misconfigurations—public S3 buckets, open security groups, overly permissive IAM, unencrypted databases—are committed to git and deployed at scale.

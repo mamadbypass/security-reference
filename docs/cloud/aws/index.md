@@ -2,6 +2,20 @@
 
 Assess Amazon Web Services misconfigurations and IAM issues.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    ENUM[Account enum / Pacu] --> IAM[IAM misconfigs]
+    ENUM --> S3[S3 public buckets]
+    ENUM --> META[IMDSv1 metadata]
+    IAM & S3 & META --> COMPROMISE[AWS account compromise]
+```
+
+</div>
+
 ## How It Works
 
 Amazon Web Services (AWS) security testing evaluates **Identity and Access Management (IAM)**, resource misconfigurations, and network exposure across accounts and regions. Core services under review:

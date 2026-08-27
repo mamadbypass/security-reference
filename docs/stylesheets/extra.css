@@ -19,6 +19,25 @@
   --md-default-bg-color: #12121a;
 }
 
+/* ── Mermaid diagrams ─────────────────────────────────── */
+.sr-diagram {
+  background: var(--sr-surface);
+  border: 1px solid rgba(108, 60, 224, 0.15);
+  border-radius: var(--sr-radius);
+  padding: 1.25rem 1rem;
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+}
+
+.sr-diagram .mermaid {
+  display: flex;
+  justify-content: center;
+}
+
+[data-md-color-scheme="slate"] .sr-diagram {
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
 /* ── Typography ─────────────────────────────────────────── */
 .md-typeset h1 {
   font-weight: 700;

@@ -2,6 +2,21 @@
 
 Fingerprint frameworks, CMS platforms, and third-party integrations.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    URL[URLs] --> WW[whatweb / httpx]
+    WW --> STACK[Frameworks & versions]
+    STACK --> CVE[Known CVEs]
+    STACK --> MIS[Misconfig templates]
+    CVE & MIS --> NU[nuclei targeted scan]
+```
+
+</div>
+
 ## How It Works
 
 Technology detection fingerprints the **software stack** behind web applications: web servers (nginx, IIS), frameworks (Django, Rails, Spring), CMS platforms (WordPress, Drupal), JavaScript libraries, CDNs, WAFs, analytics, and payment processors.

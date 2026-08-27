@@ -2,6 +2,21 @@
 
 Abuse query batching to bypass rate limits and brute force.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+sequenceDiagram
+    participant A as Attacker
+    participant API as GraphQL
+    A->>API: Batch 1000 queries in 1 HTTP request
+    API->>API: Rate limit bypassed
+    API-->>A: Mass data / brute force
+```
+
+</div>
+
 ## How It Works
 
 Many GraphQL servers accept an **array of operations** in a single HTTP POST body, executing them sequentially or in parallel and returning an array of results. Libraries such as Apollo Server enable batching by default in some versions. Similarly, **query aliases** let multiple identical or distinct operations run in one request:

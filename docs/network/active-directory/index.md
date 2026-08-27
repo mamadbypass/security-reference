@@ -2,6 +2,21 @@
 
 Attack and assess Windows domain environments.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    RECON[LDAP enum / BloodHound] --> PATH[Attack paths]
+    PATH --> KERB[Kerberoasting]
+    PATH --> RELAY[NTLM relay]
+    PATH --> ACL[ACL abuse]
+    KERB & RELAY & ACL --> DA[Domain Admin]
+```
+
+</div>
+
 ## How It Works
 
 Active Directory (AD) is Microsoft's centralized identity and access management system for Windows domains. A **domain** contains **users**, **computers**, **groups**, and **Group Policy Objects (GPOs)** stored on **Domain Controllers (DCs)**. Authentication uses **Kerberos** (ticket-based) and **NTLM** (challenge-response); authorization is enforced through **Access Control Lists (ACLs)** on directory objects.

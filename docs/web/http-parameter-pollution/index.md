@@ -2,6 +2,19 @@
 
 Abuse duplicate parameters handled differently by proxies and backends.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    DUP[id=1&id=2] --> FE[Front-end uses first]
+    DUP --> BE[Back-end uses last]
+    FE & BE --> BYPASS[Auth / logic bypass]
+```
+
+</div>
+
 ## How It Works
 
 HTTP Parameter Pollution (HPP) sends duplicate parameters in one request (`?id=1&id=2`) knowing different components parse duplicates inconsistently.

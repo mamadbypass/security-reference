@@ -2,6 +2,19 @@
 
 Frame sensitive actions to trick users into unintended clicks.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    ATT[Attacker page] --> IFRAME[Invisible iframe]
+    IFRAME --> VICTIM[Victim clicks visible button]
+    VICTIM --> ACTION[Hidden action on bank.com]
+```
+
+</div>
+
 ## How It Works
 
 Clickjacking (UI redressing) tricks users into clicking hidden or overlaid elements on a victim site while believing they interact with the attacker's visible UI. The attack typically embeds the target in a transparent `<iframe>` over decoy buttons.

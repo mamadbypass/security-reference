@@ -2,6 +2,19 @@
 
 Find sensitive data exposed through errors, backups, and misconfigurations.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    SRC[Git / .env / backups] --> SCAN[trufflehog / nuclei]
+    SCAN --> SECRETS[API keys & creds]
+    SECRETS --> ABUSE[Account takeover]
+```
+
+</div>
+
 ## How It Works
 
 Information disclosure exposes sensitive data through errors, misconfiguration, excessive API responses, and forgotten assets—not always a CVE-class bug but often high impact for attackers doing recon and chaining findings.

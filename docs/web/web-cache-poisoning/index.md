@@ -2,6 +2,19 @@
 
 Poison shared caches to serve malicious content.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    A[Attacker] -->|unkeyed header/param| CACHE[CDN cache]
+    CACHE --> STORE[Stores poisoned response]
+    STORE --> VICTIM[All users get XSS/redirect]
+```
+
+</div>
+
 ## How It Works
 
 Web cache poisoning stores a malicious response in a shared cache (CDN, reverse proxy) so subsequent users receive attacker-controlled content from the cache key the poisoner triggered.

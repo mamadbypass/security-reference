@@ -2,6 +2,19 @@
 
 Test mobile deep link handlers for auth bypass and XSS.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    LINK[myapp://path] --> APP[App handler]
+    APP --> AUTH{Validate intent?}
+    AUTH -->|no| XSS[WebView XSS / IDOR]
+```
+
+</div>
+
 ## How It Works
 
 **Deep links** route users into specific app screens via custom URL schemes (`myapp://path`) or **App Links / Universal Links** (`https://domain/path`) verified by `assetlinks.json` (Android) or `apple-app-site-association` (iOS).

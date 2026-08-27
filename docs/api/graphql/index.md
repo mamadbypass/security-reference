@@ -2,6 +2,22 @@
 
 Test GraphQL APIs for introspection, batching, and authorization flaws.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    Q[GraphQL query] --> API[API endpoint]
+    API --> INTRO{Introspection?}
+    INTRO -->|enabled| SCHEMA[Full schema dump]
+    API --> BATCH[Batching abuse]
+    API --> AUTH{Field-level auth?}
+    AUTH -->|missing| IDOR[Access other users' data]
+```
+
+</div>
+
 ## How It Works
 
 GraphQL exposes a single HTTP endpoint (typically `/graphql`) where clients send declarative queries describing exactly which fields and nested objects they need. Unlike REST, the server resolves a graph of types—`Query`, `Mutation`, and `Subscription`—and fetches only requested fields. This flexibility creates a distinct attack surface:

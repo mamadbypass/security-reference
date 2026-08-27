@@ -2,6 +2,20 @@
 
 Access unauthorized objects by manipulating identifiers.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    AUTH[Authenticated user] --> REQ[Request object by ID]
+    REQ --> APP{Authorization check?}
+    APP -->|missing| LEAK[Other user's data]
+    APP -->|present| OK[Access denied]
+```
+
+</div>
+
 ## How It Works
 
 Insecure Direct Object Reference (IDOR) is an access control failure where the application exposes object identifiers (IDs, filenames, tokens) in requests but fails to verify that the authenticated user is authorized to access the referenced object.

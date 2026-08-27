@@ -2,6 +2,20 @@
 
 Graph-based Active Directory attack path analysis.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    SH[SharpHound collect] --> BH[BloodHound ingest]
+    BH --> GRAPH[Attack path graph]
+    GRAPH --> PATH[Shortest path to DA]
+    PATH --> EXEC[Execute AD attack]
+```
+
+</div>
+
 ## How It Works
 
 BloodHound is a graph analysis tool that maps **Active Directory attack paths**. Collectors (`SharpHound`, `bloodhound.py`) ingest LDAP, session, ACL, GPO, and trust data into a Neo4j graph database. Nodes represent users, computers, groups, GPOs, and domains; edges represent relationships like **MemberOf**, **HasSession**, **GenericAll**, **AdminTo**, and **CanRDP**.

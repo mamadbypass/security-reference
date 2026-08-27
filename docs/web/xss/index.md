@@ -2,6 +2,23 @@
 
 Reflected, stored, and DOM-based XSS testing.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    IN[Malicious input] --> STORED{Stored or reflected?}
+    STORED -->|stored| DB[(Database)]
+    STORED -->|reflected| RESP[HTTP response]
+    DB --> VICTIM[Victim browser]
+    RESP --> VICTIM
+    VICTIM --> JS[Execute attacker JS]
+    JS --> COOK[Steal session / actions]
+```
+
+</div>
+
 ## How It Works
 
 Cross-Site Scripting (XSS) lets attackers inject JavaScript or HTML that executes in another user's browser under the victim site's origin. That origin access enables session theft, account takeover, keylogging, and actions on behalf of the victim.

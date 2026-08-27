@@ -2,6 +2,20 @@
 
 Secure Kubernetes clusters and workloads.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    K8S[Cluster] --> KUBE[kubescape / Falco]
+    KUBE --> MIS[Misconfigs]
+    MIS --> NET[Network policies missing]
+    MIS --> SEC[Secrets in env vars]
+```
+
+</div>
+
 ## How It Works
 
 **Kubernetes** orchestrates containers across nodes with RBAC, admission controllers, network policies, and secrets stored in etcd. Misconfigurations—overly permissive ClusterRoleBindings, default service accounts with API access, secrets in ConfigMaps, missing NetworkPolicies—allow lateral movement and cluster takeover.

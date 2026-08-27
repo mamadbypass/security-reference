@@ -2,6 +2,20 @@
 
 Desynchronize front-end and back-end HTTP parsers.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    FE[Front-end server] --> BE[Back-end server]
+    A[Smuggled request] --> FE
+    FE -->|desync| BE
+    BE --> HIJACK[Poison next user's request]
+```
+
+</div>
+
 ## How It Works
 
 HTTP request smuggling exploits disagreements between front-end (CDN, load balancer, WAF) and back-end (app server) on message boundaries. Attackers craft ambiguous requests so each parser splits headers/body differently—desynchronizing the connection queue.

@@ -2,6 +2,26 @@
 
 Exploit time-of-check to time-of-use flaws.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+sequenceDiagram
+    participant A as Attacker
+    participant S as Server
+    participant DB as Database
+    par Parallel requests
+        A->>S: Transfer $100
+        A->>S: Transfer $100
+    end
+    S->>DB: Check balance once
+    DB-->>S: OK
+    S->>DB: Double spend
+```
+
+</div>
+
 ## How It Works
 
 Race conditions in web applications exploit the gap between **checking** a condition and **using** the result (time-of-check to time-of-use, TOCTOU). Parallel requests can pass a limit check simultaneously before any request completes the state update.

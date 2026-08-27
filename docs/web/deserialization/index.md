@@ -2,6 +2,19 @@
 
 Exploit unsafe object deserialization in web applications.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    SER[Serialized object] --> APP[App unmarshals]
+    APP --> GADGET[Gadget chain]
+    GADGET --> RCE[Remote code execution]
+```
+
+</div>
+
 ## How It Works
 
 Insecure deserialization restores attacker-controlled byte streams or text into runtime objects. If the application trusts serialized data from cookies, hidden fields, message queues, or APIs, gadget chains in the language runtime can lead to arbitrary code execution.

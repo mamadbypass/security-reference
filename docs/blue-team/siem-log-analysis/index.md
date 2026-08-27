@@ -2,6 +2,20 @@
 
 Investigate events using centralized logging.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    INGEST[Log ingestion] --> PARSE[Field extraction]
+    PARSE --> QUERY[Correlation queries]
+    QUERY --> ALERT[Alert triage]
+    ALERT --> ESCALATE[Incident escalation]
+```
+
+</div>
+
 ## How It Works
 
 Security Information and Event Management (SIEM) platforms **aggregate, normalize, and correlate** logs from across the enterprise for detection and investigation. Core capabilities:

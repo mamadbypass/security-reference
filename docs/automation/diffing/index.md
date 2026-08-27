@@ -2,6 +2,20 @@
 
 Monitor target changes for new attack surface.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    V1[Release v1] --> DIFF[Diff endpoints]
+    V2[Release v2] --> DIFF
+    DIFF --> NEW[New attack surface]
+    NEW --> TEST[Security test new code]
+```
+
+</div>
+
 ## How It Works
 
 **Change detection** compares snapshots of targets over time—subdomains, HTTP responses, JavaScript bundles, OpenAPI specs, and DNS records—to surface new attack surface without re-running full manual recon.

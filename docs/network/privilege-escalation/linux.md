@@ -2,6 +2,20 @@
 
 Escalate privileges on Linux systems.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    SHELL[Low priv shell] --> LIN[linPEAS]
+    LIN --> SUDO[SUID / sudo misconfig]
+    LIN --> KERNEL[Kernel exploit]
+    SUDO & KERNEL --> ROOT[root access]
+```
+
+</div>
+
 ## How It Works
 
 Linux privilege escalation gains **root** from an unprivileged shell. Attack surface includes:

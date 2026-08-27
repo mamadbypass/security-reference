@@ -2,6 +2,20 @@
 
 Test real-time channels for auth bypass and injection.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    WS[WebSocket connection] --> MSG[Messages]
+    MSG --> AUTH{Per-message auth?}
+    AUTH -->|no| IDOR[Subscribe to others' channels]
+    AUTH -->|no| INJ[SQL/cmd in message handler]
+```
+
+</div>
+
 ## How It Works
 
 WebSockets provide full-duplex channels over a long-lived connection, often after an HTTP upgrade handshake. Security issues mirror HTTP but are frequently overlooked: weak origin checks, missing auth on messages, injection into handlers, and trust in client-sent event types.

@@ -2,6 +2,20 @@
 
 Inject carriage return and line feed to manipulate HTTP responses.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    CRLF[%0d%0a injected] --> RESP[HTTP response headers]
+    RESP --> SPLIT[Response splitting]
+    SPLIT --> XSS[Reflected XSS]
+    SPLIT --> CACHE[Cache poison]
+```
+
+</div>
+
 ## How It Works
 
 CRLF injection inserts Carriage Return (`%0d`) and Line Feed (`%0a`) characters to terminate HTTP headers or inject new ones. When applications reflect input into response headers (`Location`, `Set-Cookie`, custom headers) without stripping newline characters, attackers perform **HTTP response splitting**.

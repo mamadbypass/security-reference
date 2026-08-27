@@ -2,6 +2,20 @@
 
 Identify threats using structured modeling approaches.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    DFD[Data flow diagram] --> STRIDE[STRIDE per component]
+    STRIDE --> RANK[Risk ranking]
+    RANK --> MIT[Mitigations & tests]
+    MIT --> TRACK[Jira security tasks]
+```
+
+</div>
+
 ## How It Works
 
 **Threat modeling** systematically identifies threats to a system using structured approaches—**STRIDE** (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege), **PASTA**, or **Attack Trees**.

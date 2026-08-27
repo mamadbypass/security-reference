@@ -2,6 +2,20 @@
 
 Assess container images and runtime configurations.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    IMG[Container image] --> TRIVY[trivy scan]
+    TRIVY --> CVE[Known CVEs]
+    RUN[Running container] --> SOCK[Docker socket mount]
+    SOCK --> ESC[Host escape]
+```
+
+</div>
+
 ## How It Works
 
 **Docker** packages applications with dependencies into images run as isolated containers on shared kernels. Security depends on namespace/cgroup isolation, image contents, runtime flags (`--privileged`, volume mounts, capabilities), and daemon configuration.

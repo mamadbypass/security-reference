@@ -2,6 +2,19 @@
 
 Inject template syntax for code execution.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    IN[Template input] --> ENG[Template engine]
+    ENG --> EXEC[Server-side code exec]
+    EXEC --> RCE[Read files / shell]
+```
+
+</div>
+
 ## How It Works
 
 Server-Side Template Injection occurs when user input is embedded into a server-side template engine and interpreted as template syntax rather than static text. Unlike XSS (browser), SSTI executes on the server—often leading to remote code execution.

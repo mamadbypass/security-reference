@@ -2,6 +2,19 @@
 
 Test magic links, OTP, and passkey implementations.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    MAGIC[Magic link / OTP] --> EMAIL[Email channel]
+    EMAIL --> LEAK[Token in referrer/logs]
+    LEAK --> ATO[Account takeover]
+```
+
+</div>
+
 ## How It Works
 
 Passwordless authentication replaces passwords with **magic links** (email URLs with embedded tokens), **OTP codes** (SMS/email/TOTP), or **WebAuthn/FIDO2 passkeys** (public-key cryptography bound to origin and challenge). Each mechanism has distinct risks:

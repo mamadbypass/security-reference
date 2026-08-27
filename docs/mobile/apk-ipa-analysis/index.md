@@ -2,6 +2,20 @@
 
 Static and dynamic analysis of mobile applications.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    APK[APK/IPA] --> JADX[jadx decompile]
+    JADX --> SECRETS[Hardcoded keys]
+    JADX --> API[Hidden API endpoints]
+    SECRETS & API --> TEST[Dynamic test with Frida]
+```
+
+</div>
+
 ## How It Works
 
 Mobile applications ship as **APK** (Android) or **IPA** (iOS) packages containing compiled bytecode, native libraries, resources, and manifest metadata. Attackers and researchers reverse these packages to recover API endpoints, hardcoded secrets, cryptographic keys, and business logic that was never meant to be public.

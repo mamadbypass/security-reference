@@ -2,6 +2,19 @@
 
 Intercept HTTPS from mobile apps with certificate pinning.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+  APP[App with pinning] --> MITM[Proxy blocked]
+  MITM --> FRIDA[Frida ssl-kill-switch]
+  FRIDA --> BURP[Burp intercepts HTTPS]
+```
+
+</div>
+
 ## How It Works
 
 **SSL/TLS certificate pinning** binds an app to specific public keys or certificates instead of trusting the device's CA store. Even if a tester installs Burp's CA on a rooted device, the app rejects the intercepted connection because the proxy certificate does not match the pinned hash.

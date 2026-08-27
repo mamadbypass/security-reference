@@ -2,6 +2,19 @@
 
 Assess transport layer security configuration.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    TLS[TLS config] --> SCAN[testssl.sh / sslyze]
+    SCAN --> WEAK[Weak ciphers / protocols]
+    WEAK --> MITM[Downgrade / MITM]
+```
+
+</div>
+
 ## How It Works
 
 **TLS** negotiates cipher suites, certificates, and key exchange between client and server. Misconfigurations expose **deprecated protocols** (SSLv3, TLS 1.0/1.1), **weak ciphers** (RC4, 3DES, NULL), **certificate problems** (expired, wrong hostname, weak RSA keys), and **missing features** (HSTS, OCSP stapling).

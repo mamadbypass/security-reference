@@ -2,6 +2,20 @@
 
 Move through networks using harvested credentials and trust relationships.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    CRED[Captured hashes] --> PTH[Pass-the-hash]
+    CRED --> WINRM[evil-winrm]
+    PTH & WINRM --> HOST[Next host]
+    HOST --> MORE[Expand foothold]
+```
+
+</div>
+
 ## How It Works
 
 Lateral movement is the technique of **expanding access** from one compromised host to others within a network using harvested credentials, tokens, and trust relationships. Unlike privilege escalation (local root/admin), lateral movement operates **across systems**.

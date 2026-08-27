@@ -2,6 +2,19 @@
 
 Decrypt ciphertext by observing padding error differences.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    CIPHER[Ciphertext blocks] --> ORACLE[Padding error oracle]
+    ORACLE --> BYTE[Decrypt byte-by-byte]
+    BYTE --> PLAIN[Plaintext recovered]
+```
+
+</div>
+
 ## How It Works
 
 A **padding oracle** arises when an application using **CBC mode** returns different errors for invalid padding vs invalid plaintext—often after decryption. The attacker can submit modified ciphertext blocks and learn whether padding is valid, enabling **byte-by-byte decryption** without the key.

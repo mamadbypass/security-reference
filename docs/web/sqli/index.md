@@ -2,6 +2,24 @@
 
 Classic SQL injection across query types and database engines.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    U[Attacker input] --> APP[App concatenates SQL]
+    APP --> DB[(Database)]
+    DB --> OUT[Data leak / auth bypass / RCE]
+    classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+    classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+    class U attacker
+    class APP,DB target
+    class OUT data
+```
+
+</div>
+
 ## How It Works
 
 SQL injection occurs when application code concatenates untrusted input into SQL queries instead of using parameterized queries or a safe query builder. The database interpreter then executes attacker-controlled syntax as part of the query.

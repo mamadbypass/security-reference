@@ -2,6 +2,20 @@
 
 Uncover undocumented and forgotten API endpoints.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    JS[JavaScript bundles] --> LF[linkfinder]
+    LF --> HIDDEN[Hidden API routes]
+    HIDDEN --> OLD[Unmaintained endpoints]
+    OLD --> VULN[No auth / IDOR]
+```
+
+</div>
+
 ## How It Works
 
 **Shadow APIs** are undocumented endpoints—microservices, serverless functions, admin panels, or feature branches reachable in production but absent from official docs. **Zombie APIs** are formerly documented services that should have been retired but still accept traffic (old load balancer rules, forgotten containers, or DNS to decommissioned environments that were cloned).

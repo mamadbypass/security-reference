@@ -2,6 +2,20 @@
 
 Publish quality writeups to build bug bounty reputation.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    FIND[Finding] --> DOC[Document steps]
+    DOC --> IMPACT[Show impact safely]
+    IMPACT --> PUBLISH[Publish writeup]
+    PUBLISH --> REP[Build reputation]
+```
+
+</div>
+
 ## How It Works
 
 **Security writeups** document how a vulnerability was found and exploited, building researcher reputation, educating the community, and demonstrating methodology to employers and program triagers.

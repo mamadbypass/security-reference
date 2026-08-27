@@ -2,6 +2,19 @@
 
 Break out of container isolation to the host.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    POD[Compromised pod] --> CAP[Capabilities / privileged]
+    CAP --> HOST[Host namespace]
+    HOST --> NODE[Node takeover]
+```
+
+</div>
+
 ## How It Works
 
 **Container escape** breaks isolation between a container and the host kernel or other containers. Vectors include **privileged containers**, **host namespace sharing**, mounted **host paths** (`/`, `/proc`, docker.sock), **kernel exploits**, and abuse of **Linux capabilities** (CAP_SYS_ADMIN, CAP_DAC_READ_SEARCH).

@@ -2,6 +2,19 @@
 
 Test single sign-on and SAML assertion handling.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    SAML[SAML Response] --> SIG{Signature valid?}
+    SIG -->|bypass| ASSERT[Modified Assertion]
+    ASSERT --> LOGIN[Login as victim]
+```
+
+</div>
+
 ## How It Works
 
 Single Sign-On (SSO) federates authentication to an Identity Provider (IdP). **SAML 2.0** flows exchange XML assertions—often via POST bindings—containing attributes like email and group membership. The Service Provider (SP) must **validate XML signatures**, check `NotBefore`/`NotOnOrAfter`, match `Audience`, and prevent **XML signature wrapping (XSW)** attacks where attackers smuggle unsigned assertions alongside valid signed copies.

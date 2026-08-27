@@ -2,6 +2,20 @@
 
 Escalate privileges on Windows hosts.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    SHELL[Low priv shell] --> ENUM[winPEAS / Watson]
+    ENUM --> MISCONFIG[Unquoted path / service]
+    ENUM --> TOKEN[Token impersonation]
+    MISCONFIG & TOKEN --> ADMIN[SYSTEM / Admin]
+```
+
+</div>
+
 ## How It Works
 
 Windows privilege escalation elevates access from a **low-privilege user** to **LOCAL SYSTEM** or **Administrator** on a host. Common vectors:

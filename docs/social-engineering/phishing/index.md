@@ -2,6 +2,20 @@
 
 Authorized phishing simulations for security awareness.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    RECON[OSINT targets] --> LURE[Craft lure email]
+    LURE --> SEND[gophish campaign]
+    SEND --> CLICK[User clicks link]
+    CLICK --> CRED[Credential harvest]
+```
+
+</div>
+
 ## How It Works
 
 **Phishing** deceives users into clicking malicious links, opening attachments, or entering credentials on fake sites. **Authorized phishing assessments** simulate these attacks to measure awareness and technical controls (email filtering, link protection).

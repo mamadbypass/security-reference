@@ -2,6 +2,19 @@
 
 Investigate incidents in cloud environments.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    CLOUD[Cloud tenant] --> LOGS[CloudTrail / Audit logs]
+    LOGS --> TIMELINE[Event timeline]
+    TIMELINE --> ROOT[Root cause & scope]
+```
+
+</div>
+
 ## How It Works
 
 **Cloud forensics** investigates incidents in AWS, Azure, and GCP where attackers lack physical access but abuse IAM, APIs, and misconfigurations. Evidence lives in **audit logs** (CloudTrail, Azure Activity Log, GCP Audit Logs), flow logs, snapshot APIs, and SaaS integrations.

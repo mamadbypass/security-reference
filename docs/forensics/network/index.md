@@ -2,6 +2,19 @@
 
 Analyze PCAPs and network logs during investigations.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    PCAP[PCAP capture] --> WS[Wireshark / Zeek]
+    WS --> FLOWS[Connection analysis]
+    FLOWS --> IOC[Extract IOCs]
+```
+
+</div>
+
 ## How It Works
 
 **Network forensics** reconstructs incidents from PCAP files, firewall logs, proxy logs, DNS queries, and NetFlow. Analysts extract C2 channels, exfiltration volumes, lateral movement paths, and malware downloads embedded in HTTP/SMTP traffic.

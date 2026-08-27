@@ -2,6 +2,18 @@
 
 Classic stack-based memory corruption exploitation.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    BUF[Overflow buffer] --> RET[Overwrite return addr]
+    RET --> SHELL[shellcode / ROP chain]
+```
+
+</div>
+
 ## How It Works
 
 A **stack buffer overflow** writes past the end of a stack-allocated buffer, corrupting adjacent data—the saved return address, stack canaries, or frame pointers. When the function returns, execution may jump to attacker-controlled addresses, enabling arbitrary code execution.

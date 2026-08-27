@@ -2,6 +2,19 @@
 
 Manipulate NoSQL query operators in MongoDB and similar databases.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    JSON[$ne / $gt operators] --> NOSQL[(MongoDB query)]
+    NOSQL --> BYPASS[Auth bypass]
+    NOSQL --> LEAK[Data extraction]
+```
+
+</div>
+
 ## How It Works
 
 NoSQL injection manipulates query documents in databases like MongoDB, CouchDB, or Elasticsearch when applications pass user input directly into query operators without type-safe binding.

@@ -2,6 +2,20 @@
 
 Analyze binaries to understand program behavior.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart TD
+    BIN[Binary] --> GH[Ghidra analyze]
+    GH --> FUNCS[Functions & strings]
+    FUNCS --> VULN[Find vuln logic]
+    VULN --> POC[Exploit PoC]
+```
+
+</div>
+
 ## How It Works
 
 **Reverse engineering** recovers program logic from compiled binaries without source code. Disassemblers (Ghidra, IDA) lift machine code to intermediate representations; debuggers (gdb, x64dbg) observe runtime state. Analysts identify **entry points**, **string references**, **crypto constants**, and **network protocols**.

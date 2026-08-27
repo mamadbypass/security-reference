@@ -2,6 +2,19 @@
 
 Manipulate directory and XML query syntax.
 
+## Overview Diagram
+
+<div class="sr-diagram" markdown="1">
+
+```mermaid
+flowchart LR
+    IN[LDAP filter input] --> QUERY[(Directory query)]
+    QUERY --> BYPASS[Auth bypass]
+    QUERY --> ENUM[User enumeration]
+```
+
+</div>
+
 ## How It Works
 
 LDAP and XPath injection insert metacharacters into directory or XML queries constructed from user input—analogous to SQLi for LDAP filters and XPath expressions.
