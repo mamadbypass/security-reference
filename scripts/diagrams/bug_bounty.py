@@ -1,17 +1,27 @@
 from diagrams._base import STYLE
 
 BUG_BOUNTY_DIAGRAMS = {
-    "bug-bounty/recon": f"""
-flowchart LR
-    subgraph Sources["Passive Sources"]
+    "bug-bounty/recon": """
+flowchart TD
+    subgraph Passive["① Passive Intel"]
         CT[CT Logs] --> E[Enumerate]
         DNS[DNS/WHOIS] --> E
         OSINT[OSINT APIs] --> E
     end
-    E --> T{{Tools}}
-    T --> SF[subfinder] & AM[amass] & GAU[gau]
-    SF & AM & GAU --> LIVE
-    LIVE --> NU --> R[Findings Report]
+    subgraph Active["② Active Discovery"]
+        E --> SF[subfinder / amass]
+        SF --> GAU[gau / waybackurls]
+        GAU --> LIVE[httpx probe]
+    end
+    subgraph Scan["③ Vuln Scan"]
+        LIVE --> NU[nuclei templates]
+        NU --> TRIAGE[Manual validation]
+    end
+    subgraph Out["④ Output"]
+        TRIAGE --> R[Asset + finding report]
+    end
+    class SF,GAU,NU tool
+    class R success
 """,
     "bug-bounty/subdomain-enumeration": """
 flowchart TD

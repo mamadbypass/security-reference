@@ -4,6 +4,10 @@ Review Solidity and EVM contracts for common vulnerabilities.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -12,6 +16,28 @@ flowchart TD
     SLI --> BUG[Reentrancy / overflow]
     BUG --> FUZZ[echidna / foundry fuzz]
     FUZZ --> REPORT[Bug bounty report]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -42,12 +68,44 @@ Report via Immunefi or protocol bug bounty; never exploit mainnet without author
 - Use audited libraries (OpenZeppelin); minimize custom low-level assembly.
 - Independent audits, bug bounties, and gradual rollout with TVL caps.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Check reentrancy and access control
-- [ ] Review oracle and price manipulation risks
-- [ ] Test with Foundry or Hardhat
-- [ ] Use static analyzers for baseline coverage
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Obtain contract address and scope on Immunefi/program
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Set up Foundry/Hardhat fork of mainnet state
+- [ ] Run slither and mythril static analysis
+- [ ] Review access control and upgrade patterns
+- [ ] Map external calls and reentrancy surfaces
+
+### Phase 3 — Validation & Testing
+
+- [ ] Fuzz with Echidna/Foundry invariant tests
+- [ ] Develop PoC exploit on local fork only
+- [ ] Calculate funds at risk
+- [ ] Never exploit mainnet without authorization
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Submit report with PoC and recommended fix
+- [ ] Follow responsible disclosure timeline
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

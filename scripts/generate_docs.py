@@ -9,6 +9,7 @@ DOCS = ROOT / "docs"
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from diagrams import render_diagram_block  # noqa: E402
+from methodologies import render_methodology_block  # noqa: E402
 from tool_links import format_tool_row, format_tools_guide_tip  # noqa: E402
 from vuln_content import enrich_meta  # noqa: E402
 
@@ -1348,9 +1349,15 @@ def render_page(rel_path: str, meta: dict) -> str:
         ]
 
     lines += ["## Methodology", ""]
-    for step in meta.get("methodology", []):
-        lines.append(f"- [ ] {step}")
-    lines.append("")
+    methodology_block = render_methodology_block(rel_path)
+    if methodology_block:
+        # Replace default heading — render_methodology_block includes "## Testing Methodology"
+        lines = lines[:-2]  # remove "## Methodology" header we just added
+        lines.append(methodology_block)
+    else:
+        for step in meta.get("methodology", []):
+            lines.append(f"- [ ] {step}")
+        lines.append("")
 
     if meta.get("tools"):
         lines += ["## Tools", ""]

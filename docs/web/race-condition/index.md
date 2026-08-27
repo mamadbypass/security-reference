@@ -4,6 +4,10 @@ Exploit time-of-check to time-of-use flaws.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -18,6 +22,28 @@ sequenceDiagram
     S->>DB: Check balance once
     DB-->>S: OK
     S->>DB: Double spend
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -106,12 +132,47 @@ Request A and B read balance=100 → both pass check for 100 debit → both comm
 - Load tests with deliberate parallelism in staging.
 - Property-based tests asserting invariant (balance never negative).
 
-## Methodology
+## Testing Methodology
 
-- [ ] Identify limit checks on coupons, transfers, or votes
-- [ ] Send parallel requests with Turbo Intruder or custom scripts
-- [ ] Test single-use tokens and rate limits
-- [ ] Measure window timing for reliable exploitation
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Identify limit-once operations: transfers, votes, coupon redemption
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Map state-changing endpoints with concurrency impact
+- [ ] Review single-use tokens, inventory counters, rate limits
+- [ ] Note microservice timing windows between check and use
+- [ ] Identify financial or privilege-escalation targets
+
+### Phase 3 — Validation & Testing
+
+- [ ] Send 20–100 parallel requests with Burp Turbo Intruder or asyncio
+- [ ] Compare single request vs burst outcomes
+- [ ] Measure window: add delays between check and update if possible
+- [ ] Test last-byte sync and HTTP/2 single-connection races
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Demonstrate double spend, double vote, or limit bypass
+- [ ] Capture timing diagram and success rate
+- [ ] Prove business impact with account balances or quotas
+- [ ] Stop after clear proof — avoid harming other users
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Recommend database transactions, locks, or idempotency keys
 
 ## Tools
 

@@ -4,6 +4,10 @@ Replicate directory credentials from domain controllers.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -11,6 +15,28 @@ flowchart LR
     PRIV[Replicating privileges] --> DC[Domain Controller]
     DC --> DUMP[secretsdump all hashes]
     DUMP --> GOLD[Golden ticket / pass-the-hash]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -48,12 +74,45 @@ DCSync dumps **all domain password hashes**, enabling Golden Ticket creation, Pa
 - **Use Protected Users** for admin accounts — Prevents NTLM and unconstrained delegation abuse.
 - **Regular BloodHound ACL audits** — Find and remove unintended replication rights.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Identify Replicating Directory Changes rights
-- [ ] Use DCSync to dump hashes
-- [ ] Protect evidence handling in engagements
-- [ ] Recommend remediation for replication ACLs
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Confirm Replicating Directory Changes rights or equivalent
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Identify accounts with DCSync privileges via BloodHound
+- [ ] Verify replication rights: GetChanges + GetChangesAll
+- [ ] Prepare secretsdump command and output handling
+- [ ] Ensure legal authorization for credential dump
+
+### Phase 3 — Validation & Testing
+
+- [ ] Execute DCSync against single high-value account first
+- [ ] Validate NT hashes obtained
+- [ ] Test pass-the-hash with extracted creds
+- [ ] Avoid full domain dump unless required
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Demonstrate Golden Ticket or DA access from hash
+- [ ] Securely store and destroy hash dumps after test
+- [ ] Recommend tiered admin and protected users
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

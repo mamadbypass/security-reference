@@ -4,6 +4,10 @@ Extract and crack service ticket hashes offline.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -13,6 +17,28 @@ flowchart LR
     HASH --> CRACK[hashcat]
     CRACK --> SVC[Service account creds]
     SVC --> PRIV[Privilege escalation]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -46,12 +72,45 @@ High-value targets: service accounts with weak passwords, accounts with `Generic
 - **Audit SPN registrations** — Remove stale SPNs from decommissioned services.
 - **Deploy honeypot SPN accounts** — Canary SPNs that alert on any TGS request.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Find SPN accounts with sufficient rights
-- [ ] Request TGS tickets for offline cracking
-- [ ] Use strong wordlists and rules
-- [ ] Validate cracked creds for lateral movement
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Confirm low-priv domain user credentials available
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Enumerate SPNs with GetUserSPNs or Rubeus
+- [ ] Request TGS tickets for service accounts
+- [ ] Export hashes to crackable format
+- [ ] Prioritize accounts without preauth or old passwords
+
+### Phase 3 — Validation & Testing
+
+- [ ] Crack RC4 tickets with hashcat rules
+- [ ] Validate cracked password against service login
+- [ ] Check if service account is over-privileged
+- [ ] Test password reuse on other systems
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Demonstrate lateral movement with cracked service creds
+- [ ] Document SPN account and cracked password policy
+- [ ] Recommend gMSA and strong service passwords
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

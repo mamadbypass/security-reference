@@ -4,6 +4,10 @@ Build detections mapped to MITRE ATT&CK techniques.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -13,6 +17,28 @@ flowchart LR
     RULE --> SIEM[SIEM alerts]
     SIEM --> TUNE[Tune false positives]
     TUNE --> ATOMIC[Validate with Atomic Red Team]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -51,12 +77,45 @@ Good detections specify **analytic story**: data source, logic, false positive g
 - **Document runbooks** — Each high-severity detection links to IR playbook.
 - **Retire noisy rules** — Failed detections erode SOC trust; fix or remove.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Select high-risk techniques for coverage
-- [ ] Author Sigma rules and SIEM queries
-- [ ] Validate detections with atomic tests
-- [ ] Tune to reduce false positives
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Define threat model and log sources available
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Research ATT&CK technique to detect
+- [ ] Draft Sigma rule or SPL/KQL query
+- [ ] Identify required log fields and parsers
+- [ ] Peer review logic for false positive rate
+
+### Phase 3 — Validation & Testing
+
+- [ ] Test rule in dev SIEM with historical logs
+- [ ] Run Atomic Red Team test to generate event
+- [ ] Tune thresholds and exclusions
+- [ ] Measure mean time to detect in simulation
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Deploy to production with alerting workflow
+- [ ] Document detection data source and MITRE mapping
+- [ ] Schedule quarterly rule review
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

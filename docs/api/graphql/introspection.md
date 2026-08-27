@@ -4,6 +4,10 @@ Enumerate schema when introspection is enabled.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -11,6 +15,28 @@ flowchart LR
     A[Attacker] -->|__schema query| GQL[GraphQL API]
     GQL --> TYPES[Types & mutations exposed]
     TYPES --> ATTACK[Target sensitive resolvers]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -40,12 +66,45 @@ Introspection is invaluable during development but dangerous when exposed to att
 - **Audit deployments** so preview environments are not publicly routable without auth.
 - **Monitor for `__schema` and `__type` in request bodies** and alert on spikes.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Send __schema and __type queries
-- [ ] Export schema for hidden mutations
-- [ ] Check introspection on staging endpoints
-- [ ] Review sensitive fields and admin mutations
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Locate GraphQL endpoint URLs
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Send `__schema` and `__type` introspection queries
+- [ ] Try clairvoyance wordlist recovery if blocked
+- [ ] Check GET vs POST introspection
+- [ ] Review GraphiQL/Playground exposure
+
+### Phase 3 — Validation & Testing
+
+- [ ] Validate full schema download
+- [ ] Identify hidden admin mutations
+- [ ] Compare introspection across environments
+- [ ] Test introspection with auth vs without
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Document sensitive types discovered via schema
+- [ ] Map unauthorized mutations for further testing
+- [ ] Do not exfiltrate production user data
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

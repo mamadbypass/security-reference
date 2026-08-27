@@ -4,6 +4,10 @@ Identify open services and exposed management interfaces.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -14,6 +18,28 @@ flowchart TD
     FP --> ADMIN{Admin panels?}
     ADMIN -->|yes| FLAG[High priority]
     ADMIN -->|no| LOG[Document services]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -51,12 +77,45 @@ In bug bounty, port scanning is usually limited to **in-scope hosts** and may be
 - **Segment internal services** — Even if one host is compromised, lateral scanning should not reach databases.
 - **Continuous external scanning** — Run internal port scans from outside to verify perimeter rules hold.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Start with top ports on live hosts
-- [ ] Expand to full port scans on high-value targets
-- [ ] Fingerprint services and versions
-- [ ] Check for default credentials and admin panels
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Confirm port scanning is allowed in program rules
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Start with top 1000 TCP ports on live hosts
+- [ ] Expand to full scan on high-value targets only
+- [ ] UDP scan critical services if permitted
+- [ ] Document scan rate limits to avoid DoS
+
+### Phase 3 — Validation & Testing
+
+- [ ] Fingerprint service versions (nmap -sV)
+- [ ] Identify management interfaces (8080, 8443, 3389)
+- [ ] Check default credentials on exposed services
+- [ ] Correlate with nuclei service templates
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Deep test only on in-scope services
+- [ ] Avoid brute force unless explicitly allowed
+- [ ] Report exposed admin panels and databases
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

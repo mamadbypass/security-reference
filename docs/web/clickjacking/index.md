@@ -4,6 +4,10 @@ Frame sensitive actions to trick users into unintended clicks.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -11,6 +15,28 @@ flowchart TD
     ATT[Attacker page] --> IFRAME[Invisible iframe]
     IFRAME --> VICTIM[Victim clicks visible button]
     VICTIM --> ACTION[Hidden action on bank.com]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -97,12 +123,47 @@ CSP `frame-ancestors` supersedes XFO in modern browsers—deploy both for legacy
 
 - Secondary channel confirmation for financial transactions (out-of-band).
 
-## Methodology
+## Testing Methodology
 
-- [ ] Check X-Frame-Options and CSP frame-ancestors
-- [ ] Build proof-of-concept iframe overlays
-- [ ] Target high-impact actions (password change, payment)
-- [ ] Test mobile WebView contexts
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Check `X-Frame-Options` and `Content-Security-Policy frame-ancestors`
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Identify sensitive actions: transfer, delete, change email, grant admin
+- [ ] Test if pages load in iframe on attacker domain
+- [ ] Review frame-busting JS (often bypassable)
+- [ ] Map double-click and drag-drop UI actions
+
+### Phase 3 — Validation & Testing
+
+- [ ] Build HTML PoC overlaying invisible iframe
+- [ ] Test mobile viewport and touch event hijacking
+- [ ] Validate bypass of `X-Frame-Options: SAMEORIGIN` via subdomain
+- [ ] Check CSP `frame-ancestors` coverage on all sensitive routes
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Record video of victim click performing protected action
+- [ ] Demonstrate with self-click on PoC page
+- [ ] Show combined impact with CSRF if cookies not protected
+- [ ] Do not target real users
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Recommend `frame-ancestors 'none'` or explicit allow-list
 
 ## Tools
 

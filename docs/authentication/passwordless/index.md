@@ -4,6 +4,10 @@ Test magic links, OTP, and passkey implementations.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -11,6 +15,28 @@ flowchart LR
     MAGIC[Magic link / OTP] --> EMAIL[Email channel]
     EMAIL --> LEAK[Token in referrer/logs]
     LEAK --> ATO[Account takeover]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -47,12 +73,46 @@ Because there is no password, **the token or authenticator becomes the sole secr
 - **Invalidate sessions** after passwordless login on new devices; notify users of new sign-ins.
 - See [WebAuthn Guide](https://webauthn.guide/) for implementation details.
 
-## Methodology
+## Testing Methodology
 
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Map magic link, OTP, and WebAuthn flows
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Analyze token entropy and expiration
+- [ ] Check if OTP is rate limited
+- [ ] Review magic link binding to browser/session
+- [ ] Test WebAuthn challenge replay
+
+### Phase 3 — Validation & Testing
+
+- [ ] Intercept magic link on shared machine scenario
 - [ ] Brute force short OTP codes
-- [ ] Test magic link token entropy
-- [ ] Review WebAuthn challenge binding
-- [ ] Check credential enumeration
+- [ ] Reuse magic link multiple times
+- [ ] Swap credential ID in WebAuthn assertion
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Demonstrate account access without possession factor
+- [ ] Show OTP bypass or link replay
+- [ ] Document token lifetime and binding gaps
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Bind tokens to session, rate limit OTP, single-use links
 
 ## Tools
 

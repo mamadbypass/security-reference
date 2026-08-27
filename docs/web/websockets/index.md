@@ -4,6 +4,10 @@ Test real-time channels for auth bypass and injection.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -12,6 +16,28 @@ flowchart TD
     MSG --> AUTH{Per-message auth?}
     AUTH -->|no| IDOR[Subscribe to others' channels]
     AUTH -->|no| INJ[SQL/cmd in message handler]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -86,12 +112,47 @@ Malicious origin or stolen session → WS connection → unauthorized subscribe/
 - Log anomalous subscription patterns (many private channels).
 - Terminate idle connections; heartbeat with timeout.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Capture WebSocket handshake and messages
-- [ ] Test origin validation on the handshake
-- [ ] Fuzz message types for injection
-- [ ] Check authorization per channel or room
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Capture WebSocket handshake and message format in Burp
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Map subscribe/send message types and channels
+- [ ] Test missing Origin validation on handshake
+- [ ] Review auth token placement: cookie vs message
+- [ ] Identify sensitive broadcast channels
+
+### Phase 3 — Validation & Testing
+
+- [ ] Connect from unauthorized Origin header
+- [ ] Subscribe to other users' rooms without permission
+- [ ] Inject SQL/commands in message handlers
+- [ ] Fuzz message JSON fields for injection
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Receive another user's messages or send as victim
+- [ ] Demonstrate XSS via WebSocket-reflected content
+- [ ] Document message schema and auth gap
+- [ ] Use two test sessions for proof
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Validate Origin, authenticate per message, authorize channels
 
 ## Tools
 

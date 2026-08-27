@@ -4,6 +4,10 @@ Assess transport layer security configuration.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -11,6 +15,28 @@ flowchart TD
     TLS[TLS config] --> SCAN[testssl.sh / sslyze]
     SCAN --> WEAK[Weak ciphers / protocols]
     WEAK --> MITM[Downgrade / MITM]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -42,12 +68,44 @@ Document findings per endpoint; CDN-fronted sites may show different configs tha
 - Enable OCSP stapling; use CA/Browser Forum baseline requirements.
 - Align CDN, load balancer, and origin TLS policies; scan continuously with sslyze or Mozilla SSL Config Generator.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Scan for weak protocols and ciphers
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] List all TLS endpoints and versions required
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Run testssl.sh and sslyze scans
 - [ ] Check certificate validity and chain
-- [ ] Test HSTS and certificate pinning
-- [ ] Review TLS termination at load balancers
+- [ ] Identify weak ciphers (RC4, 3DES, export)
+- [ ] Test for Heartbleed, ROBOT, CRIME variants
+
+### Phase 3 — Validation & Testing
+
+- [ ] Attempt downgrade to TLS 1.0/1.1
+- [ ] Validate HSTS and certificate pinning
+- [ ] Document findings per endpoint
+- [ ] Compare against Mozilla SSL config guide
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Demonstrate MITM in lab with weak config
+- [ ] Provide cipher suite hardening steps
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

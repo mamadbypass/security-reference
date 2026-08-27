@@ -4,6 +4,10 @@ Desynchronize front-end and back-end HTTP parsers.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -12,6 +16,28 @@ flowchart LR
     A[Smuggled request] --> FE
     FE -->|desync| BE
     BE --> HIJACK[Poison next user's request]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -97,12 +123,47 @@ Smuggled bytes on keep-alive connection → prepended to victim request → cach
 - Monitor for malformed TE headers, duplicate Content-Length, abnormal chunk sequences.
 - Vendor patches: keep proxies (nginx, Apache, IIS, HAProxy, Cloudflare) updated—many smuggling variants are version-specific.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Identify CL.TE and TE.CL behavior
-- [ ] Use timing-based detection
-- [ ] Exploit for cache poisoning or request hijacking
-- [ ] Test HTTP/2 downgrade scenarios
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Confirm front-end/back-end server pair (CDN + origin, load balancer)
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Identify CL.TE and TE.CL desync opportunities with Burp smuggler
+- [ ] Test HTTP/2 downgrading to H1 smuggling vectors
+- [ ] Map timeout and buffer differences between servers
+- [ ] Review reverse proxy documentation for known issues
+
+### Phase 3 — Validation & Testing
+
+- [ ] Send ambiguous `Content-Length` vs `Transfer-Encoding` requests
+- [ ] Observe desync via response queue poisoning indicators
+- [ ] Validate with timing and response-order anomalies
+- [ ] Test h2c smuggling if HTTP/2 front-end present
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Demonstrate request hijacking or cache poisoning via smuggle
+- [ ] Capture second request affecting other users (in lab)
+- [ ] Document exact server versions and header combinations
+- [ ] Avoid sustained poisoning on production
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Recommend single consistent HTTP parser and disable TE upgrades
 
 ## Tools
 

@@ -160,10 +160,22 @@ flowchart LR
 """,
     "secure-code-review/threat-modeling": """
 flowchart TD
-    DFD[Data flow diagram] --> STRIDE[STRIDE per component]
-    STRIDE --> RANK[Risk ranking]
-    RANK --> MIT[Mitigations & tests]
-    MIT --> TRACK[Jira security tasks]
+    subgraph Model["① Architecture"]
+        DFD[Data Flow Diagram + trust boundaries]
+    end
+    subgraph Analyze["② STRIDE Analysis"]
+        STRIDE[Spoof / Tamper / Repudiate / Info / DoS / Privilege]
+    end
+    subgraph Risk["③ Risk Management"]
+        RANK[Likelihood × Impact matrix]
+    end
+    subgraph Fix["④ Mitigation"]
+        MIT[Controls + security test cases]
+        TRACK[Jira / Azure DevOps tasks]
+    end
+    DFD --> STRIDE --> RANK --> MIT --> TRACK
+    class DFD,STRIDE target
+    class MIT,TRACK success
 """,
     "web3/smart-contracts": """
 flowchart TD

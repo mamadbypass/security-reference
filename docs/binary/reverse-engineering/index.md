@@ -4,6 +4,10 @@ Analyze binaries to understand program behavior.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -12,6 +16,28 @@ flowchart TD
     GH --> FUNCS[Functions & strings]
     FUNCS --> VULN[Find vuln logic]
     VULN --> POC[Exploit PoC]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -42,12 +68,44 @@ For malware, work only in isolated VMs with no network egress.
 - Monitor for cracked distributions; use legal and technical responses as appropriate.
 - For sensitive firmware, encrypt payloads and verify integrity at boot.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Load samples in disassembler/debugger
-- [ ] Identify key functions and strings
-- [ ] Trace input validation logic
-- [ ] Document findings with annotations
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Obtain binary and legal authorization to analyze
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Identify architecture, packing, and anti-debug
+- [ ] Load in Ghidra/IDA and run auto-analysis
+- [ ] Rename key functions and map call graph
+- [ ] Extract strings, imports, and crypto constants
+
+### Phase 3 — Validation & Testing
+
+- [ ] Trace vulnerable function (strcpy, format string)
+- [ ] Debug with gdb/gef to confirm flow
+- [ ] Develop minimal PoC input
+- [ ] Document offset and mitigation (ASLR, PIE, NX)
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Demonstrate controlled crash or exploit in lab
+- [ ] Provide patched pseudocode recommendation
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

@@ -4,6 +4,10 @@ Force server-side requests to internal and cloud metadata endpoints.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -13,6 +17,28 @@ flowchart LR
     APP --> META[Cloud metadata 169.254.169.254]
     APP --> OOB[OOB via interactsh]
     INT & META & OOB --> IMPACT[Data / pivot]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -93,12 +119,47 @@ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE_NAME
 
 - Alert on requests to metadata IPs, `localhost`, and RFC1918 ranges from app tiers.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Find URL import, webhook, and preview features
-- [ ] Probe localhost and cloud metadata IPs
-- [ ] Use DNS rebinding and redirect chains
-- [ ] Escalate to internal service access
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] List all server-side URL fetch features (webhooks, importers, previews)
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Find parameters accepting URLs: `url=`, `path=`, `webhook`, `avatar`, `import`
+- [ ] Review PDF generators, image processors, and link preview features
+- [ ] Check cloud metadata endpoints as internal targets
+- [ ] Map allowed protocols: http, https, file, gopher, dict
+
+### Phase 3 — Validation & Testing
+
+- [ ] Point URL to Burp Collaborator / interactsh and confirm callback
+- [ ] Test internal IPs: `127.0.0.1`, `169.254.169.254`, `10.0.0.0/8`
+- [ ] Bypass filters with DNS rebinding, decimal IP, IPv6, or redirects
+- [ ] Validate blind SSRF via timing and OOB DNS/HTTP
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Read cloud metadata credentials (if in scope)
+- [ ] Access internal admin panels or Redis/Elasticsearch
+- [ ] Demonstrate port scan of internal network via response timing
+- [ ] Stop at proof — avoid destructive internal actions
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Include bypass technique and network segmentation recommendation
 
 ## Tools
 

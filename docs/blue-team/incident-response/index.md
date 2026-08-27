@@ -4,6 +4,10 @@ Contain, eradicate, and recover from security incidents.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -13,6 +17,28 @@ flowchart TD
     CONTAIN --> ERAD[Eradicate]
     ERAD --> RECOVER[Restore services]
     RECOVER --> LESSONS[Post-incident review]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -52,12 +78,46 @@ IR teams balance **speed** (stop bleeding) with **forensic integrity** (chain of
 - **Track MTTR metrics** — Containment time, recovery time, repeat incident rate.
 - Follow [NIST SP 800-61 Rev. 2](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final).
 
-## Methodology
+## Testing Methodology
 
-- [ ] Activate IR playbook and assign roles
-- [ ] Preserve forensic evidence
-- [ ] Contain affected systems
-- [ ] Perform root cause analysis and lessons learned
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Activate IR plan and assign roles
+- [ ] Preserve evidence and chain of custody
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Triage alert severity and scope
+- [ ] Contain affected hosts and accounts
+- [ ] Collect volatile and disk evidence
+- [ ] Communicate with stakeholders per playbook
+
+### Phase 3 — Validation & Testing
+
+- [ ] Eradicate malware and attacker access
+- [ ] Recover systems from clean backups
+- [ ] Validate eradication with scans
+- [ ] Monitor for re-compromise 30+ days
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Complete post-incident report
+- [ ] Lessons learned and playbook updates
+- [ ] Implement new detections from incident
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

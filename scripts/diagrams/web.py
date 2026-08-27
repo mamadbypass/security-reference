@@ -1,14 +1,22 @@
 WEB_DIAGRAMS = {
     "web/sqli": """
-flowchart LR
-    U[Attacker input] --> APP[App concatenates SQL]
-    APP --> DB[(Database)]
-    DB --> OUT[Data leak / auth bypass / RCE]
-    classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
-    classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+flowchart TD
+    subgraph Input["① User Input"]
+        U[Attacker controlled parameter]
+    end
+    subgraph Vuln["② Vulnerable Code"]
+        APP[String concatenation into SQL]
+    end
+    subgraph DBLayer["③ Database"]
+        DB[(SQL Engine executes injected syntax)]
+    end
+    subgraph Impact["④ Impact"]
+        OUT[Data leak / Auth bypass / RCE]
+    end
+    U --> APP --> DB --> OUT
     class U attacker
     class APP,DB target
-    class OUT data
+    class OUT warn
 """,
     "web/xss": """
 flowchart TD

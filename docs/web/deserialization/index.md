@@ -4,6 +4,10 @@ Exploit unsafe object deserialization in web applications.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -11,6 +15,28 @@ flowchart TD
     SER[Serialized object] --> APP[App unmarshals]
     APP --> GADGET[Gadget chain]
     GADGET --> RCE[Remote code execution]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -88,12 +114,47 @@ Tampered serialized object → server deserializes → gadget chain executes →
 - WAF rules for Java serialization magic bytes in cookies.
 - EDR alerts on child processes spawned from app servers after cookie updates.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Identify serialized object formats (Java, PHP, .NET, Python)
-- [ ] Use known gadget chains for the stack
-- [ ] Test tampered cookies and API bodies
-- [ ] Validate impact with safe proof-of-concept payloads
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Identify serialization format: Java, PHP, .NET, Python pickle, Ruby
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Find cookies, hidden fields, or API bodies with encoded blobs
+- [ ] Decode base64 and inspect magic bytes or format markers
+- [ ] Search source/repos for `ObjectInputStream`, `unserialize`, `BinaryFormatter`
+- [ ] Map gadget chains available for detected libraries
+
+### Phase 3 — Validation & Testing
+
+- [ ] Replace serialized object with known gadget payload (ysoserial/phpggc)
+- [ ] Confirm behavior change or callback from malicious object
+- [ ] Test type confusion and signing bypass on tokens
+- [ ] Validate in isolated JVM/PHP version matching target
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Achieve RCE or auth bypass with minimal gadget chain
+- [ ] Document library versions enabling the chain
+- [ ] Do not deploy persistent backdoors
+- [ ] Capture generated payload and server response
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Recommend avoiding native deserialization of untrusted data
 
 ## Tools
 

@@ -4,6 +4,10 @@ Assess Wi-Fi networks and rogue access point risks.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -11,6 +15,28 @@ flowchart TD
     CAP[Capture handshake] --> CRACK[aircrack-ng]
     EVIL[Evil twin AP] --> MITM[bettercap MITM]
     CRACK & MITM --> NET[Network access]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -49,12 +75,45 @@ Assessments also cover **rogue AP detection**, guest network isolation, and evil
 - **Certificate pinning for 802.1X** — Prevent evil-twin credential capture.
 - **Monitor** — Alert on duplicate SSIDs and anomalous AP MAC addresses.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Capture handshakes and test WPA2/WPA3
-- [ ] Check enterprise EAP configurations
-- [ ] Test guest network segmentation
-- [ ] Evaluate rogue AP detection
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Confirm wireless test authorization and physical location
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Passively scan SSIDs, encryption, and clients
+- [ ] Identify WPA2-PSK, WPA3, or enterprise networks
+- [ ] Capture handshake or PMKID for offline crack
+- [ ] Test evil twin and captive portal scenarios
+
+### Phase 3 — Validation & Testing
+
+- [ ] Crack weak PSK with aircrack-ng wordlist
+- [ ] Test WPA enterprise cert validation
+- [ ] Attempt MITM with bettercap after association
+- [ ] Validate client isolation bypass
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Demonstrate network access from wireless compromise
+- [ ] Document SSID, encryption, and crack time
+- [ ] Recommend WPA3, strong PSK, and 802.1X
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

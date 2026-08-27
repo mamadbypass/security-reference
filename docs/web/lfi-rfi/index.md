@@ -4,6 +4,10 @@ Local and remote file inclusion testing.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -13,6 +17,28 @@ flowchart TD
     LFI -->|remote| RFI[Host malicious PHP]
     READ --> ESC[Log poison / RCE chain]
     RFI --> SHELL[Web shell]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -101,12 +127,47 @@ include(PAGES.get(page, "home.php"))
 
 **Monitoring**: Alert on repeated `%2e%2e` patterns and wrapper scheme usage in parameters.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Identify file/path parameters
-- [ ] Test path traversal sequences
-- [ ] Attempt log poisoning and PHP wrappers
-- [ ] Check for RFI via remote URL inclusion
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Find file inclusion parameters: `file=`, `page=`, `template=`, `lang=`
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Enumerate path traversal: `../../../etc/passwd`, `....//....//etc/passwd`
+- [ ] Test PHP wrappers: `php://filter/convert.base64-encode/resource=index`
+- [ ] Check for RFI by pointing to attacker-hosted file
+- [ ] Identify OS from path syntax and error messages
+
+### Phase 3 — Validation & Testing
+
+- [ ] Confirm local file read with known files (`/etc/passwd`, `win.ini`)
+- [ ] Bypass filters: null byte (legacy), encoding, double traversal
+- [ ] Read source code via wrapper filters
+- [ ] Validate RFI only in controlled lab with your server
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Chain LFI to RCE via log poisoning or `/proc/self/environ`
+- [ ] Demonstrate minimal file read as proof
+- [ ] Document exact parameter and traversal depth
+- [ ] Test upload + include chains if applicable
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Recommend allow-list file paths and disable remote includes
 
 ## Tools
 

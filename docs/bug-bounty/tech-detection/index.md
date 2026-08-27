@@ -4,6 +4,10 @@ Fingerprint frameworks, CMS platforms, and third-party integrations.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
@@ -13,6 +17,28 @@ flowchart LR
     STACK --> CVE[Known CVEs]
     STACK --> MIS[Misconfig templates]
     CVE & MIS --> NU[nuclei targeted scan]
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -53,12 +79,45 @@ Once identified, versions are correlated with **CVE databases** and nuclei templ
 - **Segment EOL systems** — Isolate unpatchable legacy apps behind VPN until replaced.
 - **Inventory third-party scripts** — Analytics and chat widgets introduce supply-chain risk.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Analyze response headers and HTML comments
-- [ ] Check JavaScript bundles and known library paths
-- [ ] Map CDN, WAF, and analytics providers
-- [ ] Correlate versions with known CVEs
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Build URL list from live host inventory
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Run whatweb, httpx -tech-detect, Wappalyzer
+- [ ] Identify frameworks, CMS, and server versions
+- [ ] Check JS libraries for known vulnerable versions
+- [ ] Map CDN, WAF, and load balancer products
+
+### Phase 3 — Validation & Testing
+
+- [ ] Cross-reference versions with CVE databases
+- [ ] Run targeted nuclei templates per stack
+- [ ] Identify outdated WordPress plugins, etc.
+- [ ] Note default install paths for each tech
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Prioritize CVE exploitation on in-scope targets
+- [ ] Document tech stack per asset for reporting
+- [ ] Retest after vendor patches
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
 
 ## Tools
 

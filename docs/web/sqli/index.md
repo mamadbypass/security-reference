@@ -4,18 +4,52 @@ Classic SQL injection across query types and database engines.
 
 ## Overview Diagram
 
+Visual summary of the **attack/data flow** and the **five-phase testing workflow** for this topic.
+
+### Attack / Data Flow
+
 <div class="sr-diagram" markdown="1">
 
 ```mermaid
-flowchart LR
-    U[Attacker input] --> APP[App concatenates SQL]
-    APP --> DB[(Database)]
-    DB --> OUT[Data leak / auth bypass / RCE]
-    classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
-    classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+flowchart TD
+    subgraph Input["① User Input"]
+        U[Attacker controlled parameter]
+    end
+    subgraph Vuln["② Vulnerable Code"]
+        APP[String concatenation into SQL]
+    end
+    subgraph DBLayer["③ Database"]
+        DB[(SQL Engine executes injected syntax)]
+    end
+    subgraph Impact["④ Impact"]
+        OUT[Data leak / Auth bypass / RCE]
+    end
+    U --> APP --> DB --> OUT
     class U attacker
     class APP,DB target
-    class OUT data
+    class OUT warn
+classDef attacker fill:#ef4444,stroke:#b91c1c,color:#fff
+classDef target fill:#6c3ce0,stroke:#5429c4,color:#fff
+classDef tool fill:#f59e0b,stroke:#d97706,color:#1a1a1a
+classDef success fill:#10b981,stroke:#059669,color:#fff
+classDef warn fill:#f97316,stroke:#ea580c,color:#fff
+
+```
+
+</div>
+
+### Testing Workflow
+
+<div class="sr-diagram sr-diagram-methodology" markdown="1">
+
+```mermaid
+flowchart LR
+    P1["1. Preparation & Scoping"]
+    P2["2. Discovery & Mapping"]
+    P3["3. Validation & Testing"]
+    P4["4. Exploitation & Impact Proof"]
+    P5["5. Documentation & Reporting"]
+    P1 --> P2 --> P3 --> P4 --> P5
 ```
 
 </div>
@@ -103,12 +137,47 @@ sqlmap -r request.txt --batch --dbs
 !!! tip "Full Tool Guide"
     See the [Tools Guide](../../TOOLS_GUIDE.md) for install instructions, all flags, and pro tips.
 
-## Methodology
+## Testing Methodology
 
-- [ ] Identify injectable parameters with error and boolean tests
-- [ ] Determine query type (UNION, blind, stacked)
-- [ ] Extract schema and sensitive records
-- [ ] Document minimal proof for reporting
+Work through each phase in order. Every step has a checkbox — complete them all for thorough, reproducible coverage.
+
+### Phase 1 — Preparation & Scoping
+
+- [ ] Confirm target is in program scope and ROE allows this test type
+- [ ] Set up isolated lab or proxy (Burp/ZAP) with scope filters
+- [ ] Document baseline application behavior and account roles
+- [ ] Identify test accounts for each privilege level
+- [ ] Inventory all parameters, headers, and JSON fields hitting the database
+
+### Phase 2 — Discovery & Mapping
+
+- [ ] Map every endpoint that queries a database (forms, APIs, search, filters)
+- [ ] Inject probe characters: `'`, `"`, `)`, `;` and observe errors or diffs
+- [ ] Test GET, POST, JSON body, cookies, and custom headers
+- [ ] Identify ORM vs raw SQL usage via error messages or stack traces
+
+### Phase 3 — Validation & Testing
+
+- [ ] Confirm with boolean pairs: `' AND 1=1--` vs `' AND 1=2--`
+- [ ] Determine injection type: error, union, boolean blind, time blind, stacked
+- [ ] For UNION: find column count via `ORDER BY n` or `UNION SELECT NULL,...`
+- [ ] Validate time-based with `SLEEP(5)` / `WAITFOR DELAY` and measure response
+
+### Phase 4 — Exploitation & Impact Proof
+
+- [ ] Extract minimal proof: one row, table name, or auth bypass
+- [ ] Avoid dumping full databases unless explicitly authorized
+- [ ] Test write primitives (`INTO OUTFILE`, stacked queries) only in lab
+- [ ] Chain to RCE only when in scope and with written approval
+
+### Phase 5 — Documentation & Reporting
+
+- [ ] Write step-by-step reproduction with HTTP requests/responses
+- [ ] Capture screenshots or video showing impact (redact sensitive data)
+- [ ] Rate severity using program CVSS or impact matrix
+- [ ] Provide concrete remediation guidance for developers
+- [ ] Retest after fix if program allows verification
+- [ ] Note database type, injection context, and parameterized query fix
 
 ## Tools
 

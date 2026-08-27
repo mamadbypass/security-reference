@@ -1,11 +1,22 @@
 INFRA_DIAGRAMS = {
     "network/active-directory": """
 flowchart TD
-    RECON[LDAP enum / BloodHound] --> PATH[Attack paths]
-    PATH --> KERB[Kerberoasting]
-    PATH --> RELAY[NTLM relay]
-    PATH --> ACL[ACL abuse]
-    KERB & RELAY & ACL --> DA[Domain Admin]
+    subgraph Recon["① Reconnaissance"]
+        BH[BloodHound / LDAP enum]
+    end
+    subgraph Paths["② Attack Paths"]
+        BH --> KERB[Kerberoasting]
+        BH --> RELAY[NTLM Relay]
+        BH --> ACL[ACL Abuse]
+    end
+    subgraph Priv["③ Privilege Escalation"]
+        KERB & RELAY & ACL --> ESC[Escalate privileges]
+    end
+    subgraph Goal["④ Domain Dominance"]
+        ESC --> DA[Domain Admin / DCSync]
+    end
+    class BH tool
+    class DA warn
 """,
     "network/active-directory/kerberoasting": """
 flowchart LR
