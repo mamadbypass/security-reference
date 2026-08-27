@@ -1,3 +1,8 @@
+---
+hide:
+  - title
+---
+
 <div class="sr-hero" markdown="1">
 
 # Security Reference
@@ -15,96 +20,84 @@ Your complete playbook for bug bounty hunting, penetration testing, and defensiv
 
 ## Start Here
 
-<div class="sr-grid" markdown="1">
+<div class="sr-grid">
 
 <a class="sr-card" href="GETTING_STARTED/">
-<div class="sr-card-icon">🚀</div>
-
-### Getting Started
-Set up your lab, install essential tools, and learn how to use this reference effectively.
+<span class="sr-card-icon" aria-hidden="true">🚀</span>
+<span class="sr-card-title">Getting Started</span>
+<span class="sr-card-text">Set up your lab, install essential tools, and learn how to use this reference effectively.</span>
 </a>
 
 <a class="sr-card" href="TOOLS_GUIDE/">
-<div class="sr-card-icon">🛠</div>
-
-### Tools Guide
-Install commands, real-world usage examples, and pro tips for 40+ security tools.
+<span class="sr-card-icon" aria-hidden="true">🛠</span>
+<span class="sr-card-title">Tools Guide</span>
+<span class="sr-card-text">Install commands, real-world usage examples, and pro tips for 40+ security tools.</span>
 </a>
 
 <a class="sr-card" href="WORKFLOWS/">
-<div class="sr-card-icon">⚡</div>
-
-### Workflows
-End-to-end pipelines: recon → exploit → report for web, API, mobile, and AD.
+<span class="sr-card-icon" aria-hidden="true">⚡</span>
+<span class="sr-card-title">Workflows</span>
+<span class="sr-card-text">End-to-end pipelines: recon → exploit → report for web, API, mobile, and AD.</span>
 </a>
 
 <a class="sr-card" href="MASTER_CHECKLIST/">
-<div class="sr-card-icon">✅</div>
-
-### Master Checklist
-100+ checklist items covering every phase of a security engagement.
+<span class="sr-card-icon" aria-hidden="true">✅</span>
+<span class="sr-card-title">Master Checklist</span>
+<span class="sr-card-text">100+ checklist items covering every phase of a security engagement.</span>
 </a>
 
 </div>
 
 ## Explore by Domain
 
-<div class="sr-grid" markdown="1">
+<div class="sr-grid">
 
 <a class="sr-card" href="bug-bounty/recon/">
-<div class="sr-card-icon">🔍</div>
-
-### Bug Bounty & Recon
-Subdomain enum, port scanning, DNS, tech detection, asset discovery.
+<span class="sr-card-icon" aria-hidden="true">🔍</span>
+<span class="sr-card-title">Bug Bounty &amp; Recon</span>
+<span class="sr-card-text">Subdomain enum, port scanning, DNS, tech detection, asset discovery.</span>
 </a>
 
 <a class="sr-card" href="web/sqli/">
-<div class="sr-card-icon">🌐</div>
-
-### Web Security
-SQLi, XSS, SSRF, IDOR, smuggling, cache poisoning, business logic.
+<span class="sr-card-icon" aria-hidden="true">🌐</span>
+<span class="sr-card-title">Web Security</span>
+<span class="sr-card-text">SQLi, XSS, SSRF, IDOR, smuggling, cache poisoning, business logic.</span>
 </a>
 
 <a class="sr-card" href="api/graphql/">
-<div class="sr-card-icon">🔌</div>
-
-### API Security
-GraphQL, REST versioning, shadow APIs, gRPC testing.
+<span class="sr-card-icon" aria-hidden="true">🔌</span>
+<span class="sr-card-title">API Security</span>
+<span class="sr-card-text">GraphQL, REST versioning, shadow APIs, gRPC testing.</span>
 </a>
 
 <a class="sr-card" href="authentication/jwt/">
-<div class="sr-card-icon">🔐</div>
-
-### Authentication
-JWT, SSO/SAML, password reset, WebAuthn, session flaws.
+<span class="sr-card-icon" aria-hidden="true">🔐</span>
+<span class="sr-card-title">Authentication</span>
+<span class="sr-card-text">JWT, SSO/SAML, password reset, WebAuthn, session flaws.</span>
 </a>
 
 <a class="sr-card" href="mobile/apk-ipa-analysis/">
-<div class="sr-card-icon">📱</div>
-
-### Mobile Security
-APK analysis, Frida, SSL pinning bypass, deep links.
+<span class="sr-card-icon" aria-hidden="true">📱</span>
+<span class="sr-card-title">Mobile Security</span>
+<span class="sr-card-text">APK analysis, Frida, SSL pinning bypass, deep links.</span>
 </a>
 
 <a class="sr-card" href="network/active-directory/">
-<div class="sr-card-icon">🖧</div>
-
-### Network & AD
-Kerberoasting, BloodHound, privesc, lateral movement.
+<span class="sr-card-icon" aria-hidden="true">🖧</span>
+<span class="sr-card-title">Network &amp; AD</span>
+<span class="sr-card-text">Kerberoasting, BloodHound, privesc, lateral movement.</span>
 </a>
 
 <a class="sr-card" href="cloud/aws/">
-<div class="sr-card-icon">☁️</div>
-
-### Cloud Security
-AWS, Azure, GCP, Kubernetes misconfigurations.
+<span class="sr-card-icon" aria-hidden="true">☁️</span>
+<span class="sr-card-title">Cloud Security</span>
+<span class="sr-card-text">AWS, Azure, GCP, Kubernetes misconfigurations.</span>
 </a>
 
 <a class="sr-card" href="blue-team/detection-engineering/">
-<div class="sr-card-icon">🛡️</div>
-
-### Blue Team
-Detection engineering, SIEM, threat hunting, incident response.
+<span class="sr-card-icon" aria-hidden="true">🛡️</span>
+<span class="sr-card-title">Blue Team</span>
+<span class="sr-card-text">Detection engineering, SIEM, threat hunting, incident response.</span>
 </a>
 
 </div>

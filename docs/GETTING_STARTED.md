@@ -191,27 +191,24 @@ See [Vulnerability Reporting](reporting/vulnerability-reports/index.md) for the 
 
 ## Next Steps
 
-<div class="sr-grid" markdown="1">
+<div class="sr-grid">
 
 <a class="sr-card" href="TOOLS_GUIDE/">
-<div class="sr-card-icon">🛠</div>
-
-### Install & Learn Tools
-Step-by-step commands for every major security tool.
+<span class="sr-card-icon" aria-hidden="true">🛠</span>
+<span class="sr-card-title">Install &amp; Learn Tools</span>
+<span class="sr-card-text">Step-by-step commands for every major security tool.</span>
 </a>
 
 <a class="sr-card" href="WORKFLOWS/">
-<div class="sr-card-icon">⚡</div>
-
-### Run Your First Workflow
-Complete recon-to-report pipelines ready to copy.
+<span class="sr-card-icon" aria-hidden="true">⚡</span>
+<span class="sr-card-title">Run Your First Workflow</span>
+<span class="sr-card-text">Complete recon-to-report pipelines ready to copy.</span>
 </a>
 
 <a class="sr-card" href="bug-bounty/recon/">
-<div class="sr-card-icon">🔍</div>
-
-### Start Recon
-Begin with subdomain enumeration and asset discovery.
+<span class="sr-card-icon" aria-hidden="true">🔍</span>
+<span class="sr-card-title">Start Recon</span>
+<span class="sr-card-text">Begin with subdomain enumeration and asset discovery.</span>
 </a>
 
 </div>
