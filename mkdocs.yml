@@ -24,23 +24,22 @@ theme:
     - search.share
     - content.code.copy
     - content.code.annotate
+    - content.code.mermaid
     - content.tabs.link
     - toc.follow
     - toc.integrate
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: deep purple
-      accent: amber
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: default
       primary: deep purple
       accent: amber
       toggle:
         icon: material/brightness-4
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/brightness-7
         name: Switch to light mode
   icon:
     repo: fontawesome/brands/github
@@ -70,6 +69,9 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/theme-sync.js
 
 extra:
   social:
